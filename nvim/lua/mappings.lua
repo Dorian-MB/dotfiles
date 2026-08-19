@@ -56,36 +56,36 @@ map("n", "<leader>fb", "<cmd>Telescope builtin<CR>", { desc = "telescope builtin
 -- map('n', '<leader>k', vim.lsp.buf.hover, { desc = "Afficher la description (LSP)" })
 
 
----- Notebook keymap
--- Navigation
-map("n", "<leader>cd", function()
-  require("notebook-navigator").move_cell("d")
-end, { desc = "Next notebook cell" })
-
-map("n", "<leader>cu", function()
-  require("notebook-navigator").move_cell("u")
-end, { desc = "Previous notebook cell" })
-
--- Execution
-map("n", "<leader>M", function()
-  require("notebook-navigator").run_cell()
-end, { desc = "Run notebook cell" })
--- Execution
-map({"n", "i"}, "<C-CR>", function()
-  require("notebook-navigator").run_and_move()
-end, { desc = "Run notebook cell" })
-
-map({"n", "i"}, "<C-a>", function()
-  require("notebook-navigator").add_cell_above()
-end, { desc = "Run cell and move" })
-
-map({"n", "i"}, "<C-b>", function()
-  require("notebook-navigator").add_cell_below()
-end, { desc = "Run cell and move" })
-
-map("n", "<C-:>", function()
-  require("notebook-navigator").comment_cell()
-end, { desc = "Run cell and move" })
-
+-- ---- Notebook keymap
+-- -- Navigation
+-- map("n", "<leader>cd", function()
+--   require("notebook-navigator").move_cell("d")
+-- end, { desc = "Next notebook cell" })
+--
+-- map("n", "<leader>cu", function()
+--   require("notebook-navigator").move_cell("u")
+-- end, { desc = "Previous notebook cell" })
+--
+-- -- Execution
+-- map("n", "<leader>M", function()
+--   require("notebook-navigator").run_cell()
+-- end, { desc = "Run notebook cell" })
+-- -- Execution
+-- map({"n", "i"}, "<C-CR>", function()
+--   require("notebook-navigator").run_and_move()
+-- end, { desc = "Run notebook cell" })
+--
+-- map({"n", "i"}, "<C-a>", function()
+--   require("notebook-navigator").add_cell_above()
+-- end, { desc = "Run cell and move" })
+--
+-- map({"n", "i"}, "<C-b>", function()
+--   require("notebook-navigator").add_cell_below()
+-- end, { desc = "Run cell and move" })
+--
+-- map("n", "<C-:>", function()
+--   require("notebook-navigator").comment_cell()
+-- end, { desc = "Run cell and move" })
+--
 
 
