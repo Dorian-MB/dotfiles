@@ -35,7 +35,11 @@ return {
 
           config = function()
                require("nvim-treesitter").install({
+                    "vim",
                     "lua",
+                    "vimdoc",
+                    "html",
+                    "css",
                     "rust",
                     "python",
                     "markdown",
@@ -43,6 +47,16 @@ return {
                })
 
                vim.api.nvim_create_autocmd("FileType", {
+                    pattern = {
+                         "vim",
+                         "lua",
+                         "vimdoc",
+                         "html",
+                         "css",
+                         "rust",
+                         "python",
+                         "markdown",
+                    },
                     callback = function(args)
                          vim.treesitter.start(args.buf)
                     end,

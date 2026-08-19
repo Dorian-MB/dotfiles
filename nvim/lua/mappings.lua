@@ -26,16 +26,11 @@ map("n", "<leader>rf", ":.,$s///gc<Left><Left><Left><Left>", {desc = "Find and R
 map("v", "<leader>R", [["zy:%s/<C-r>z//gc<Left><Left><Left>]], { desc = "Find and Replace selection (whole file)" })
 map("v", "<leader>rr", [["zy:.,$s/<C-r>z//gc<Left><Left><Left>]], { desc = "Find and Replace selection from current position to the end" })
 
+map("n", "<leader>G", "<cmd>tabnew<cr>")
 -- by debault past over a selection doent copy
 -- but <leader> + p does
 map("x", "p", 'p:let @+=@0<cr>:let @"=@0<cr>', {desc = "dont copy replaced text"})
 map("x", "<leader>p", '"+p' , {desc = "past and copy over the selection"})
-
-map("n", "<leader>G", "<cmd>tabnew<cr>")
--- foo
--- bar
--- foo
--- bar
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
