@@ -1,0 +1,1016 @@
+2026-08-17T23:08:06.189609Z  INFO herdr::platform::macos: raised server file descriptor soft limit previous=256 target=8192
+2026-08-17T23:08:06.190082Z  INFO herdr::api::server: api server listening path=/Users/dorian/.config/herdr/herdr.sock
+2026-08-17T23:08:06.191097Z  INFO herdr::app: using pane scrollback configuration pane_scrollback_limit_bytes=10000000
+2026-08-17T23:08:06.210185Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-17T23:08:06.215954Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=1 rows=24 cols=80 scrollback_limit_bytes=10000000
+2026-08-17T23:08:06.218663Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=1 pid=1461
+2026-08-17T23:08:06.218942Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="w1" pane_id=1
+2026-08-17T23:08:06.218950Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w1"
+2026-08-17T23:08:06.218991Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-08-17T23:08:06.219018Z  INFO herdr::server::headless: created startup workspace cwd=/Users/dorian
+2026-08-17T23:08:06.219121Z  INFO herdr::server::headless: client protocol socket listening path=/Users/dorian/.config/herdr/herdr-client.sock
+2026-08-17T23:08:06.219145Z  INFO herdr::server::headless: herdr server started api_socket=/Users/dorian/.config/herdr/herdr.sock client_socket=/Users/dorian/.config/herdr/herdr-client.sock
+2026-08-17T23:08:06.219490Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="server" outcome="started" pid=1397
+2026-08-17T23:08:06.365066Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-17T23:08:06.476500Z  INFO herdr::server::headless: client connected client_id=2 cols=65 rows=36 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-08-17T23:08:11.222767Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=1
+2026-08-17T23:08:17.362749Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=2 rows=35 cols=39 scrollback_limit_bytes=10000000
+2026-08-17T23:08:17.367909Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=2 pid=1921
+2026-08-17T23:08:17.368199Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t2"
+2026-08-17T23:08:20.107174Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-08-17T23:08:24.398100Z  INFO herdr::server::headless: client resize client_id=2 cols=32 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-17T23:08:25.114044Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=1
+2026-08-17T23:08:28.643917Z  INFO herdr::server::headless: client resize client_id=2 cols=65 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-17T23:08:42.806795Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t2"
+2026-08-17T23:08:44.357176Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w1"
+2026-08-17T23:08:44.357251Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t2"
+2026-08-17T23:08:44.357281Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t2"
+2026-08-17T23:08:44.359068Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=2 status="ExitStatus { code: 1, signal: None }"
+2026-08-17T23:08:44.377969Z  INFO herdr::pane: pane session terminated pane=2 pid=1921 signal=Hangup
+2026-08-17T23:08:44.378279Z  WARN herdr::app::actions: PaneDied for unknown pane pane=2
+2026-08-17T23:08:46.057075Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w1"
+2026-08-17T23:08:46.057153Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-08-17T23:08:46.057191Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-08-17T23:08:46.057216Z  INFO herdr::logging: workspace closed event="workspace.close" subsystem="workspace" outcome="ok" workspace_id="w1"
+2026-08-17T23:08:46.059273Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=1 status="ExitStatus { code: 1, signal: None }"
+2026-08-17T23:08:46.079068Z  INFO herdr::pane: pane session terminated pane=1 pid=1461 signal=Hangup
+2026-08-17T23:08:46.079379Z  WARN herdr::app::actions: PaneDied for unknown pane pane=1
+2026-08-17T23:08:46.079481Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=3 rows=35 cols=39 scrollback_limit_bytes=10000000
+2026-08-17T23:08:46.083735Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=3 pid=2569
+2026-08-17T23:08:46.084028Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="w2" pane_id=3
+2026-08-17T23:08:46.084041Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w2"
+2026-08-17T23:08:46.084063Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w2" tab_id="w2:t1"
+2026-08-17T23:08:50.665477Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=3 status="ExitStatus { code: 0, signal: None }"
+2026-08-17T23:08:50.665711Z  INFO herdr::pane: pane session terminated pane=3 pid=2569 signal=Hangup
+2026-08-17T23:08:50.665901Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=4 rows=35 cols=39 scrollback_limit_bytes=10000000
+2026-08-17T23:08:50.669975Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=4 pid=2825
+2026-08-17T23:08:50.670234Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="w3" pane_id=4
+2026-08-17T23:08:50.670246Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w3"
+2026-08-17T23:08:50.670276Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w3" tab_id="w3:t1"
+2026-08-17T23:08:51.750178Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=4 status="ExitStatus { code: 0, signal: None }"
+2026-08-17T23:08:51.750419Z  INFO herdr::pane: pane session terminated pane=4 pid=2825 signal=Hangup
+2026-08-17T23:08:51.750564Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=5 rows=35 cols=39 scrollback_limit_bytes=10000000
+2026-08-17T23:08:51.755368Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=5 pid=3074
+2026-08-17T23:08:51.755667Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="w4" pane_id=5
+2026-08-17T23:08:51.755682Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w4"
+2026-08-17T23:08:51.755716Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w4" tab_id="w4:t1"
+2026-08-17T23:08:53.558172Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=5 status="ExitStatus { code: 0, signal: None }"
+2026-08-17T23:08:53.558426Z  INFO herdr::pane: pane session terminated pane=5 pid=3074 signal=Hangup
+2026-08-17T23:08:53.558593Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=6 rows=35 cols=39 scrollback_limit_bytes=10000000
+2026-08-17T23:08:53.562477Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=6 pid=3298
+2026-08-17T23:08:53.562761Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="w5" pane_id=6
+2026-08-17T23:08:53.562771Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w5"
+2026-08-17T23:08:53.562802Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w5" tab_id="w5:t1"
+2026-08-17T23:08:53.916513Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=6 status="ExitStatus { code: 0, signal: None }"
+2026-08-17T23:08:53.916573Z  INFO herdr::pane: pane session terminated pane=6 pid=3298 signal=Hangup
+2026-08-17T23:08:53.916635Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=7 rows=35 cols=39 scrollback_limit_bytes=10000000
+2026-08-17T23:08:53.918396Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=7 pid=3513
+2026-08-17T23:08:53.918479Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="w6" pane_id=7
+2026-08-17T23:08:53.918482Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w6"
+2026-08-17T23:08:53.918491Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w6" tab_id="w6:t1"
+2026-08-17T23:08:55.349559Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=7 status="ExitStatus { code: 0, signal: None }"
+2026-08-17T23:08:55.349768Z  INFO herdr::pane: pane session terminated pane=7 pid=3513 signal=Hangup
+2026-08-17T23:08:55.349967Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=8 rows=35 cols=39 scrollback_limit_bytes=10000000
+2026-08-17T23:08:55.354272Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=8 pid=3735
+2026-08-17T23:08:55.354554Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="w7" pane_id=8
+2026-08-17T23:08:55.354566Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w7"
+2026-08-17T23:08:55.354599Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w7" tab_id="w7:t1"
+2026-08-17T23:08:58.232903Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=8 status="ExitStatus { code: 0, signal: None }"
+2026-08-17T23:08:58.233121Z  INFO herdr::pane: pane session terminated pane=8 pid=3735 signal=Hangup
+2026-08-17T23:08:58.233307Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=9 rows=35 cols=39 scrollback_limit_bytes=10000000
+2026-08-17T23:08:58.237173Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=9 pid=3954
+2026-08-17T23:08:58.237451Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="w8" pane_id=9
+2026-08-17T23:08:58.237463Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w8"
+2026-08-17T23:08:58.237485Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w8" tab_id="w8:t1"
+2026-08-17T23:09:03.250261Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=1
+2026-08-17T23:09:04.709295Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=9 status="ExitStatus { code: 130, signal: None }"
+2026-08-17T23:09:04.709514Z  INFO herdr::pane: pane session terminated pane=9 pid=3954 signal=Hangup
+2026-08-17T23:09:04.709692Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=10 rows=35 cols=39 scrollback_limit_bytes=10000000
+2026-08-17T23:09:04.714445Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=10 pid=4185
+2026-08-17T23:09:04.714744Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="w9" pane_id=10
+2026-08-17T23:09:04.714758Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w9"
+2026-08-17T23:09:04.714781Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w9" tab_id="w9:t1"
+2026-08-17T23:09:09.724885Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=1
+2026-08-17T23:09:25.855529Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=10 status="ExitStatus { code: 0, signal: None }"
+2026-08-17T23:09:25.855730Z  INFO herdr::pane: pane session terminated pane=10 pid=4185 signal=Hangup
+2026-08-17T23:09:25.855887Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=11 rows=35 cols=39 scrollback_limit_bytes=10000000
+2026-08-17T23:09:25.862535Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=11 pid=4786
+2026-08-17T23:09:25.862955Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="wA" pane_id=11
+2026-08-17T23:09:25.862980Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wA"
+2026-08-17T23:09:25.863010Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wA" tab_id="wA:t1"
+2026-08-17T23:09:30.869639Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=1
+2026-08-17T23:09:33.832333Z  INFO herdr::logging: workspace closed event="workspace.close" subsystem="workspace" outcome="ok" workspace_id="wA"
+2026-08-17T23:09:33.836194Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=11 status="ExitStatus { code: 1, signal: None }"
+2026-08-17T23:09:33.858432Z  INFO herdr::pane: pane session terminated pane=11 pid=4786 signal=Hangup
+2026-08-17T23:09:33.858836Z  WARN herdr::app::actions: PaneDied for unknown pane pane=11
+2026-08-17T23:09:33.858972Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=12 rows=35 cols=39 scrollback_limit_bytes=10000000
+2026-08-17T23:09:33.862875Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=12 pid=5016
+2026-08-17T23:09:33.863138Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="wB" pane_id=12
+2026-08-17T23:09:33.863151Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wB"
+2026-08-17T23:09:33.863172Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wB" tab_id="wB:t1"
+2026-08-17T23:09:36.401904Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wB"
+2026-08-17T23:09:36.401958Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wB" tab_id="wB:t1"
+2026-08-17T23:09:41.408503Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=1
+2026-08-17T23:10:00.818407Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=1
+2026-08-17T23:10:45.640388Z  INFO herdr::logging: integration action finished event="integration.action" subsystem="integration" outcome="ok" action="install" target="claude"
+2026-08-17T23:10:50.649855Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=1
+2026-08-17T23:10:53.493747Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=13 rows=35 cols=39 scrollback_limit_bytes=10000000
+2026-08-17T23:10:53.498290Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=13 pid=5385
+2026-08-17T23:10:53.498667Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="wC" pane_id=13
+2026-08-17T23:10:53.498688Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wC"
+2026-08-17T23:10:53.498732Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wC" tab_id="wC:t1"
+2026-08-17T23:10:55.152468Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=14 rows=35 cols=39 scrollback_limit_bytes=10000000
+2026-08-17T23:10:55.159409Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=14 pid=5601
+2026-08-17T23:10:55.159828Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="wD" pane_id=14
+2026-08-17T23:10:55.159852Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wD"
+2026-08-17T23:10:55.159892Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wD" tab_id="wD:t1"
+2026-08-17T23:10:56.342631Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wC"
+2026-08-17T23:10:56.342700Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wC" tab_id="wC:t1"
+2026-08-17T23:10:56.926051Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wB"
+2026-08-17T23:10:56.926128Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wB" tab_id="wB:t1"
+2026-08-17T23:10:57.738487Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wC"
+2026-08-17T23:10:57.738563Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wC" tab_id="wC:t1"
+2026-08-17T23:10:58.301293Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wD"
+2026-08-17T23:10:58.301425Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wD" tab_id="wD:t1"
+2026-08-17T23:11:03.307946Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=3
+2026-08-17T23:11:24.605666Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=14 status="ExitStatus { code: 0, signal: None }"
+2026-08-17T23:11:24.605961Z  INFO herdr::pane: pane session terminated pane=14 pid=5601 signal=Hangup
+2026-08-17T23:11:25.317967Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=13 status="ExitStatus { code: 0, signal: None }"
+2026-08-17T23:11:25.318113Z  INFO herdr::pane: pane session terminated pane=13 pid=5385 signal=Hangup
+2026-08-17T23:11:25.717199Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=12 status="ExitStatus { code: 0, signal: None }"
+2026-08-17T23:11:25.717431Z  INFO herdr::pane: pane session terminated pane=12 pid=5016 signal=Hangup
+2026-08-17T23:11:25.717671Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=15 rows=35 cols=39 scrollback_limit_bytes=10000000
+2026-08-17T23:11:25.722544Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=15 pid=5873
+2026-08-17T23:11:25.722864Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="wE" pane_id=15
+2026-08-17T23:11:25.722876Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wE"
+2026-08-17T23:11:25.722910Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wE" tab_id="wE:t1"
+2026-08-17T23:11:29.438914Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=15 status="ExitStatus { code: 0, signal: None }"
+2026-08-17T23:11:29.439138Z  INFO herdr::pane: pane session terminated pane=15 pid=5873 signal=Hangup
+2026-08-17T23:11:29.439340Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=16 rows=35 cols=39 scrollback_limit_bytes=10000000
+2026-08-17T23:11:29.443400Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=16 pid=6095
+2026-08-17T23:11:29.443635Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="wF" pane_id=16
+2026-08-17T23:11:29.443646Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wF"
+2026-08-17T23:11:29.443666Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wF" tab_id="wF:t1"
+2026-08-17T23:11:29.799050Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=16 status="ExitStatus { code: 0, signal: None }"
+2026-08-17T23:11:29.799114Z  INFO herdr::pane: pane session terminated pane=16 pid=6095 signal=Hangup
+2026-08-17T23:11:29.799178Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=17 rows=35 cols=39 scrollback_limit_bytes=10000000
+2026-08-17T23:11:29.801035Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=17 pid=6310
+2026-08-17T23:11:29.801125Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="wG" pane_id=17
+2026-08-17T23:11:29.801129Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wG"
+2026-08-17T23:11:29.801140Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wG" tab_id="wG:t1"
+2026-08-17T23:11:30.130484Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=17 status="ExitStatus { code: 0, signal: None }"
+2026-08-17T23:11:30.130544Z  INFO herdr::pane: pane session terminated pane=17 pid=6310 signal=Hangup
+2026-08-17T23:11:30.130602Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=18 rows=35 cols=39 scrollback_limit_bytes=10000000
+2026-08-17T23:11:30.132255Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=18 pid=6526
+2026-08-17T23:11:30.132362Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="wH" pane_id=18
+2026-08-17T23:11:30.132369Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wH"
+2026-08-17T23:11:30.132377Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wH" tab_id="wH:t1"
+2026-08-17T23:11:30.458585Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=18 status="ExitStatus { code: 0, signal: None }"
+2026-08-17T23:11:30.458653Z  INFO herdr::pane: pane session terminated pane=18 pid=6526 signal=Hangup
+2026-08-17T23:11:30.458710Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=19 rows=35 cols=39 scrollback_limit_bytes=10000000
+2026-08-17T23:11:30.460323Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=19 pid=6741
+2026-08-17T23:11:30.460426Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="wJ" pane_id=19
+2026-08-17T23:11:30.460431Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wJ"
+2026-08-17T23:11:30.460441Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wJ" tab_id="wJ:t1"
+2026-08-17T23:11:34.282570Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=19 status="ExitStatus { code: 130, signal: None }"
+2026-08-17T23:11:34.282713Z  INFO herdr::pane: pane session terminated pane=19 pid=6741 signal=Hangup
+2026-08-17T23:11:34.282810Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=20 rows=35 cols=39 scrollback_limit_bytes=10000000
+2026-08-17T23:11:34.286435Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=20 pid=6966
+2026-08-17T23:11:34.286760Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="wK" pane_id=20
+2026-08-17T23:11:34.286775Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wK"
+2026-08-17T23:11:34.286814Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-17T23:11:42.176734Z  INFO herdr::server::headless: client detach requested via keybind client_id=2
+2026-08-17T23:11:42.179645Z  INFO herdr::server::headless: client disconnected client_id=2
+2026-08-17T23:11:44.134529Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=1
+2026-08-17T23:11:44.385834Z  INFO herdr::server::headless: client connected client_id=4 cols=65 rows=36 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-08-17T23:11:55.980774Z  INFO herdr::server::headless: client detach requested via keybind client_id=4
+2026-08-17T23:11:55.983163Z  INFO herdr::server::headless: client disconnected client_id=4
+2026-08-17T23:15:19.390914Z  INFO herdr::server::headless: client connected client_id=6 cols=130 rows=34 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-08-17T23:16:28.380239Z  INFO herdr::server::headless: client resize client_id=6 cols=125 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-17T23:16:59.680593Z  INFO herdr::server::headless: client resize client_id=6 cols=130 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-17T23:17:04.873359Z  INFO herdr::server::headless: client resize client_id=6 cols=131 rows=35 cell_width_px=0 cell_height_px=0
+2026-08-17T23:17:04.974160Z  INFO herdr::server::headless: client resize client_id=6 cols=130 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-17T23:20:39.603901Z  INFO herdr::server::headless: client detach requested via keybind client_id=6
+2026-08-17T23:20:39.606500Z  INFO herdr::server::headless: client disconnected client_id=6
+2026-08-17T23:20:44.202617Z  INFO herdr::server::headless: client connected client_id=8 cols=130 rows=34 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-08-17T23:25:16.693459Z  INFO herdr::server::headless: client resize client_id=8 cols=125 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-17T23:25:18.778185Z  INFO herdr::server::headless: client resize client_id=8 cols=130 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-17T23:38:06.211575Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-17T23:38:06.373523Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-17T23:56:51.251093Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=1
+2026-08-17T23:59:39.974524Z  INFO herdr::server::headless: client resize client_id=8 cols=125 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-17T23:59:51.907877Z  INFO herdr::server::headless: client resize client_id=8 cols=125 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-18T00:00:00.737263Z  INFO herdr::server::headless: client resize client_id=8 cols=130 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-18T00:00:31.999638Z  INFO herdr::server::headless: client resize client_id=8 cols=125 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-18T00:00:36.859160Z  INFO herdr::server::headless: client resize client_id=8 cols=130 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-18T00:00:57.205278Z  INFO herdr::app::actions: copied selection to clipboard
+2026-08-18T00:01:32.321850Z  INFO herdr::server::headless: client resize client_id=8 cols=125 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-18T00:01:32.516977Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=1
+2026-08-18T00:01:47.565387Z  INFO herdr::server::headless: client resize client_id=8 cols=130 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-18T00:01:49.953606Z  INFO herdr::server::headless: client resize client_id=8 cols=126 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-18T00:01:50.057353Z  INFO herdr::server::headless: client resize client_id=8 cols=130 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-18T00:01:53.791361Z  INFO herdr::server::headless: client resize client_id=8 cols=129 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-18T00:01:53.892705Z  INFO herdr::server::headless: client resize client_id=8 cols=126 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-18T00:01:55.854408Z  INFO herdr::server::headless: client resize client_id=8 cols=126 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-18T00:01:55.957609Z  INFO herdr::server::headless: client resize client_id=8 cols=130 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-18T00:02:01.442225Z  INFO herdr::server::headless: client resize client_id=8 cols=131 rows=35 cell_width_px=0 cell_height_px=0
+2026-08-18T00:02:01.545989Z  INFO herdr::server::headless: client resize client_id=8 cols=130 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-18T00:08:06.233664Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-18T00:08:06.398448Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-18T00:14:26.718022Z  INFO herdr::server::headless: client resize client_id=8 cols=125 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-18T00:14:29.937746Z  INFO herdr::server::headless: client resize client_id=8 cols=130 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-18T00:14:54.628064Z  INFO herdr::server::headless: client resize client_id=8 cols=125 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-18T00:14:56.694599Z  INFO herdr::server::headless: client resize client_id=8 cols=130 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-18T00:38:06.292888Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-18T00:38:06.460475Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-18T00:42:56.519034Z  INFO herdr::server::headless: client resize client_id=8 cols=130 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-18T00:42:56.624101Z  INFO herdr::server::headless: client resize client_id=8 cols=130 rows=32 cell_width_px=0 cell_height_px=0
+2026-08-18T00:42:56.729308Z  INFO herdr::server::headless: client resize client_id=8 cols=130 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-18T00:43:04.413656Z  INFO herdr::server::headless: client resize client_id=8 cols=130 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-18T00:43:08.367863Z  INFO herdr::server::headless: client resize client_id=8 cols=130 rows=33 cell_width_px=0 cell_height_px=0
+2026-08-18T00:43:08.468292Z  INFO herdr::server::headless: client resize client_id=8 cols=130 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-18T00:43:13.449617Z  INFO herdr::server::headless: client resize client_id=8 cols=130 rows=33 cell_width_px=0 cell_height_px=0
+2026-08-18T00:43:13.554846Z  INFO herdr::server::headless: client resize client_id=8 cols=130 rows=33 cell_width_px=0 cell_height_px=0
+2026-08-18T00:43:14.788774Z  INFO herdr::server::headless: client resize client_id=8 cols=130 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-18T00:43:14.893906Z  INFO herdr::server::headless: client resize client_id=8 cols=131 rows=35 cell_width_px=0 cell_height_px=0
+2026-08-18T00:59:54.893085Z  INFO herdr::server::headless: client resize client_id=8 cols=131 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T00:59:59.875389Z  INFO herdr::server::headless: client resize client_id=8 cols=80 rows=24 cell_width_px=0 cell_height_px=0
+2026-08-18T00:59:59.876066Z  INFO herdr::server::headless: client detached client_id=8
+2026-08-18T00:59:59.876135Z  INFO herdr::server::headless: client disconnected client_id=8
+2026-08-18T01:08:06.255771Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-18T01:08:06.413306Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-18T01:10:08.808732Z  INFO herdr::server::headless: client connected client_id=10 cols=130 rows=34 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-08-18T10:08:40.180647Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-18T10:08:40.375191Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-18T10:39:32.915612Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-18T10:39:33.110974Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-18T11:09:32.927508Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-18T11:09:33.110192Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-18T11:32:53.512048Z  INFO herdr::server::headless: client resize client_id=10 cols=130 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T11:32:53.535774Z  INFO herdr::server::headless: client detached client_id=10
+2026-08-18T11:32:53.535856Z  INFO herdr::server::headless: client disconnected client_id=10
+2026-08-18T11:33:01.067511Z  INFO herdr::server::headless: server shutdown initiated
+2026-08-18T11:33:01.122622Z  INFO herdr::server::headless: completing server shutdown
+2026-08-18T11:33:01.123726Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=1
+2026-08-18T11:33:01.123758Z  INFO herdr::server::headless: headless server exiting
+2026-08-18T11:33:01.126612Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=20 status="ExitStatus { code: 1, signal: None }"
+2026-08-18T11:33:01.148925Z  INFO herdr::pane: pane session terminated pane=20 pid=6966 signal=Hangup
+2026-08-18T11:33:01.149716Z  INFO herdr::logging: herdr exiting event="app.shutdown" subsystem="server" outcome="completed" pid=1397
+2026-08-18T12:53:55.088499Z  INFO herdr::platform::macos: raised server file descriptor soft limit previous=256 target=8192
+2026-08-18T12:53:55.089452Z  INFO herdr::api::server: api server listening path=/Users/dorian/.config/herdr/herdr.sock
+2026-08-18T12:53:55.094851Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=1 rows=24 cols=80 scrollback_limit_bytes=10000000
+2026-08-18T12:53:55.099472Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=1 pid=7042
+2026-08-18T12:53:55.100307Z  INFO herdr::logging: session restore evaluated event="persist.restore" subsystem="persist" outcome="ok" workspaces=1
+2026-08-18T12:53:55.100355Z  INFO herdr::app: using pane scrollback configuration pane_scrollback_limit_bytes=10000000
+2026-08-18T12:53:55.130337Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-18T12:53:55.134829Z  INFO herdr::server::headless: restored session already has workspaces; ignoring startup cwd cwd=/Users/dorian/.config/aerospace
+2026-08-18T12:53:55.135093Z  INFO herdr::server::headless: client protocol socket listening path=/Users/dorian/.config/herdr/herdr-client.sock
+2026-08-18T12:53:55.135185Z  INFO herdr::server::headless: herdr server started api_socket=/Users/dorian/.config/herdr/herdr.sock client_socket=/Users/dorian/.config/herdr/herdr-client.sock
+2026-08-18T12:53:55.135697Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="server" outcome="started" pid=7040
+2026-08-18T12:53:55.285693Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-18T12:53:55.394029Z  INFO herdr::server::headless: client connected client_id=2 cols=130 rows=34 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-08-18T12:54:41.043814Z  INFO herdr::server::headless: client detach requested via keybind client_id=2
+2026-08-18T12:54:41.046315Z  INFO herdr::server::headless: client disconnected client_id=2
+2026-08-18T12:54:42.832828Z  INFO herdr::server::headless: client connected client_id=4 cols=130 rows=34 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-08-18T12:56:36.446824Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=2 rows=33 cols=104 scrollback_limit_bytes=10000000
+2026-08-18T12:56:36.451214Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=2 pid=7768
+2026-08-18T12:56:36.451465Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T12:56:41.464136Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=1
+2026-08-18T12:56:42.626101Z  INFO herdr::server::headless: client resize client_id=4 cols=64 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-18T12:56:46.479110Z  INFO herdr::server::headless: client resize client_id=4 cols=130 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-18T12:56:54.433112Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T12:56:58.785130Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T12:57:03.792733Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=1
+2026-08-18T12:57:45.940167Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T12:57:50.946623Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=1
+2026-08-18T12:58:04.173587Z  INFO herdr::server::headless: client resize client_id=4 cols=64 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-18T12:58:07.713415Z  INFO herdr::server::headless: client resize client_id=4 cols=130 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-18T12:58:21.871849Z  INFO herdr::server::headless: client resize client_id=4 cols=130 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-18T12:58:25.448783Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T12:58:28.663330Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=2 status="ExitStatus { code: 0, signal: None }"
+2026-08-18T12:58:28.663620Z  INFO herdr::pane: pane session terminated pane=2 pid=7768 signal=Hangup
+2026-08-18T12:58:32.037761Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=3 rows=33 cols=126 scrollback_limit_bytes=10000000
+2026-08-18T12:58:32.043425Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=3 pid=8931
+2026-08-18T12:58:32.043684Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T12:58:34.614475Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=3 status="ExitStatus { code: 1, signal: None }"
+2026-08-18T12:58:34.635216Z  INFO herdr::pane: pane session terminated pane=3 pid=8931 signal=Hangup
+2026-08-18T12:58:34.635630Z  WARN herdr::app::actions: PaneDied for unknown pane pane=3
+2026-08-18T12:58:39.640446Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=1
+2026-08-18T12:59:38.043555Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=4 rows=33 cols=126 scrollback_limit_bytes=10000000
+2026-08-18T12:59:38.050051Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=4 pid=9294
+2026-08-18T12:59:38.050277Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T12:59:40.984677Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=4 status="ExitStatus { code: 1, signal: None }"
+2026-08-18T12:59:41.009153Z  INFO herdr::pane: pane session terminated pane=4 pid=9294 signal=Hangup
+2026-08-18T12:59:41.009473Z  WARN herdr::app::actions: PaneDied for unknown pane pane=4
+2026-08-18T12:59:46.011537Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=1
+2026-08-18T13:00:00.762847Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=5 rows=33 cols=126 scrollback_limit_bytes=10000000
+2026-08-18T13:00:00.766405Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=5 pid=9548
+2026-08-18T13:00:00.766894Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="wM" pane_id=5
+2026-08-18T13:00:00.766929Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wM"
+2026-08-18T13:00:00.766944Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wM" tab_id="wM:t1"
+2026-08-18T13:00:05.776473Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:00:28.066534Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wK"
+2026-08-18T13:00:28.066636Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:00:28.720051Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wM"
+2026-08-18T13:00:28.720099Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wM" tab_id="wM:t1"
+2026-08-18T13:00:31.228672Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wK"
+2026-08-18T13:00:31.228727Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:00:36.238816Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:00:42.536932Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wM"
+2026-08-18T13:00:42.536966Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wM" tab_id="wM:t1"
+2026-08-18T13:00:47.546655Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:01:09.234048Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wK"
+2026-08-18T13:01:09.234135Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:01:14.242879Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:01:20.405071Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wM"
+2026-08-18T13:01:20.405117Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wM" tab_id="wM:t1"
+2026-08-18T13:01:21.021594Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wM"
+2026-08-18T13:01:21.021663Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wM" tab_id="wM:t1"
+2026-08-18T13:01:21.754771Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wK"
+2026-08-18T13:01:21.754812Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:01:29.812344Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:02:54.484040Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wM"
+2026-08-18T13:02:54.484195Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wM" tab_id="wM:t1"
+2026-08-18T13:02:59.490488Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:03:07.486378Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wM"
+2026-08-18T13:03:07.486489Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wM" tab_id="wM:t1"
+2026-08-18T13:03:09.932973Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=5 status="ExitStatus { code: 0, signal: None }"
+2026-08-18T13:03:09.933246Z  INFO herdr::pane: pane session terminated pane=5 pid=9548 signal=Hangup
+2026-08-18T13:03:14.942151Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=1
+2026-08-18T13:03:39.286571Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wK"
+2026-08-18T13:03:39.286698Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:03:43.322983Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=6 rows=33 cols=126 scrollback_limit_bytes=10000000
+2026-08-18T13:03:43.327906Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=6 pid=10204
+2026-08-18T13:03:43.328308Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="wN" pane_id=6
+2026-08-18T13:03:43.328326Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wN"
+2026-08-18T13:03:43.328335Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wN" tab_id="wN:t1"
+2026-08-18T13:03:48.336998Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:04:02.473424Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wK"
+2026-08-18T13:04:02.473526Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:04:07.481740Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:05:27.718585Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wN"
+2026-08-18T13:05:27.718681Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wN" tab_id="wN:t1"
+2026-08-18T13:05:29.815905Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wK"
+2026-08-18T13:05:29.815992Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:05:34.823603Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:05:45.706783Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=7 rows=33 cols=126 scrollback_limit_bytes=10000000
+2026-08-18T13:05:45.712759Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=7 pid=10655
+2026-08-18T13:05:45.713008Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:05:50.722217Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:05:55.778588Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:05:56.139480Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:05:56.378447Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:05:56.493325Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:05:56.681056Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:05:56.707040Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:05:56.868634Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:05:57.001785Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:05:57.260497Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:05:57.462048Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:05:57.831229Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:05:58.026324Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:05:58.285608Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:05:58.471605Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:05:58.772959Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:05:59.238312Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:05:59.506108Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:05:59.888274Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:06:00.075342Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:06:04.789971Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:06:09.800049Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:06:20.801947Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:06:24.208345Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:06:29.214805Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:06:57.715052Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=8 rows=33 cols=63 scrollback_limit_bytes=10000000
+2026-08-18T13:06:57.720606Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=8 pid=11010
+2026-08-18T13:06:57.721014Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t2"
+2026-08-18T13:07:02.730302Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:07:19.700795Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wN"
+2026-08-18T13:07:19.700869Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wN" tab_id="wN:t1"
+2026-08-18T13:07:24.707768Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:07:27.281036Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wK"
+2026-08-18T13:07:27.281135Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t2"
+2026-08-18T13:07:30.787681Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:07:35.795687Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:07:37.201208Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wN"
+2026-08-18T13:07:37.201354Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wN" tab_id="wN:t1"
+2026-08-18T13:07:38.458344Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wK"
+2026-08-18T13:07:38.458387Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:07:39.284436Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wN"
+2026-08-18T13:07:39.284528Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wN" tab_id="wN:t1"
+2026-08-18T13:07:39.884400Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wN"
+2026-08-18T13:07:39.884503Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wN" tab_id="wN:t1"
+2026-08-18T13:07:40.549931Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wK"
+2026-08-18T13:07:40.549966Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:07:42.103982Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t2"
+2026-08-18T13:07:43.992756Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wN"
+2026-08-18T13:07:43.992852Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wN" tab_id="wN:t1"
+2026-08-18T13:07:47.250929Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wK"
+2026-08-18T13:07:47.251001Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t2"
+2026-08-18T13:07:48.275267Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wN"
+2026-08-18T13:07:48.275337Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wN" tab_id="wN:t1"
+2026-08-18T13:07:50.409301Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wK"
+2026-08-18T13:07:50.409433Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t2"
+2026-08-18T13:07:55.417551Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:08:22.458553Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:08:27.467005Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:08:32.882896Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:08:34.059743Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:08:34.934512Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:08:39.944782Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:08:48.447688Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t2"
+2026-08-18T13:08:53.456369Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:08:53.688104Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:08:58.697078Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:09:04.074424Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wN"
+2026-08-18T13:09:04.074521Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wN" tab_id="wN:t1"
+2026-08-18T13:09:09.079995Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:09:10.200617Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wK"
+2026-08-18T13:09:10.200677Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:09:15.208284Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:10:11.852566Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:10:13.840316Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=7 status="ExitStatus { code: 1, signal: None }"
+2026-08-18T13:10:13.864015Z  INFO herdr::pane: pane session terminated pane=7 pid=10655 signal=Hangup
+2026-08-18T13:10:13.864462Z  WARN herdr::app::actions: PaneDied for unknown pane pane=7
+2026-08-18T13:10:17.950890Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t2"
+2026-08-18T13:10:19.695277Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:10:24.702065Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:10:40.261272Z  INFO herdr::server::headless: client resize client_id=4 cols=130 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T13:13:43.118854Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t2"
+2026-08-18T13:13:48.123262Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:16:18.214600Z  INFO herdr::server::headless: client detach requested via keybind client_id=4
+2026-08-18T13:16:18.216596Z  INFO herdr::server::headless: client disconnected client_id=4
+2026-08-18T13:16:24.330495Z  INFO herdr::server::headless: client connected client_id=6 cols=130 rows=36 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-08-18T13:16:29.030563Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:16:31.426801Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wN"
+2026-08-18T13:16:31.426868Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wN" tab_id="wN:t1"
+2026-08-18T13:16:32.122244Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wK"
+2026-08-18T13:16:32.122294Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:16:37.131254Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:19:51.782337Z  INFO herdr::server::headless: client detach requested via keybind client_id=6
+2026-08-18T13:19:51.783440Z  INFO herdr::server::headless: client disconnected client_id=6
+2026-08-18T13:19:52.836157Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:19:53.342608Z  INFO herdr::server::headless: client connected client_id=8 cols=130 rows=36 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-08-18T13:20:50.201548Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t2"
+2026-08-18T13:21:00.053911Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:23:05.280079Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t2"
+2026-08-18T13:23:10.288561Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:23:55.141757Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-18T13:23:55.320571Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-18T13:26:21.231567Z  INFO herdr::pane: agent changed pane=8 previous_agent=None agent=Some(Claude) process=claude pgid=Some(15370)
+2026-08-18T13:26:30.632995Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:26:43.960183Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:26:47.006344Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t2"
+2026-08-18T13:26:48.931006Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:26:53.656043Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t2"
+2026-08-18T13:26:58.662975Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:27:07.872631Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:27:12.879640Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:30:53.997124Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t2"
+2026-08-18T13:30:59.004438Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:30:59.342459Z  INFO herdr::pane: agent changed pane=8 previous_agent=Some(Claude) agent=None pgid=Some(11010)
+2026-08-18T13:31:04.041707Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:31:10.997784Z  INFO herdr::server::headless: client resize client_id=8 cols=64 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T13:31:13.282278Z  INFO herdr::server::headless: client resize client_id=8 cols=130 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T13:31:33.946232Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:35:55.400907Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:36:00.409376Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:36:11.271161Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t2"
+2026-08-18T13:36:13.521209Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:36:14.856920Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t2"
+2026-08-18T13:36:16.815700Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:36:17.659386Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t2"
+2026-08-18T13:36:22.665150Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:41:36.012892Z  INFO herdr::server::headless: client detach requested via keybind client_id=8
+2026-08-18T13:41:36.013769Z  INFO herdr::server::headless: client disconnected client_id=8
+2026-08-18T13:41:48.004671Z  INFO herdr::server::headless: client connected client_id=10 cols=130 rows=36 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-08-18T13:43:12.150046Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:43:12.791721Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t2"
+2026-08-18T13:43:17.799186Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:44:29.185824Z  INFO herdr::server::headless: client detach requested via keybind client_id=10
+2026-08-18T13:44:29.188974Z  INFO herdr::server::headless: client disconnected client_id=10
+2026-08-18T13:44:32.011794Z  INFO herdr::server::headless: client connected client_id=12 cols=130 rows=36 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-08-18T13:45:40.838718Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=8 status="ExitStatus { code: 1, signal: None }"
+2026-08-18T13:45:40.861364Z  INFO herdr::pane: pane session terminated pane=8 pid=11010 signal=Hangup
+2026-08-18T13:45:40.861761Z  WARN herdr::app::actions: PaneDied for unknown pane pane=8
+2026-08-18T13:45:45.868680Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:45:48.618118Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=9 rows=35 cols=104 scrollback_limit_bytes=10000000
+2026-08-18T13:45:48.623605Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=9 pid=19822
+2026-08-18T13:45:48.623945Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T13:45:53.633622Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:46:04.161398Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:49:53.497630Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:49:58.505993Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:50:00.040487Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T13:50:01.215680Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:50:06.224049Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:51:09.255023Z  INFO herdr::server::headless: client resize client_id=12 cols=64 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T13:51:30.455780Z  INFO herdr::server::headless: client resize client_id=12 cols=130 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T13:51:41.087367Z  INFO herdr::server::headless: client resize client_id=12 cols=64 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T13:51:49.114305Z  INFO herdr::server::headless: client resize client_id=12 cols=130 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T13:52:02.469241Z  INFO herdr::server::headless: client resize client_id=12 cols=64 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T13:52:10.144983Z  INFO herdr::server::headless: client resize client_id=12 cols=130 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T13:52:18.691866Z  INFO herdr::server::headless: client resize client_id=12 cols=64 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T13:52:58.844673Z  INFO herdr::server::headless: client resize client_id=12 cols=130 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T13:53:04.776629Z  INFO herdr::server::headless: client resize client_id=12 cols=64 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T13:53:24.978698Z  INFO herdr::server::headless: client resize client_id=12 cols=130 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T13:53:30.807637Z  INFO herdr::server::headless: client resize client_id=12 cols=64 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T13:53:37.365797Z  INFO herdr::server::headless: client resize client_id=12 cols=130 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T13:53:55.038108Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-18T13:53:55.237472Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-18T13:54:29.045715Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T13:54:33.388771Z  INFO herdr::server::headless: client resize client_id=12 cols=64 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T13:54:34.051258Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T13:54:58.182111Z  INFO herdr::server::headless: client resize client_id=12 cols=130 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T13:55:02.141078Z  INFO herdr::server::headless: client resize client_id=12 cols=64 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T13:55:06.202663Z  INFO herdr::server::headless: client resize client_id=12 cols=130 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T13:59:35.343063Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T13:59:40.350248Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T14:39:11.959888Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-18T14:39:12.132355Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-18T15:10:29.080983Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-18T15:10:29.270742Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-18T15:31:05.697743Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T15:31:10.703683Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T15:34:59.198037Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=10 rows=35 cols=104 scrollback_limit_bytes=10000000
+2026-08-18T15:34:59.201105Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=10 pid=38670
+2026-08-18T15:34:59.201210Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t4"
+2026-08-18T15:35:03.290625Z  INFO herdr::pane: agent changed pane=10 previous_agent=None agent=Some(Claude) process=claude pgid=Some(38888)
+2026-08-18T15:35:04.206719Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T15:35:09.766478Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T15:35:13.912601Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T15:35:18.923072Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T15:35:32.072611Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t4"
+2026-08-18T15:35:37.082542Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T15:35:44.724249Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=11 rows=35 cols=104 scrollback_limit_bytes=10000000
+2026-08-18T15:35:44.730924Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=11 pid=39121
+2026-08-18T15:35:44.731262Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t5"
+2026-08-18T15:35:46.804990Z  INFO herdr::pane: agent changed pane=11 previous_agent=None agent=Some(Claude) process=claude pgid=Some(39339)
+2026-08-18T15:35:51.834385Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T15:35:52.381154Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:35:54.445221Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t4"
+2026-08-18T15:35:55.548328Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t5"
+2026-08-18T15:35:56.441222Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t4"
+2026-08-18T15:36:01.447160Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T15:36:01.912499Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t5"
+2026-08-18T15:36:06.920699Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T15:36:10.141304Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t4"
+2026-08-18T15:36:12.066167Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t5"
+2026-08-18T15:36:13.394281Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t4"
+2026-08-18T15:36:18.403913Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T15:36:20.214098Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=10 status="ExitStatus { code: 1, signal: None }"
+2026-08-18T15:36:20.575426Z  INFO herdr::pane: pane session terminated pane=10 pid=38670 signal=Terminate
+2026-08-18T15:36:20.575986Z  WARN herdr::app::actions: PaneDied for unknown pane pane=10
+2026-08-18T15:36:25.580466Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T15:36:38.389291Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:36:43.398032Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T15:36:55.482349Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wN"
+2026-08-18T15:36:55.482440Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wN" tab_id="wN:t1"
+2026-08-18T15:37:00.491925Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T15:37:02.174008Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wK"
+2026-08-18T15:37:02.174105Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:37:03.690722Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t5"
+2026-08-18T15:37:05.676841Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:37:10.684305Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T15:37:14.547750Z  INFO herdr::server::headless: client resize client_id=12 cols=64 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T15:37:19.034685Z  INFO herdr::server::headless: client resize client_id=12 cols=130 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T15:37:30.952065Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t5"
+2026-08-18T15:37:32.218780Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T15:37:33.018750Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:37:34.168738Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T15:37:39.173235Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T15:40:29.158623Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-18T15:40:29.346277Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-18T15:40:35.502852Z  INFO herdr::server::headless: client resize client_id=12 cols=64 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T15:41:31.338333Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:41:36.346276Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T15:42:13.748398Z  INFO herdr::server::headless: client resize client_id=12 cols=65 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T15:42:14.679811Z  INFO herdr::server::headless: client resize client_id=12 cols=64 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T15:42:14.990909Z  INFO herdr::server::headless: client resize client_id=12 cols=64 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T15:42:15.199104Z  INFO herdr::server::headless: client resize client_id=12 cols=63 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T15:42:15.720497Z  INFO herdr::server::headless: client resize client_id=12 cols=64 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T15:42:15.824826Z  INFO herdr::server::headless: client resize client_id=12 cols=64 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T15:42:44.832519Z  INFO herdr::server::headless: client resize client_id=12 cols=65 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T15:42:45.965046Z  INFO herdr::server::headless: client resize client_id=12 cols=64 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T15:43:07.343053Z  INFO herdr::server::headless: client resize client_id=12 cols=130 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T15:43:21.073366Z  INFO herdr::server::headless: client resize client_id=12 cols=64 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T15:43:23.991176Z  INFO herdr::server::headless: client resize client_id=12 cols=130 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T15:43:36.771707Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T15:43:37.375813Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t5"
+2026-08-18T15:43:38.729990Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T15:43:39.288445Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:43:44.298310Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T15:44:33.114675Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t5"
+2026-08-18T15:44:36.716777Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:44:41.725212Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T15:44:48.272665Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T15:44:49.635033Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:44:54.640044Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T15:48:07.154635Z  INFO herdr::server::headless: client detach requested via keybind client_id=12
+2026-08-18T15:48:07.157828Z  INFO herdr::server::headless: client disconnected client_id=12
+2026-08-18T15:48:12.762755Z  INFO herdr::server::headless: client connected client_id=14 cols=130 rows=36 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-08-18T15:48:24.757158Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wK"
+2026-08-18T15:48:24.757238Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:48:24.757276Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t5"
+2026-08-18T15:48:24.760158Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=11 status="ExitStatus { code: 1, signal: None }"
+2026-08-18T15:48:25.225529Z  INFO herdr::pane: pane session terminated pane=11 pid=39121 signal=Terminate
+2026-08-18T15:48:25.225993Z  WARN herdr::app::actions: PaneDied for unknown pane pane=11
+2026-08-18T15:48:26.748871Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:48:31.756588Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T15:49:16.717626Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T15:49:19.738568Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:49:20.841920Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T15:49:24.469041Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:49:29.477516Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T15:51:13.804381Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T15:51:18.810632Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T15:54:16.613589Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:54:17.700352Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T15:54:22.708093Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T15:54:53.429582Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:54:58.436616Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T15:57:37.244230Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=12 rows=35 cols=126 scrollback_limit_bytes=10000000
+2026-08-18T15:57:37.251319Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=12 pid=44064
+2026-08-18T15:57:37.251544Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:57:40.747478Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=13 rows=35 cols=63 scrollback_limit_bytes=10000000
+2026-08-18T15:57:40.750189Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=13 pid=44301
+2026-08-18T15:57:40.750346Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:57:48.991303Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:57:55.982468Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:57:57.522369Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:57:58.596139Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:58:03.287893Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:58:08.296523Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T15:58:11.937960Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:58:12.501220Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:58:12.835299Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:58:13.545695Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:58:14.001221Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:58:14.266541Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:58:14.580234Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:58:15.275597Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:58:16.121909Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:58:16.667733Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:58:17.396649Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:58:17.990109Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:58:18.507168Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:58:18.782198Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:58:19.040027Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:58:19.360263Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:58:19.624979Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:58:20.022064Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:58:20.515682Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:58:21.635585Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:58:22.738548Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:58:23.141683Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:58:23.547228Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:58:28.554417Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T15:58:30.959308Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wN"
+2026-08-18T15:58:30.959410Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wN" tab_id="wN:t1"
+2026-08-18T15:58:35.968022Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T15:58:38.444035Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wK"
+2026-08-18T15:58:38.444130Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:58:43.453422Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T15:58:51.414469Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T15:58:56.420598Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T15:59:29.503695Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T15:59:36.364561Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T15:59:57.796016Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T16:00:00.376637Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T16:00:00.376673Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T16:00:05.382104Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T16:00:12.366336Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T16:00:16.743264Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t1"
+2026-08-18T16:00:20.395044Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=13 status="ExitStatus { code: 1, signal: None }"
+2026-08-18T16:00:20.416389Z  INFO herdr::pane: pane session terminated pane=13 pid=44301 signal=Hangup
+2026-08-18T16:00:20.416774Z  WARN herdr::app::actions: PaneDied for unknown pane pane=13
+2026-08-18T16:00:21.198904Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=12 status="ExitStatus { code: 1, signal: None }"
+2026-08-18T16:00:21.220450Z  INFO herdr::pane: pane session terminated pane=12 pid=44064 signal=Hangup
+2026-08-18T16:00:21.220950Z  WARN herdr::app::actions: PaneDied for unknown pane pane=12
+2026-08-18T16:00:26.224213Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T16:10:29.193949Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-18T16:10:29.368204Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-18T16:22:46.976132Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T16:25:27.601580Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=1 status="ExitStatus { code: 1, signal: Some(\"Segmentation fault: 11\") }"
+2026-08-18T16:25:27.623147Z  INFO herdr::pane: pane session terminated pane=1 pid=7042 signal=Hangup
+2026-08-18T16:25:27.623622Z  WARN herdr::app::actions: PaneDied for unknown pane pane=1
+2026-08-18T16:25:32.632301Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T16:25:35.900881Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=14 rows=35 cols=126 scrollback_limit_bytes=10000000
+2026-08-18T16:25:35.906024Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=14 pid=48734
+2026-08-18T16:25:35.906268Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t6"
+2026-08-18T16:25:40.916683Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T16:25:45.095537Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T16:25:46.341730Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t6"
+2026-08-18T16:25:48.016380Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T16:25:53.022900Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T16:25:53.208624Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t6"
+2026-08-18T16:25:58.216546Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T16:26:54.014031Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T16:40:05.205369Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T16:40:29.140272Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-18T16:40:29.324307Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-18T16:49:11.344040Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T17:10:29.166535Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-18T17:10:29.355855Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-18T17:40:29.129460Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-18T17:40:29.304397Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-18T18:10:29.151039Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-18T18:10:29.318601Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-18T18:19:23.586429Z  INFO herdr::server::headless: client detach requested via keybind client_id=14
+2026-08-18T18:19:23.587311Z  INFO herdr::server::headless: client disconnected client_id=14
+2026-08-18T18:19:25.305674Z  INFO herdr::server::headless: client connected client_id=16 cols=130 rows=36 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-08-18T18:22:16.374610Z  INFO herdr::server::headless: client resize client_id=16 cols=64 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T18:22:30.119295Z  INFO herdr::server::headless: client resize client_id=16 cols=130 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T18:22:38.119700Z  INFO herdr::server::headless: client resize client_id=16 cols=64 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T18:26:01.941725Z  INFO herdr::server::headless: client resize client_id=16 cols=130 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T18:34:36.184501Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T18:35:46.994956Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T18:35:52.001594Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T18:35:54.276593Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=15 rows=35 cols=126 scrollback_limit_bytes=10000000
+2026-08-18T18:35:54.283739Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=15 pid=73839
+2026-08-18T18:35:54.284039Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t7"
+2026-08-18T18:35:59.294070Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T18:36:05.357375Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t6"
+2026-08-18T18:36:06.857357Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t7"
+2026-08-18T18:36:11.866130Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T18:36:20.828871Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T18:40:29.195592Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-18T18:40:29.383929Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-18T20:03:35.233932Z  INFO herdr::server::headless: client detach requested via keybind client_id=16
+2026-08-18T20:03:35.237708Z  INFO herdr::server::headless: client disconnected client_id=16
+2026-08-18T20:17:23.873768Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-18T20:17:24.054046Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-18T20:25:57.084306Z  INFO herdr::server::headless: client connected client_id=18 cols=130 rows=36 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-08-18T20:26:05.107854Z  INFO herdr::server::headless: client resize client_id=18 cols=130 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-18T20:26:05.211329Z  INFO herdr::server::headless: client resize client_id=18 cols=64 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-18T20:26:07.501460Z  INFO herdr::server::headless: client resize client_id=18 cols=130 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-18T20:26:12.192871Z  INFO herdr::server::headless: client resize client_id=18 cols=131 rows=35 cell_width_px=0 cell_height_px=0
+2026-08-18T20:26:12.297929Z  INFO herdr::server::headless: client resize client_id=18 cols=130 rows=34 cell_width_px=0 cell_height_px=0
+2026-08-18T20:27:52.224134Z  INFO herdr::server::headless: client detach requested via keybind client_id=18
+2026-08-18T20:27:52.226281Z  INFO herdr::server::headless: client disconnected client_id=18
+2026-08-18T20:28:00.355706Z  INFO herdr::server::headless: client connected client_id=20 cols=130 rows=34 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-08-18T20:32:01.563230Z  INFO herdr::server::headless: client detach requested via keybind client_id=20
+2026-08-18T20:32:01.565900Z  INFO herdr::server::headless: client disconnected client_id=20
+2026-08-18T20:32:28.803581Z  INFO herdr::server::headless: client connected client_id=22 cols=130 rows=34 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-08-18T20:32:46.087808Z  INFO herdr::server::headless: client detach requested via keybind client_id=22
+2026-08-18T20:32:46.089983Z  INFO herdr::server::headless: client disconnected client_id=22
+2026-08-18T20:34:09.402623Z  INFO herdr::server::headless: client connected client_id=24 cols=130 rows=34 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-08-18T20:43:51.923108Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T20:43:56.933266Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T20:44:13.559030Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T20:44:18.400317Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t6"
+2026-08-18T20:44:23.410387Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T20:45:03.675410Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T20:45:08.685042Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T20:45:08.781587Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t6"
+2026-08-18T20:45:10.661773Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T20:45:12.351577Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t6"
+2026-08-18T20:45:17.360959Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T20:45:23.088170Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T20:45:24.232568Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t6"
+2026-08-18T20:45:28.886352Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T20:45:31.872850Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t6"
+2026-08-18T20:45:36.882755Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T20:47:18.755078Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t7"
+2026-08-18T20:47:23.945206Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-18T20:47:24.095927Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-18T20:47:28.491827Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T20:47:39.939389Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T20:47:49.690513Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t6"
+2026-08-18T20:47:50.902263Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T20:47:52.604938Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t6"
+2026-08-18T20:47:53.051322Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t7"
+2026-08-18T20:47:58.056865Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T20:48:01.317912Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t6"
+2026-08-18T20:48:02.753782Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T20:48:07.760361Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T20:48:37.668893Z  INFO herdr::server::headless: client resize client_id=24 cols=130 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T20:49:00.566489Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t6"
+2026-08-18T20:49:02.516430Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t7"
+2026-08-18T20:49:03.416455Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T20:49:08.426265Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T20:49:44.974090Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=16 rows=35 cols=126 scrollback_limit_bytes=10000000
+2026-08-18T20:49:44.976919Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=16 pid=95378
+2026-08-18T20:49:44.977135Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T20:49:49.981337Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T20:50:00.240376Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T20:50:46.484644Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T20:55:05.511266Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wK"
+2026-08-18T20:55:05.511337Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T20:55:10.516931Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T20:55:11.279182Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wN"
+2026-08-18T20:55:11.279287Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wN" tab_id="wN:t1"
+2026-08-18T20:55:16.284000Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T20:55:29.324650Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wK"
+2026-08-18T20:55:29.324774Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T20:55:34.333550Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T20:58:25.935402Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wN"
+2026-08-18T20:58:25.935523Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wN" tab_id="wN:t1"
+2026-08-18T20:58:28.694649Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wK"
+2026-08-18T20:58:28.694765Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T20:58:30.421143Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wN"
+2026-08-18T20:58:30.421253Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wN" tab_id="wN:t1"
+2026-08-18T20:58:31.923268Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wK"
+2026-08-18T20:58:31.923370Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T20:58:36.929872Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T20:58:38.704852Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t6"
+2026-08-18T20:58:40.098621Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T20:58:42.454430Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wN"
+2026-08-18T20:58:42.454530Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wN" tab_id="wN:t1"
+2026-08-18T20:58:44.422251Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="wK"
+2026-08-18T20:58:44.422324Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T20:58:49.431520Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T20:59:25.447621Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t6"
+2026-08-18T20:59:26.797661Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T20:59:31.808208Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T21:00:38.707790Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t6"
+2026-08-18T21:00:43.174478Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T21:00:48.179980Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T21:03:37.165887Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T21:03:41.305114Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t6"
+2026-08-18T21:03:46.315072Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T21:03:46.745743Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T21:03:51.750721Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T21:07:53.285512Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T21:07:58.296238Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T21:08:00.593960Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T21:08:02.854270Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=16 status="ExitStatus { code: 1, signal: None }"
+2026-08-18T21:08:02.869807Z  INFO herdr::pane: pane session terminated pane=16 pid=95378 signal=Hangup
+2026-08-18T21:08:02.870178Z  WARN herdr::app::actions: PaneDied for unknown pane pane=16
+2026-08-18T21:08:07.875949Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T21:08:19.947632Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=17 rows=35 cols=126 scrollback_limit_bytes=10000000
+2026-08-18T21:08:19.952954Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=17 pid=99706
+2026-08-18T21:08:19.953170Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T21:08:24.960853Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T21:08:43.016694Z  INFO herdr::server::headless: client detach requested via keybind client_id=24
+2026-08-18T21:08:43.017878Z  INFO herdr::server::headless: client disconnected client_id=24
+2026-08-18T21:09:09.796606Z  INFO herdr::server::headless: client connected client_id=26 cols=130 rows=36 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-08-18T21:09:17.489478Z  INFO herdr::server::headless: client resize client_id=26 cols=64 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T21:09:19.669614Z  INFO herdr::server::headless: client resize client_id=26 cols=130 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T21:10:29.385132Z  INFO herdr::server::headless: client resize client_id=26 cols=64 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T21:10:30.722387Z  INFO herdr::server::headless: client resize client_id=26 cols=130 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T21:10:54.516068Z  INFO herdr::server::headless: client resize client_id=26 cols=64 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T21:11:14.591692Z  INFO herdr::server::headless: client resize client_id=26 cols=130 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T21:11:20.949968Z  INFO herdr::server::headless: client resize client_id=26 cols=64 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T21:12:16.417365Z  INFO herdr::server::headless: client resize client_id=26 cols=130 rows=36 cell_width_px=0 cell_height_px=0
+2026-08-18T21:15:54.585368Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t6"
+2026-08-18T21:15:56.334022Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t7"
+2026-08-18T21:16:01.342167Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T21:16:02.599991Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t6"
+2026-08-18T21:16:07.607884Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T21:16:51.559998Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T21:16:56.565913Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T21:17:23.935564Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-18T21:17:24.095739Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-18T21:47:23.939274Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-18T21:47:24.103050Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-18T21:57:44.072200Z  INFO herdr::server::headless: client connected client_id=28 cols=128 rows=35 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-08-18T21:57:50.841215Z  INFO herdr::server::headless: client detach requested via keybind client_id=28
+2026-08-18T21:57:50.845079Z  INFO herdr::server::headless: client disconnected client_id=28
+2026-08-18T22:17:23.967340Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-18T22:17:24.133193Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-18T22:28:56.160051Z  INFO herdr::server::headless: client resize client_id=26 cols=129 rows=35 cell_width_px=0 cell_height_px=0
+2026-08-18T22:46:29.785493Z  INFO herdr::server::headless: client resize client_id=26 cols=80 rows=24 cell_width_px=0 cell_height_px=0
+2026-08-18T22:46:29.787310Z  INFO herdr::server::headless: client detached client_id=26
+2026-08-18T22:46:29.787381Z  INFO herdr::server::headless: client disconnected client_id=26
+2026-08-18T22:50:15.377312Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-18T22:50:15.532745Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-18T23:04:09.543651Z  INFO herdr::server::headless: client connected client_id=30 cols=128 rows=35 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-08-18T23:04:18.692003Z  INFO herdr::server::headless: client detach requested via keybind client_id=30
+2026-08-18T23:04:18.694725Z  INFO herdr::server::headless: client disconnected client_id=30
+2026-08-18T23:09:36.542584Z  INFO herdr::server::headless: client connected client_id=32 cols=129 rows=37 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-08-18T23:09:43.761819Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t6"
+2026-08-18T23:09:45.436781Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t7"
+2026-08-18T23:09:46.773841Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t6"
+2026-08-18T23:09:51.781671Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T23:09:52.230394Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-18T23:09:57.238991Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T23:10:00.987526Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=17 status="ExitStatus { code: 0, signal: None }"
+2026-08-18T23:10:00.987926Z  INFO herdr::pane: pane session terminated pane=17 pid=99706 signal=Hangup
+2026-08-18T23:10:05.997414Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-18T23:20:15.411710Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-18T23:20:15.576987Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-18T23:50:15.434120Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-18T23:50:15.588887Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-19T00:01:22.580660Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t6"
+2026-08-19T00:01:27.587035Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T00:03:57.034062Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-19T00:04:02.040610Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T00:04:36.142204Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t6"
+2026-08-19T00:04:41.151568Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T00:05:03.442160Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-19T00:05:08.449758Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T00:05:32.287963Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t6"
+2026-08-19T00:05:37.297868Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T00:06:19.692125Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-19T00:06:24.702776Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T00:06:33.941047Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T00:07:38.074759Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t6"
+2026-08-19T00:07:43.080445Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T00:07:47.166360Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-19T00:07:52.172264Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T00:08:10.670455Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t7"
+2026-08-19T00:08:16.924778Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T00:08:17.782907Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t6"
+2026-08-19T00:08:22.792635Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T00:08:41.549534Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t7"
+2026-08-19T00:08:46.554796Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T00:09:07.603574Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t6"
+2026-08-19T00:09:10.665993Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t7"
+2026-08-19T00:09:15.672006Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T00:09:17.907677Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t6"
+2026-08-19T00:09:22.915185Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T00:09:23.957635Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t7"
+2026-08-19T00:09:26.749318Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-19T00:09:29.320039Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t7"
+2026-08-19T00:09:34.329186Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T00:09:38.445033Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-19T00:09:39.349214Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t6"
+2026-08-19T00:09:44.355338Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T00:10:30.423970Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t7"
+2026-08-19T00:10:35.431783Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T00:20:15.444470Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-19T00:20:15.594332Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-19T11:40:18.092506Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-19T11:40:18.297159Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-19T11:47:12.398753Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-19T11:47:17.410273Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T11:47:28.623975Z  INFO herdr::app::actions: copied selection to clipboard
+2026-08-19T11:50:03.903630Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T11:57:30.701296Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t6"
+2026-08-19T11:57:32.815312Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t7"
+2026-08-19T11:57:40.478469Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T11:57:51.595569Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-19T11:57:56.603427Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T11:58:49.145929Z  INFO herdr::app::actions: copied selection to clipboard
+2026-08-19T12:10:18.101815Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-19T12:10:18.258202Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-19T12:24:24.692653Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T12:24:51.364958Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t7"
+2026-08-19T12:24:56.369354Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T12:25:03.066949Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-19T12:25:08.077381Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T12:27:50.088922Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T12:32:03.643688Z  INFO herdr::app::actions: copied selection to clipboard
+2026-08-19T12:32:57.412593Z  INFO herdr::server::headless: client resize client_id=32 cols=64 rows=37 cell_width_px=0 cell_height_px=0
+2026-08-19T12:32:59.805770Z  INFO herdr::server::headless: client resize client_id=32 cols=129 rows=37 cell_width_px=0 cell_height_px=0
+2026-08-19T12:36:58.481726Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t6"
+2026-08-19T12:37:00.910025Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t7"
+2026-08-19T12:37:05.920058Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T12:37:17.873792Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T12:38:14.217998Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-19T12:38:19.227804Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T12:40:18.083834Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-19T12:40:18.278140Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-19T12:42:48.406093Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t7"
+2026-08-19T12:42:53.411517Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T12:43:35.830517Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-19T12:43:40.839589Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T12:43:50.673872Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t7"
+2026-08-19T12:43:55.684277Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T12:43:58.619165Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-19T12:44:03.623459Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T12:44:37.230829Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t7"
+2026-08-19T12:44:42.241821Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T12:44:43.664656Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-19T12:44:48.675151Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T12:45:11.586444Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t7"
+2026-08-19T12:45:16.590813Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T12:45:16.714110Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-19T12:45:21.723173Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T12:46:06.008001Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t7"
+2026-08-19T12:46:11.018349Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T12:46:36.287250Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-19T12:46:41.298771Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T12:47:37.541966Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t7"
+2026-08-19T12:47:42.550231Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T12:47:47.393099Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-19T12:47:52.403709Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T12:47:55.919603Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t7"
+2026-08-19T12:47:58.480506Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-19T12:48:03.489560Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T12:50:04.704263Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T12:52:35.217365Z  INFO herdr::app::actions: copied selection to clipboard
+2026-08-19T12:52:54.378139Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T12:53:18.884795Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t7"
+2026-08-19T12:53:23.893924Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T12:54:36.506436Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-19T12:54:41.513273Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T13:01:52.877590Z  INFO herdr::app::actions: copied selection to clipboard
+2026-08-19T13:03:09.896861Z  INFO herdr::app::actions: copied selection to clipboard
+2026-08-19T13:10:18.099511Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-08-19T13:10:18.348162Z  WARN herdr::detect::manifest_update: skipping unknown remote manifest agent agent="qwen"
+2026-08-19T13:12:48.724795Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T13:13:11.721771Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T13:16:41.756592Z  INFO herdr::app::actions: copied selection to clipboard
+2026-08-19T13:18:30.326219Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t7"
+2026-08-19T13:18:35.334422Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T13:19:12.326465Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t6"
+2026-08-19T13:19:17.338328Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T13:19:20.254057Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t7"
+2026-08-19T13:19:22.910921Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-19T13:19:27.916804Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T13:19:50.587571Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t7"
+2026-08-19T13:19:55.597858Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T13:20:02.957560Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
+2026-08-19T13:20:07.963493Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2

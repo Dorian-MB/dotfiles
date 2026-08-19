@@ -1,0 +1,19 @@
+onboarding = false
+[ui]
+agent_panel_sort = "spaces"
+
+[keys]
+prefix = "ctrl+w"
+new_tab = "prefix+t"
+next_agent = "prefix+a"
+previous_agent = "prefix+shift+a"
+next_workspace = "prefix+shift+n"
+previous_workspace = "prefix+shift+p"
+new_workspace = "prefix+shift+t"
+switch_workspace = "prefix+ctrl+1..9" # todo fix this
+switch_tab = "prefix+1..9"
+# focus_workspace = "prefix+ctrl+1..9"
+
+[theme]
+name = "terminal"
+auto_switch = false
