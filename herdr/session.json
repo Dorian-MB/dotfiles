@@ -6,9 +6,9 @@
       "custom_name": null,
       "identity_cwd": "/Users/dorian/dotfiles",
       "public_pane_numbers": {
-        "14": 12,
+        "9": 7,
         "15": 13,
-        "9": 7
+        "14": 12
       },
       "next_public_pane_number": 16,
       "public_tab_numbers": [
@@ -39,7 +39,7 @@
           },
           "panes": {
             "15": {
-              "cwd": "/Users/dorian/.config"
+              "cwd": "/Users/dorian/dotfiles"
             }
           },
           "zoomed": false,
