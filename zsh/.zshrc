@@ -45,7 +45,8 @@ alias cl=clear
 alias cc=claude
 alias cdd="cd ~/Documents/CODE/"
 alias cdai="cd ~/AI/turbo-fieldfare/"
-alias cdvi="cd ~/.config/nvim/"
+alias cdvi="cd ~/dotfiles/nvim/"
+alias dot="cd ~/dotfiles"
 
 alias python="$HOME/.venvs/nvim/bin/python"
 alias py=python

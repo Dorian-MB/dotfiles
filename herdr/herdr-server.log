@@ -1014,3 +1014,10 @@
 2026-08-19T13:19:55.597858Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
 2026-08-19T13:20:02.957560Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="wK" tab_id="wK:t3"
 2026-08-19T13:20:07.963493Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T13:24:00.090483Z  INFO herdr::app::actions: copied selection to clipboard
+2026-08-19T13:24:30.067008Z  INFO herdr::app::actions: copied selection to clipboard
+2026-08-19T13:25:09.894115Z  INFO herdr::app::actions: copied selection to clipboard
+2026-08-19T13:30:41.890010Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T13:31:35.044289Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T13:31:57.462164Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
+2026-08-19T13:32:22.185955Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/dorian/.config/herdr/session.json workspaces=2
