@@ -89,5 +89,20 @@ return {
           },
      },
 
+     {
+         "lewis6991/gitsigns.nvim",
+         event = "BufReadPost",
+         opts = {},
+         keys = {
+             {
+                 "<leader>gd",
+                 function()
+                     require("gitsigns").diffthis("HEAD")
+                 end,
+                 desc = "Git diff current file",
+             },
+         },
+     }
+
 
 }
