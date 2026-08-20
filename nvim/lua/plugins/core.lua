@@ -62,7 +62,7 @@ return {
                  function()
                      require("gitsigns").diffthis("HEAD")
                  end,
-                 desc = "Git diff current file",
+                 desc = "git diff current file",
              },
          },
      }
