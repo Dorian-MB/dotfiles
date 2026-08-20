@@ -1,5 +1,5 @@
 # Usage 
-This is a personal nvim config, everything already install.
+This is a personal nvim config.
 
 
 # Credit 
@@ -44,18 +44,27 @@ if you need to re-install / update you can use `:MasonInstallAll` (then U to upd
 Restart Neovim and install the treesitter syntax <br>
 Exemple :
 ```
-:TSInstall python
+:TSInstall python rust 
 ```
 
 ## Some Mapping :
 
 - `<leader>` = space
 
+**[x]**
 - `p` - dont copy replaced text
 - `<leader>p` - does
 
+**[v]**
+- `J`&`K` - move down/up the selected line
+
+**[n, v]**
 - `<leader>R` - find and replace current word
 - `<leader>rr` - find and replace current word from the current position
 
-- `J`&`K` - move down/up the selected line
+**[n]**
+- `<leader>G` - goto tabnew
+- `<leader>ds` - telescope document_symbols
+- `<leader>ws` - telescope workspace_symbols
+
 
