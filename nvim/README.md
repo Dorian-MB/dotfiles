@@ -16,6 +16,10 @@ Exemple on Mac os :
 ```bash
 brew install neovim
 ```
+**also consider**
+```bash
+brew install jesseduffield/lazygit/lazygit
+```
 
 ## Make a backup of your current Neovim files:
 ```bash
@@ -64,7 +68,9 @@ Exemple :
 
 **[n]**
 - `<leader>G` - goto tabnew
+- `<leader>U` - Undo tree
 - `<leader>ds` - telescope document_symbols
 - `<leader>ws` - telescope workspace_symbols
+- `<leader>lg` - LazyGit
 
 
