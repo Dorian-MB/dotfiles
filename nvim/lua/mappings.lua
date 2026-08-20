@@ -50,6 +50,10 @@ map("n", "<leader>fc", "<cmd>Telescope commands<CR>", { desc = "telescope comman
 map("n", "<leader>fr", "<cmd>Telescope resume<CR>", { desc = "telescope resume" })
 map("n", "<leader>fd", "<cmd>Telescope diagnostics<CR>", { desc = "telescope diagnostics" })
 map("n", "<leader>fb", "<cmd>Telescope builtin<CR>", { desc = "telescope builtin" })
+map("n", "<leader>gb", "<cmd>Telescope git_branches<CR>", { desc = "telescope git brances" })
+map("n", "<leader>ds", "<cmd>Telescope lsp_document_symbols<CR>", {desc = "telescope document symbole"})
+map("n", "<leader>ws", "<cmd>Telescope lsp_workspace_symbols<CR>", {desc = "telescope document symbole"})
+
 
 
 
