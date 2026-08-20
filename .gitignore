@@ -1,7 +1,7 @@
 .DS_Store
 .git/
 
-herdr/.session.json
+herdr/release-notes.json
 herdr/herdr-server.log
 herdr/herdr-client.log
 herdr/session.json
