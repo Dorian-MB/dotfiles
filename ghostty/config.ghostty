@@ -1,0 +1,41 @@
+# The syntax is "key = value". The whitespace around the
+# equals doesn't matter.
+# Empty values reset the configuration to the default value
+
+macos-titlebar-style = hidden
+window-show-tab-bar = never
+window-decoration = true
+
+window-save-state = always
+maximize = true
+confirm-close-surface = false
+quick-terminal-position = center
+
+font-family = JetBrainsMono Nerd Font
+font-size=19
+font-thicken = true
+font-thicken-strength = 0
+
+# background = 1E1E2E
+# foreground = ffffff
+
+# theme = Catppuccin Latte
+theme = Catppuccin Macchiato
+
+# background: (opacity of image is back_opacity * img_opacity)
+background-image-fit = cover
+# background-image = "/Users/dorian/Documents/Prepa/cours info psi/SB/1.png"
+background-image-opacity = 0.1
+background-opacity = 0.85
+background-blur = 13
+
+macos-option-as-alt = left
+keybind = ctrl+tab=goto_split:next
+
+
+
+# [[on-window-detected]]
+# if.app-id="com.mitchellh.ghostty"
+# run= [
+#   "layout tiling",
+# ]
