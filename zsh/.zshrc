@@ -56,6 +56,11 @@ alias pip="$HOME/.venvs/nvim/bin/python -m pip"
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 
+# ls after cd 
+chpwd() {
+  ll
+}
+
 # fcd -> Cherche un dossier et se déplace (cd) dedans directement
 fcd() {
   local dir
