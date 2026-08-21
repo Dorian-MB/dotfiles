@@ -39,7 +39,11 @@ callback = function() vim.hl.on_yank() end,
 })
 
 
-map({ "n", "t" }, "<A-o>", function()
+map({ "i", "n", "t" }, "<A-i>", function()
+  require("nvchad.term").toggle { pos = "float", id = "floatTerm" }
+end, { desc = "terminal toggle floating term" })
+
+map({ "i", "n", "t" }, "<A-o>", function()
   require("nvchad.term").toggle { pos = "sp", id = "htoggleTerm" }
 end, { desc = "terminal toggleable horizontal term" })
 
