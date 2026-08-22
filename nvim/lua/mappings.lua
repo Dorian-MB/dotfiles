@@ -1,10 +1,13 @@
 require "nvchad.mappings"
+vim.keymap.del("n", "<leader>h")
 
 -- add yours here
 
 local map = vim.keymap.set
 
--- map("n", ";", ":", { desc = "CMD enter command mode" })
+map("n", "<C-Tab>", "<cmd>e #<CR>", { desc = "Switch to previous file" })
+map("n", "<leader>T", "<cmd>e #<CR>", { desc = "Switch to previous file" })
+
 map("i", "jk", "<ESC>")
 
 map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
