@@ -50,19 +50,4 @@ return {
       { "<leader>u", "<cmd>lua require('undotree').toggle()<cr>" },
     },
   },
-
-  {
-    "lewis6991/gitsigns.nvim",
-    event = "BufReadPost",
-    opts = {},
-    keys = {
-      {
-        "<leader>gd",
-        function()
-          require("gitsigns").diffthis "HEAD"
-        end,
-        desc = "git diff current file",
-      },
-    },
-  },
 }
