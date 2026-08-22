@@ -36,7 +36,8 @@ vim.schedule(function()
   require "mappings"
 end)
 
-vim.g.loaded_python3_provider = nil
-vim.g.python3_host_prog = vim.fn.expand("~/.venvs/nvim/bin/python")
-vim.env.PATH = vim.fn.expand("~/.venvs/nvim/bin") .. ":" .. vim.env.PATH
-
+vim.env.PATH = table.concat({
+  vim.fn.expand "~/.venvs/nvim/bin",
+  vim.fn.expand "~/.cargo/bin",
+  vim.env.PATH,
+}, ":")
