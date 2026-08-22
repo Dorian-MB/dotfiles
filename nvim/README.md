@@ -26,6 +26,7 @@ External dependencies
 ├── fd
 ├── rustup
 ├── uv
+├── tree-sitter
 └── lazygit
 
 Mason
@@ -61,8 +62,6 @@ rm -rf ~/.cache/nvim
 
 Then open up neovim and let everything install.
 
-if you need to re-install / update you can use `:MasonInstallAll` (then U to update if needed)
-
 ### Install treesitter syntax
 Restart Neovim and install the treesitter syntax <br>
 Exemple :
@@ -87,7 +86,7 @@ Exemple :
 
 **[n]**
 - `<leader>G` - goto tabnew
-- `<leader>U` - Undo tree
+- `<leader>u` - Undo tree
 - `<leader>ds` - telescope document_symbols
 - `<leader>ws` - telescope workspace_symbols
 - `<leader>lg` - LazyGit
