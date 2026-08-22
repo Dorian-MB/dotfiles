@@ -16,7 +16,26 @@ Exemple on Mac os :
 ```bash
 brew install neovim
 ```
-**also consider**
+
+### optional (but recomended)
+```
+External dependencies
+├── Neovim
+├── git
+├── ripgrep
+├── fd
+├── rustup
+├── uv
+└── lazygit
+
+Mason
+├── pyright
+├── ruff
+├── lua-language-server
+├── stylua
+└── ...
+```
+Exemple:
 ```bash
 brew install jesseduffield/lazygit/lazygit
 ```
