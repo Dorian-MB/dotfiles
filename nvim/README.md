@@ -90,5 +90,11 @@ Exemple :
 - `<leader>ds` - telescope document_symbols
 - `<leader>ws` - telescope workspace_symbols
 - `<leader>lg` - LazyGit
+- `<leader>T` - switch with previous buffer
+- `<leader>hh` - harpoon menu
+- `<leader>ha` - harpoon add file
+- `<leader>hx` - harpoon remove file
+- `<leader>h1..4` - harpoon file 1..4
+
 
 
