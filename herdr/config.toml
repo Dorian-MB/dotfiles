@@ -1,6 +1,8 @@
 onboarding = false
 [ui]
 agent_panel_sort = "spaces"
+sidebar_start_collapsed = true
+sidebar_collapsed_mode = "hidden" # "compact" by default
 
 [keys]
 prefix = "ctrl+w"
@@ -10,7 +12,7 @@ previous_agent = "prefix+shift+a"
 next_workspace = "prefix+shift+n"
 previous_workspace = "prefix+shift+p"
 new_workspace = "prefix+shift+t"
-switch_workspace = "prefix+ctrl+1..9" # todo fix this
+switch_workspace = "prefix+ctrl+1..9"
 switch_tab = "prefix+1..9"
 # focus_workspace = "prefix+ctrl+1..9"
 
