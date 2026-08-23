@@ -94,7 +94,7 @@ Exemple :
 - `<leader>hh` - harpoon menu
 - `<leader>ha` - harpoon add file
 - `<leader>hx` - harpoon remove file
-- `<leader>h1..4` - harpoon file 1..4
+- `<leader>1..4` - harpoon go to file 1..4
 
 
 
