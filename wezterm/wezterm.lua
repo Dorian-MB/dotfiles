@@ -8,6 +8,7 @@ config.window_decorations = "RESIZE"
 config.window_close_confirmation = "NeverPrompt"
 config.color_scheme = "Catppuccin Macchiato"
 -- config.font = "JetBrainsMono Nerd Font"
+config.max_fps = 120
 config.font_size = 19
 config.font = wezterm.font_with_fallback({
 	{
