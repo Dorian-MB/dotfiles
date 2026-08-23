@@ -23,8 +23,8 @@ config.bold_brightens_ansi_colors = false
 config.window_background_opacity = 0.85
 config.macos_window_background_blur = 13
 
-local enable_background = true
--- local enable_background = false
+-- local enable_background = true
+local enable_background = false
 if enable_background then
 	config.background = {
 		{
