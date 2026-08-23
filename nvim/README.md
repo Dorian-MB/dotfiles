@@ -17,7 +17,7 @@ Exemple on Mac os :
 brew install neovim
 ```
 
-### Dependencies (but recomended)
+### Dependencies 
 ```
 External dependencies
 ├── Neovim
