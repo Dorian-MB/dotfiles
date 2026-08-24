@@ -16,7 +16,7 @@ return {
                 function()
                     require("flash").jump()
                 end,
-                desc = "Flash",
+                desc = "Flash jump to char",
             },
 
             {
