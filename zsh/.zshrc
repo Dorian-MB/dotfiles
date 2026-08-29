@@ -1,6 +1,9 @@
 # StarShip
 eval "$(starship init zsh)"
 
+# import secret key
+[ -f ~/.zshrc_secret ] && source ~/.zshrc_secret
+
 # Activate syntax highlighting
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Disable underline

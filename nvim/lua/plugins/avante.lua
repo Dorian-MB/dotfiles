@@ -30,26 +30,25 @@ return {
         -- },
 
         instructions_file = "avante.md",
-        -- for example
-        provider = "claude",
-        providers = {
-            claude = {
-                endpoint = "https://api.anthropic.com",
-                model = "claude-sonnet-4-20250514",
-                api_key_name = "ANTHROPIC_API_KEY",
-                timeout = 30000, -- Timeout in milliseconds
-                extra_request_body = {
-                    temperature = 0.75,
-                    max_tokens = 20480,
+        opts = {
+            provider = "gemini",
+            providers = {
+                gemini = {
+                    endpoint = "https://generativelanguage.googleapis.com/v1beta/models",
+                    model = "gemini-2.5-flash",
+                    timeout = 30000,
+                    extra_request_body = {
+                        generationConfig = {
+                            temperature = 0.75,
+                            maxOutputTokens = 8192,
+                        },
+                    },
                 },
-            },
-            moonshot = {
-                endpoint = "https://api.moonshot.ai/v1",
-                model = "kimi-k2-0711-preview",
-                timeout = 30000, -- Timeout in milliseconds
-                extra_request_body = {
-                    temperature = 0.75,
-                    max_tokens = 32768,
+                claude = {
+                    endpoint = "https://api.anthropic.com",
+                    model = "claude-sonnet-4-20250514",
+                    api_key_name = "ANTHROPIC_API_KEY",
+                    timeout = 30000,
                 },
             },
         },
