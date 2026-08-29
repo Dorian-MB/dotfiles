@@ -21,9 +21,6 @@ export KAGGLE_API_TOKEN=KGAT_095768fe0f9c599df4081fa5995143fd
 # export PATH="/opt/nvim/bin:$PATH"
 export PATH="/opt/homebrew/bin/nvim:$PATH"
 
-# For nvim/avante
-export TURBOFIELDFARE_API_KEY=local
-
 # set -o vi
 set -o emacs
 
@@ -51,6 +48,7 @@ alias dot="cd ~/dotfiles"
 alias python="$HOME/.venvs/nvim/bin/python"
 alias py=python
 alias pip="$HOME/.venvs/nvim/bin/python -m pip"
+alias activate-base-env="source ${HOME}/.venvs/base/venv3.14/bin/activate"
 
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

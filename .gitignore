@@ -5,3 +5,5 @@ herdr/release-notes.json
 herdr/herdr-server.log
 herdr/herdr-client.log
 herdr/session.json
+
+.zshrc_secret
