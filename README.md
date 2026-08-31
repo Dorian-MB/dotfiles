@@ -11,7 +11,7 @@ cd dotfiles
 ```bash
 # exemple:
 ln -s ~/dotfiles/nvim ~/.config/nvim
-ln -s ~/dotfiles/aeropsace ~/.config/aeropsace
+ln -s ~/dotfiles/aeropsace ~/.config/aeropsace # ou might want `borders` with this.
 ln -s ~/dotfiles/sketchybar ~/.config/sketchybar
 ln -s ~/dotfiles/herdr ~/.config/herdr
 ```
