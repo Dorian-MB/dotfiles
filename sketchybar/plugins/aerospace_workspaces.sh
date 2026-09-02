@@ -18,7 +18,7 @@ CONFIG_DIR="${CONFIG_DIR:-$HOME/.config/sketchybar}"
 source "$CONFIG_DIR/colors.sh"
 source "$CONFIG_DIR/helpers/workspaces.sh"
 
-# need to add this to yout aerospace.toml :
+# need to add this to your aerospace.toml :
 # exec-on-workspace-change = ['/bin/bash', '-c', 'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE']
 # ─── Fast path: workspace switch (color-only update) ─────────────────────────
 if [ -n "$FOCUSED_WORKSPACE" ] && [ -n "$PREV_WORKSPACE" ] \
