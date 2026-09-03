@@ -15,5 +15,5 @@ ln -s ~/dotfiles/aeropsace ~/.config/aeropsace # ou might want `borders` with th
 ln -s ~/dotfiles/sketchybar ~/.config/sketchybar
 ln -s ~/dotfiles/herdr ~/.config/herdr
 ```
-
+Or just copy paste what you want
 
