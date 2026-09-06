@@ -16,6 +16,8 @@ switch_workspace = "prefix+ctrl+1..9"
 switch_tab = "prefix+1..9"
 # focus_workspace = "prefix+ctrl+1..9"
 
+copy_mode = "prefix+("
+
 [theme]
 name = "terminal"
 auto_switch = false

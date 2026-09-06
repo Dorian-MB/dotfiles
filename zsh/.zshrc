@@ -13,14 +13,8 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 # Activate autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-##NVIM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # export PATH="$PATH:/Users/dorian/Library/Python/3.9/bin"
 export PATH="$HOME/.venvs/nvim/bin:$PATH"
-export KAGGLE_API_TOKEN=KGAT_095768fe0f9c599df4081fa5995143fd
 # export PATH="/opt/nvim/bin:$PATH"
 export PATH="/opt/homebrew/bin/nvim:$PATH"
 
