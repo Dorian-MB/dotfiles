@@ -40,6 +40,7 @@ bars:
     widgets:
       left:
         - "power_menu"
+        - "quick_launch"
         # - "notes"
         # - "todo"
         # - "bin"
@@ -551,3 +552,34 @@ widgets:
         shutdown: ["\uf011", "Shut Down"]
         signout: ["\udb80\udf43", "Sign out"]
         cancel: ["\udb81\udf3a", "Cancel"]
+  quick_launch:
+    type: yasb.quick_launch.QuickLaunchWidget
+    options:
+      label: "<span>\uE71E</span>"
+      search_placeholder: Search applications...
+      max_results: 30
+      show_icons: true
+      icon_size: 16
+      compact_text: true
+      providers:
+        apps:
+          enabled: true
+          prefix: "*"
+          priority: 0
+          show_recent: true
+          max_recent: 5
+          show_description: true
+      popup:
+        width: 720
+        height: 480
+        blur: true
+        round_corners: true
+        round_corners_type: normal
+        border_color: system
+        dark_mode: true
+      callbacks:
+        on_left: toggle_quick_launch
+      keybindings:
+        - keys: alt+space
+          action: toggle_quick_launch
+          screen: primary
