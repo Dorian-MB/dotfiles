@@ -19,6 +19,15 @@ map("n", "<C-d>", "<C-d>zz")
 map("v", "J", ":m '>+1<CR>gv=gv", { desc = "move down the selected line" })
 map("v", "K", ":m '<-2<CR>gv=gv", { desc = "move up the selected line" })
 
+-- Ghostty (macos-option-as-alt) sends these as <Esc>b / <Esc>f (the classic
+-- readline word-jump convention), not as <M-Left>/<M-Right>.
+map("i", "<M-b>", "<C-o>b", { desc = "move cursor to the begening of the word" })
+map("i", "<M-f>", "<C-o>e<C-o>l", { desc = "move cursor to the end of the word" })
+map("i", "<M-BS>", "<Esc>dbx`[i", { desc = "delete to the begening of the word" })
+map("i", "<M-Del>", "<Esc>lde`[i", { desc = "delete to the end of the word" })
+map("i", "<C-BS>", "<Esc>d0x`[i", { desc = "delete to the begening of the line" })
+map("i", "<C-Del>", "<Esc>lD`[a", { desc = "delete to the end of the line" })
+
 -- Find and replaced
 map(
     "n",
