@@ -2,7 +2,7 @@ return {
     { -- formatteur
         "stevearc/conform.nvim",
         cmd = "ConformInfo",
-        event = "BufWritePre", -- uncomment for format on savecore
+        event = "BufWritePre", -- format on save (see configs/conform.lua)
         opts = require "configs.conform",
     },
 

@@ -2,15 +2,16 @@
 
 SKETCHYBAR_CONFIG="$HOME/.config/sketchybar"
 
-# This is used to determine if a monitor is used
-# Since the notch is -only- on the laptop, if a monitor isn't used,
-# then that means the internal display is used ¯\_(ツ)_/¯
-MAIN_DISPLAY=$(system_profiler SPDisplaysDataType | grep -B 3 'Main Display:' | awk '/Display Type/ {print $3}')
+# Only the laptop bar is loaded (see commit "sketchy-bar remove desktop in the
+# main script"). sketchybarrc-desktop is kept and still works — swap the two
+# lines below to use it, or restore the auto-detection with:
+#
+#   MAIN_DISPLAY=$(system_profiler SPDisplaysDataType \
+#       | grep -B 3 'Main Display:' | awk '/Display Type/ {print $3}')
+#   [[ $MAIN_DISPLAY = "Built-in" ]] && ... || ...
+#
+# (the notch only exists on the laptop, so "not Built-in" means an external
+# monitor is driving the bar). It costs ~1s per reload, hence the manual switch.
 
 source "$SKETCHYBAR_CONFIG/sketchybarrc-laptop"
-
-# if [[ $MAIN_DISPLAY = "Built-in" ]]; then
-#     source "$SKETCHYBAR_CONFIG/sketchybarrc-laptop"
-# else
-#     source "$SKETCHYBAR_CONFIG/sketchybarrc-desktop"
-# fi
+# source "$SKETCHYBAR_CONFIG/sketchybarrc-desktop"

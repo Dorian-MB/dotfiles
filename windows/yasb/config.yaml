@@ -1,6 +1,7 @@
 # GlazeWM | Catppuccin Mocha | Glazing Mocha
-# Place this file at: C:/users/{username}/.config/yasb/config.yaml
-# You need to Replace {username} with your username and insert your wallpaper path at line 76. also provide the info at line 305 to use the ai chat.
+# Place this file at: C:/Users/<username>/.config/yasb/config.yaml
+# Machine-specific paths to check after cloning: the `wallpapers` widget
+# (image_path) and the `disk` widget (wiztree.lnk shortcut).
 watch_stylesheet: true
 watch_config: true
 debug: false
@@ -49,7 +50,6 @@ bars:
         - "cpu"
         - "gpu"
         # - "pomodoro"
-        - "clock"
         - "memory"
         - "disk"
       right:
@@ -92,7 +92,7 @@ widgets:
         bin_empty: "\udb82\ude7a"
         bin_filled: "\udb82\ude79"
       callbacks:
-        on_left: 'exec "C:/Users/{username}/Desktop/file_explorer.lnk" shell:RecycleBinFolder'
+        on_left: 'exec "C:/Users/doria/Desktop/file_explorer.lnk" shell:RecycleBinFolder'
         on_right: "empty_bin"
         on_middle: "do_nothing"
       show_confirmation: true
@@ -333,7 +333,7 @@ widgets:
       callbacks:
         on_left: "toggle_label"
         on_middle: "do_nothing"
-        on_right: 'exec cmd /c start "" "C:/Users/{username}/Desktop/wiztree.lnk"'
+        on_right: 'exec cmd /c start "" "C:/Users/doria/Desktop/wiztree.lnk"'
   gpu:
     type: "yasb.gpu.GpuWidget"
     options:

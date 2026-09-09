@@ -1,8 +1,8 @@
-# Usage 
+# Usage
 This is a personal nvim config.
 
 
-# Credit 
+# Credit
 - [ Neovim ](https://neovim.io/)
 - [ NvChad distribution ](https://github.com/NvChad/NvChad.git)
 
@@ -17,7 +17,7 @@ Exemple on Mac os :
 brew install neovim
 ```
 
-### Dependencies 
+### Dependencies
 ```
 External dependencies
 ├── Neovim
@@ -66,7 +66,7 @@ Then open up neovim and let everything install.
 Restart Neovim and install the treesitter syntax <br>
 Exemple :
 ```
-:TSInstall python rust 
+:TSInstall python rust
 ```
 
 ## Some Mapping :

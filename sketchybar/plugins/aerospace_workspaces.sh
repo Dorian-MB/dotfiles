@@ -6,33 +6,14 @@
 #   - shows up to 3 app icons per workspace so you can see what's inside
 #   - left-clicking a workspace focuses it in AeroSpace
 #
-# Called two ways:
-#   1. Fast path, from aerospace.toml's exec-on-workspace-change, with
-#      FOCUSED_WORKSPACE/PREV_WORKSPACE env vars set: just swaps the
-#      highlight colors, no `aerospace` CLI calls at all.
-#   2. Full path, from sketchybar's aerospace_workspace_change/
-#      front_app_switched events: recomputes which workspaces are occupied
-#      and their app icons.
+# Triggered by sketchybar's aerospace_workspace_change (fired from
+# aerospace.toml's exec-on-workspace-change) and front_app_switched events.
+# The former passes FOCUSED_WORKSPACE, which saves the `aerospace
+# list-workspaces --focused` call below; everything else is identical.
 
 CONFIG_DIR="${CONFIG_DIR:-$HOME/.config/sketchybar}"
 source "$CONFIG_DIR/colors.sh"
 source "$CONFIG_DIR/helpers/workspaces.sh"
-
-# ─── Fast path: workspace switch (color-only update) ─────────────────────────
-if [ -n "$FOCUSED_WORKSPACE" ] && [ -n "$PREV_WORKSPACE" ] \
-   && [ "$FOCUSED_WORKSPACE" != "$PREV_WORKSPACE" ]; then
-  sketchybar --animate sin 8 \
-    --set aerospace.workspace.$PREV_WORKSPACE \
-      background.color=$CAT_SURFACE1 \
-      icon.color=$CAT_TEXT \
-      label.color=$CAT_TEXT \
-    --set aerospace.workspace.$FOCUSED_WORKSPACE \
-      background.color=$CAT_GREEN \
-      icon.color=$CAT_BASE \
-      label.color=$CAT_BASE
-fi
-
-# ─── Full path: recompute occupancy + app icons ───────────────────────────────
 source "$CONFIG_DIR/helpers/icon_map.sh"
 
 CURRENT_WORKSPACE="${FOCUSED_WORKSPACE:-$(aerospace list-workspaces --focused 2>/dev/null)}"

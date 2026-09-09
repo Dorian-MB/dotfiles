@@ -1,0 +1,11 @@
+# Fonts are binary, never diff or normalize them.
+*.ttf    binary
+*.woff   binary
+*.woff2  binary
+*.eot    binary
+
+# windows/glaze/config.yaml and windows/yasb/yasb_colors.css are authored with
+# CRLF and stored that way. Deliberately NOT marked `eol=crlf`: that would make
+# git renormalize the blobs and rewrite both files wholesale. If you edit them
+# from macOS, keep the line endings (e.g. `python3` read_bytes/write_bytes, or
+# `sed -i '' 's/$/\r/'` after the fact).

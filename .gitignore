@@ -1,9 +1,16 @@
+# macOS
 .DS_Store
-.git/
 
+# Secrets (kept out of the repo entirely, see README — belt and braces)
+.zshrc_secret
+
+# herdr runtime state
 herdr/release-notes.json
 herdr/herdr-server.log
 herdr/herdr-client.log
 herdr/session.json
+herdr/.plugins.lock
+herdr/*.sock
 
-.zshrc_secret
+# yasb runtime state
+windows/yasb/yasb.log

@@ -13,10 +13,8 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 # Activate autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# export PATH="$PATH:/Users/dorian/Library/Python/3.9/bin"
 export PATH="$HOME/.venvs/nvim/bin:$PATH"
 # export PATH="/opt/nvim/bin:$PATH"
-export PATH="/opt/homebrew/bin/nvim:$PATH"
 
 # set -o vi
 set -o emacs
@@ -42,16 +40,17 @@ alias cdai="cd ~/AI/turbo-fieldfare/"
 alias cdvi="cd ~/dotfiles/nvim/"
 alias dot="cd ~/dotfiles"
 
-alias python="$HOME/.venvs/nvim/bin/python"
+# No `alias python=...` here on purpose: an alias wins over the PATH that
+# `source .../activate` sets, so an activated venv would be silently
+# ignored. The PATH line above already defaults python/pip to ~/.venvs/nvim.
 alias py=python
-alias pip="$HOME/.venvs/nvim/bin/python -m pip"
 alias activate-base-env="source ${HOME}/.venvs/base/venv3.14/bin/activate"
 
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 
-# ls after cd 
+# ls after cd
 chpwd() {
   ll
 }
@@ -71,6 +70,6 @@ fvi() {
     --select-1 \
     --exit-0 \
     --preview 'bat --style=numbers --color=always {} 2>/dev/null || cat {}')
-  
+
   [ -n "$file" ] && vi "$file"
 }

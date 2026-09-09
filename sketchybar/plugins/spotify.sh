@@ -1,8 +1,16 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
+
+# Shared by the laptop and desktop bars. The only thing that differed between
+# the two copies was which property carries the play/pause accent color, so it
+# is passed as $1:
+#   laptop  -> icon.color        (accent on the icon, dark pill)
+#   desktop -> background.color  (accent on the whole pill)
+ACCENT_PROP="${1:-icon.color}"
+
+source "${CONFIG_DIR:-$HOME/.config/sketchybar}/colors.sh"
 
 # Max number of characters so it fits nicely to the right of the notch
 # MAY NOT WORK WITH NON-ENGLISH CHARACTERS
-
 MAX_LENGTH=35
 
 # Logic starts here, do not modify
@@ -13,14 +21,14 @@ SPOTIFY_JSON="$INFO"
 
 update_track() {
 
-    if [[ -z $SPOTIFY_JSON ]]; then
-        sketchybar --set $NAME background.color=0xffeed49f label.drawing=no
+    if [ -z "$SPOTIFY_JSON" ]; then
+        sketchybar --set $NAME "$ACCENT_PROP"=$CAT_YELLOW label.drawing=no
         return
     fi
 
     PLAYER_STATE=$(echo "$SPOTIFY_JSON" | jq -r '.["Player State"]')
 
-    if [ $PLAYER_STATE = "Playing" ]; then
+    if [ "$PLAYER_STATE" = "Playing" ]; then
         TRACK="$(echo "$SPOTIFY_JSON" | jq -r .Name)"
         ARTIST="$(echo "$SPOTIFY_JSON" | jq -r .Artist)"
 
@@ -44,14 +52,14 @@ update_track() {
                 ARTIST="${ARTIST:0:$((MAX_LENGTH - TRACK_LENGTH - 1))}…"
             fi
         fi
-        sketchybar --set $NAME label="${TRACK}  ${ARTIST}" label.drawing=yes background.color=0xffa6da95
+        sketchybar --set $NAME label="${TRACK}  ${ARTIST}" label.drawing=yes "$ACCENT_PROP"=$CAT_GREEN
 
-    elif [ $PLAYER_STATE = "Paused" ]; then
-        sketchybar --set $NAME background.color=0xffeed49f
-    elif [ $PLAYER_STATE = "Stopped" ]; then
-        sketchybar --set $NAME background.color=0xffeed49f label.drawing=no
+    elif [ "$PLAYER_STATE" = "Paused" ]; then
+        sketchybar --set $NAME "$ACCENT_PROP"=$CAT_YELLOW
+    elif [ "$PLAYER_STATE" = "Stopped" ]; then
+        sketchybar --set $NAME "$ACCENT_PROP"=$CAT_YELLOW label.drawing=no
     else
-        sketchybar --set $NAME background.color=0xffeed49f
+        sketchybar --set $NAME "$ACCENT_PROP"=$CAT_YELLOW
     fi
 }
 

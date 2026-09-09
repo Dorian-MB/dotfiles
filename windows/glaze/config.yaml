@@ -181,6 +181,12 @@ binding_modes:
         bindings: ["escape", "enter"]
 
 keybindings:
+  # NOTE (cross-platform): aerospace.toml remaps q<->a and w<->z via
+  # `key-mapping.key-notation-to-key-code` for an AZERTY keyboard.
+  # GlazeWM has no equivalent and binds virtual-key codes, which follow
+  # QWERTY positions. So on an AZERTY keyboard the letter workspaces
+  # (a/z/e/q) land on different physical keys here than on macOS.
+  # Left as-is on purpose: swapping them blind would break a QWERTY setup.
   # Shift focus in a given direction.
   - commands: ["focus --direction left"]
     bindings: ["alt+h", "alt+left"]

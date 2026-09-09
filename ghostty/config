@@ -30,7 +30,12 @@ background-opacity = 0.85
 background-blur = 13
 
 macos-option-as-alt = left
-keybind = ctrl+tab=goto_split:next
+
+# Split navigation. NOT bound to ctrl+tab: ghostty would swallow it and
+# nvim's <C-Tab> ("switch to previous file", see nvim/lua/mappings.lua)
+# would never fire inside a ghostty window.
+keybind = cmd+]=goto_split:next
+keybind = cmd+[=goto_split:previous
 
 
 

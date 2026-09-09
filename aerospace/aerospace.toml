@@ -1,5 +1,6 @@
-# Place a copy of this config to ~/.aerospace.toml
-# After that, you can edit ~/.aerospace.toml to your liking
+# Deployed as ~/.config/aerospace/aerospace.toml (the whole aerospace/
+# directory is symlinked, see the repo README). ~/.aerospace.toml also
+# works if you prefer a single file at $HOME.
 
 # Config version for compatibility and deprecations
 # See: https://nikitabobko.github.io/AeroSpace/guide#config-version
@@ -53,9 +54,10 @@ automatically-unhide-macos-hidden-apps = true
 # This config option is only available since 'config-version = 2'
 # Fallback value (if you omit the key): persistent-workspaces = []
 # persistent-workspaces = []
-persistent-workspaces = ["1", "2", "3", "Z", "A", "C", "S"]
-#                          "C", "D", "E", "F", "G", "I", "O", "P", "Q",
-#                          "R", "S", "T", "U", "W", "X", "Y", "Z"]
+# Must stay in sync with sketchybar/helpers/workspaces.sh and with the
+# `workspace X` bindings below: a workspace bound here but missing from
+# that list gets no bar item, and vice versa.
+persistent-workspaces = ["1", "2", "3", "4", "A", "C", "E", "Q", "S", "Z"]
 
 # A callback that runs every time binding mode changes
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -79,7 +81,7 @@ key-mapping.key-notation-to-key-code = {
     # comma = 'semicolon',
     # period = 'slash',
     # slash = 'equal',
-    # equal = 'minus', 
+    # equal = 'minus',
     }
 
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
