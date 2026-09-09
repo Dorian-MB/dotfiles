@@ -1,5 +1,5 @@
 local wezterm = require("wezterm")
-config = wezterm.config_builder()
+local config = wezterm.config_builder()
 
 config.automatically_reload_config = true
 config.adjust_window_size_when_changing_font_size = false
@@ -51,6 +51,12 @@ end
 config.leader = { key = "<", mods = "CTRL", timeout_milliseconds = 1000 }
 
 config.keys = {
+	-- La barre d'onglets est désactivée, mais wezterm garde ses raccourcis
+	-- d'onglets par défaut et avale CTRL+Tab. On les rend au terminal pour que
+	-- <C-Tab> de nvim (mappings.lua) fonctionne.
+	{ key = "Tab", mods = "CTRL", action = wezterm.action.DisableDefaultAssignment },
+	{ key = "Tab", mods = "SHIFT|CTRL", action = wezterm.action.DisableDefaultAssignment },
+
 	-- Diviser verticalement avec Leader + v
 	{
 		key = "v",
