@@ -21,3 +21,9 @@ copy_mode = "prefix+("
 [theme]
 name = "terminal"
 auto_switch = false
+
+[experimental]
+# Rendu local des images (protocole graphique kitty) dans les panes herdr :
+# necessaire pour voir les figures matplotlib des notebooks dans Neovim.
+# Le terminal exterieur doit lui aussi supporter le protocole (Ghostty : ok).
+kitty_graphics = true

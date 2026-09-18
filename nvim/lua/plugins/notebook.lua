@@ -1,84 +1,64 @@
--- Need 2 python package for molten to work (python >3.10)
--- uv venv ~/.venvs/nvim --python 3.12
--- python3 -m pip install --user pynvim jupyter_client
-
--- python3 -m venv ~/.venvs/nvim
--- ~/.venvs/nvim/bin/pip install \
---     pynvim \
---     jupyter_client \
---     ipykernel \
---     matplotlib \
---     pandas \
---     numpy
+-- Jupyter notebooks (.ipynb) inside Neovim, with real cells.
 --
---  il faut aussi ajouter les lignes suivante dans le init.lua
--- vim.g.python3_host_prog = vim.fn.expand("~/.venvs/nvim/bin/python")
--- vim.env.PATH = vim.fn.expand("~/.venvs/nvim/bin") .. ":" .. vim.env.PATH
+-- Requirements (already installed in ~/.venvs/nvim):
+--   pip install jupyter_client ipykernel   (+ matplotlib, pandas, ...)
+-- Images are displayed through the kitty graphics protocol, which Ghostty
+-- speaks natively, and need ImageMagick (`brew install imagemagick`).
+
 return {
-    -- Jupyter kernel + outputs
-    -- {
-    --   "benlubas/molten-nvim",
-    --   dependencies = {
-    --     "3rd/image.nvim",
-    --   },
-    --   build = ":UpdateRemotePlugins",
-    --
-    --   init = function()
-    --     vim.g.molten_image_provider = "image.nvim"
-    --
-    --     -- Afficher les résultats directement sous les cellules
-    --     vim.g.molten_auto_open_output = false
-    --     vim.g.molten_virt_text_output = true
-    --     vim.g.molten_virt_lines_off_by_1 = false
-    --     vim.g.molten_wrap_output = true
-    --
-    --     vim.g.molten_output_win_max_height = 20
-    --   end,
-    -- },
-    --
-    -- -- Affichage des images matplotlib
-    -- {
-    --   "3rd/image.nvim",
-    --   opts = {
-    --     backend = "kitty",
-    --
-    --     max_width = 100,
-    --     max_height = 12,
-    --
-    --     max_width_window_percentage = math.huge,
-    --     max_height_window_percentage = math.huge,
-    --
-    --     window_overlap_clear_enabled = true,
-    --     window_overlap_clear_ft_ignore = {
-    --       "cmp_menu",
-    --       "cmp_docs",
-    --       "",
-    --     },
-    --   },
-    -- },
-    --
-    -- {
-    --      "goerz/jupytext.nvim",
-    --      lazy = false,
-    --      opts = {
-    --           format = "py:percent",
-    --      },
-    -- },
-    --
-    -- -- Navigation / exécution des cellules
-    -- {
-    --      "GCBallesteros/NotebookNavigator.nvim",
-    --
-    --      dependencies = {
-    --           "echasnovski/mini.comment",
-    --      },
-    --
-    --      event = "VeryLazy",
-    --
-    --      config = function()
-    --           require("notebook-navigator").setup({
-    --                repl_provider = "molten",
-    --           })
-    --      end,
-    -- },
+  {
+    "jupynb.nvim",
+    dir = vim.fn.stdpath "config" .. "/jupynb.nvim",
+    lazy = false,
+    priority = 100,
+    dependencies = {
+      "3rd/image.nvim",
+      "jmbuhr/otter.nvim",
+      "MeanderingProgrammer/render-markdown.nvim",
+    },
+    opts = {
+      -- see jupynb.nvim/README.md for every option
+      keymaps = { prefix = "<leader>j" },
+    },
+  },
+
+  -- Inline images (matplotlib figures) through the kitty graphics protocol.
+  {
+    "3rd/image.nvim",
+    lazy = true,
+    opts = {
+      backend = "kitty",
+      processor = "magick_cli", -- uses the `magick` binary, no luarocks needed
+      integrations = {
+        markdown = { enabled = false },
+        neorg = { enabled = false },
+        typst = { enabled = false },
+        html = { enabled = false },
+        css = { enabled = false },
+      },
+      max_width_window_percentage = 100,
+      max_height_window_percentage = 100,
+      window_overlap_clear_enabled = true,
+      window_overlap_clear_ft_ignore = { "cmp_menu", "cmp_docs", "blink-cmp-menu", "" },
+      editor_only_render_when_focused = false,
+      tmux_show_only_in_active_window = true,
+    },
+  },
+
+  -- LSP (pyright) + completion inside the code cells.
+  { "jmbuhr/otter.nvim", lazy = true },
+
+  -- Pretty rendering of the markdown cells.
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    ft = { "markdown", "jupynb" },
+    opts = {
+      file_types = { "markdown", "jupynb" },
+      -- code blocks are the notebook cells themselves: jupynb draws those
+      code = { enabled = false },
+      sign = { enabled = false },
+      heading = { sign = false, width = "block", left_pad = 1, right_pad = 2 },
+      anti_conceal = { enabled = true },
+    },
+  },
 }

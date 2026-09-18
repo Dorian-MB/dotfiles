@@ -96,5 +96,34 @@ Exemple :
 - `<leader>hx` - harpoon remove file
 - `<leader>1..4` - harpoon go to file 1..4
 
+## Notebooks (.ipynb)
+
+Ouvrir un `.ipynb` affiche un vrai notebook (cellules, sorties, images) grace
+au plugin local [`jupynb.nvim`](jupynb.nvim/README.md).
+
+Dependances python (deja installees dans `~/.venvs/nvim`) :
+```bash
+pip install jupyter_client ipykernel matplotlib pandas
+```
+Les images passent par le protocole graphique kitty (Ghostty le supporte) et
+ont besoin d'ImageMagick : `brew install imagemagick`.
+
+`:checkhealth jupynb` verifie l'installation, `:Jupynb <Tab>` liste les
+commandes.
+
+**[n] dans un buffer notebook**
+- `<C-CR>` - executer la cellule
+- `<S-CR>` - executer et aller a la cellule suivante
+- `<M-CR>` - executer et inserer une cellule en dessous
+- `]c` / `[c` - cellule suivante / precedente
+- `<leader>jr` / `<leader>jR` - executer la cellule / tout le notebook
+- `<leader>ja` / `<leader>jb` - inserer une cellule au dessus / en dessous
+- `<leader>jd` - supprimer la cellule
+- `<leader>jm` - basculer code <-> markdown
+- `<leader>jc` / `<leader>jC` - effacer la sortie / toutes les sorties
+- `<leader>jo` - ouvrir la sortie complete dans un split
+- `<leader>jk` - choisir le kernel (les `.venv` du projet sont proposes)
+- `<leader>jx` / `<leader>ji` - redemarrer / interrompre le kernel
+
 
 

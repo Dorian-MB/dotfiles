@@ -11,6 +11,7 @@ herdr/herdr-client.log
 herdr/session.json
 herdr/.plugins.lock
 herdr/*.sock
+herdr/sessions/
 
 # yasb runtime state
 windows/yasb/yasb.log
