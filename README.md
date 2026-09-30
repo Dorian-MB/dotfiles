@@ -23,12 +23,16 @@ git clone https://github.com/Dorian-MB/dotfiles.git ~/dotfiles
 ### Dependencies
 
 ```bash
-brew install neovim git ripgrep fd fzf bat eza jq starship tree-sitter uv rustup
+brew install neovim git ripgrep fd fzf bat eza jq starship tree-sitter-cli uv rustup
 brew install jesseduffield/lazygit/lazygit
 brew install --cask wezterm ghostty
 brew install nikitabobko/tap/aerospace FelixKratz/formulae/sketchybar FelixKratz/formulae/borders
 brew services start borders
 ```
+
+The nvim config needs **Neovim >= 0.12** and the `tree-sitter` CLI, otherwise
+there is no syntax highlighting. On Linux / WSL (no Homebrew), see
+[`nvim/README.md`](nvim/README.md) for the install commands and troubleshooting.
 
 Fonts: `JetBrainsMono Nerd Font` (terminals + bar) and the bundled
 `sketchybar/helpers/sketchybar-app-font.ttf` (workspace app icons).
