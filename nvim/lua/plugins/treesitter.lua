@@ -33,7 +33,7 @@ return {
                 "markdown",
             },
             callback = function(args)
-                vim.treesitter.start(args.buf)
+                pcall(vim.treesitter.start, args.buf)
             end,
         })
     end,
