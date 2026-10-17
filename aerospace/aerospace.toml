@@ -99,6 +99,12 @@ gaps.outer.bottom =     8
 gaps.outer.top =        [{ monitor."Built-in.*" = 12 }, 40]
 gaps.outer.right =      8
 
+
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = 'layout floating'
+
+
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # 'main' binding mode must be always presented
