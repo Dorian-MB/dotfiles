@@ -36,7 +36,7 @@ alias vi11="/opt/nvim/bin/nvim"
 alias cl=clear
 alias cc=claude
 alias cdd="cd ~/Documents/CODE/"
-alias cdai="cd ~/AI/turbo-fieldfare/"
+alias cdai="cd ~/AI/"
 alias cdvi="cd ~/dotfiles/nvim/"
 alias dot="cd ~/dotfiles"
 
