@@ -43,6 +43,14 @@ config.ssh_domains = {
 }
 config.default_domain = USE_SSH and "wsl-ssh" or "WSL:Ubuntu"
 
+-- En SSH, wezterm ne demarre plus WSL tout seul : apres un reboot (ou
+-- `wsl --shutdown`) personne n'ecoute sur 2222. On reveille Ubuntu une fois
+-- (systemd lance alors ssh.socket). GLOBAL survit aux rechargements de config.
+if USE_SSH and not wezterm.GLOBAL.wsl_started then
+	wezterm.GLOBAL.wsl_started = true
+	wezterm.run_child_process({ "wsl.exe", "-d", "Ubuntu", "--exec", "true" })
+end
+
 config.automatically_reload_config = true
 config.adjust_window_size_when_changing_font_size = false
 config.enable_tab_bar = false
