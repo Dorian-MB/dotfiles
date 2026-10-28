@@ -169,7 +169,8 @@ require("jupynb").setup {
 `JupynbHeaderCount`, `JupynbHeaderOk`, `JupynbHeaderError`,
 `JupynbHeaderRunning`, `JupynbBar`, `JupynbBarActive`, `JupynbBarMd`,
 `JupynbBarMdActive`, `JupynbCellActive`, `JupynbOutBorder`, `JupynbOutText`,
-`JupynbOutStderr`, `JupynbOutErrName`, `JupynbOutErrText`, `JupynbAnsi*`.
+`JupynbOutStderr`, `JupynbOutErrName`, `JupynbOutErrText`, `JupynbTableHead`,
+`JupynbTableIndex`, `JupynbAnsi*`.
 
 Ils sont recalculés à chaque `ColorScheme`.
 
@@ -203,10 +204,25 @@ jupynb détecte ces deux cas : il affiche alors le placeholder texte au lieu de
 réserver des lignes vides, et dit une fois par session ce qu'il faut changer.
 `:checkhealth jupynb` le rappelle aussi.
 
+### WSL + WezTerm (Windows)
+
+Le terminal tourne côté Windows : il ne peut pas lire `/tmp/…` de WSL, donc
+jupynb envoie les octets de l'image au lieu de son chemin. Dans le
+`.wezterm.lua` **Windows** :
+
+```lua
+config.enable_kitty_graphics = true -- désactivé par défaut dans WezTerm
+config.keys = { -- ConPTY ne transmet pas Ctrl/Shift+Enter
+  { key = "Enter", mods = "CTRL", action = wezterm.action.SendString("\x1b[13;5u") },
+  { key = "Enter", mods = "SHIFT", action = wezterm.action.SendString("\x1b[13;2u") },
+}
+```
+
 ## Limites connues
 
-- Le rendu HTML (tableaux pandas) retombe sur `text/plain` : un terminal ne
-  sait pas afficher du HTML.
+- Le HTML n'est pas rendu, sauf les tableaux (DataFrames pandas / polars) :
+  ils sont dessinés en grille alignée. Une grille plus large que la fenêtre
+  est coupée à droite ; `<leader>jo` l'ouvre en entier.
 - Les images nécessitent un terminal compatible kitty graphics + ImageMagick.
 - Éditer une ligne de marqueur peut casser la structure : `:Jupynb fix` la
   reconstruit à partir du modèle.

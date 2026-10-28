@@ -26,6 +26,8 @@ return {
   {
     "3rd/image.nvim",
     lazy = true,
+    -- skip the rockspec build (luarocks `magick`): magick_cli doesn't need it
+    build = false,
     opts = {
       backend = "kitty",
       processor = "magick_cli", -- uses the `magick` binary, no luarocks needed

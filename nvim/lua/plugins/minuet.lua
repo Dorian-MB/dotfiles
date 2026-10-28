@@ -3,6 +3,7 @@ return {
     -- Loaded on the first insert; `lazy = false` used to sit next to this
     -- event and silently won, pulling the provider in at every startup.
     event = "InsertEnter",
+    enabled = false, -- Désactive le plugin
     config = function()
         require("minuet").setup {
             -- preset actif au démarrage

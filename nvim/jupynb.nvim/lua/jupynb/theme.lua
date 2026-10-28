@@ -173,6 +173,8 @@ local function groups(c)
     JupynbOutErrText = { fg = blend(c.red, c.fg, 0.35) },
     JupynbOutMore = { fg = c.muted, italic = true },
     JupynbOutImage = { fg = c.cyan, italic = true },
+    JupynbTableHead = { fg = c.blue, bold = true },
+    JupynbTableIndex = { fg = c.muted, bold = true },
 
     -- misc
     JupynbStatus = { fg = c.blue },
