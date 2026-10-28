@@ -24,6 +24,16 @@ config.bold_brightens_ansi_colors = false
 config.window_background_opacity = 0.85
 config.macos_window_background_blur = 13
 
+-- Figures matplotlib dans nvim (jupynb.nvim / image.nvim) : desactive par defaut.
+config.enable_kitty_graphics = true
+
+-- ConPTY (pont Windows -> WSL) ne sait pas encoder Ctrl/Shift+Enter : on envoie
+-- nous-memes la sequence CSI u que nvim lit comme <C-CR> / <S-CR>.
+config.keys = {
+	{ key = "Enter", mods = "CTRL", action = wezterm.action.SendString("\x1b[13;5u") },
+	{ key = "Enter", mods = "SHIFT", action = wezterm.action.SendString("\x1b[13;2u") },
+}
+
 -- local enable_background = true
 local enable_background = false
 if enable_background then
