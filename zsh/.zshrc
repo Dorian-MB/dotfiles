@@ -18,6 +18,11 @@ export PATH="$HOME/.venvs/nvim/bin:$PATH"
 
 # set -o vi
 set -o emacs
+# Ctrl/Alt + flèches : mot suivant / précédent (sans ça zsh affiche ";5C")
+bindkey '^[[1;5C' forward-word
+bindkey '^[[1;5D' backward-word
+bindkey '^[[1;3C' forward-word
+bindkey '^[[1;3D' backward-word
 
 
 # alias l="ls -l"
