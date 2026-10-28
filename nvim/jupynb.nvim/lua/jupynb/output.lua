@@ -53,6 +53,32 @@ local function pick_text(data)
   end
 end
 
+local TABLE_HL = {
+  border = "JupynbOutBorder",
+  head = "JupynbTableHead",
+  index = "JupynbTableIndex",
+  text = "JupynbOutText",
+  note = "JupynbOutLabel",
+}
+
+---DataFrame outputs (pandas, polars, ...) carry an HTML table: draw it as a
+---grid like VSCode does instead of the wrapped text/plain repr.
+---@return table[]|nil lines of chunks
+local function html_table(data)
+  local html = data and data["text/html"]
+  if type(html) == "table" then
+    html = table.concat(html, "")
+  end
+  if type(html) ~= "string" or not html:find("<table", 1, true) then
+    return nil
+  end
+  local tbl = require("jupynb.table")
+  local ok, parsed = pcall(tbl.parse, html)
+  if ok and parsed then
+    return tbl.render(parsed, TABLE_HL)
+  end
+end
+
 ---Path on disk for an image payload (kernel output or notebook attachment).
 ---@return string|nil path, integer|nil width, integer|nil height
 function M.image_path(value, mime)
@@ -191,6 +217,13 @@ function M.render(cell)
           handled = true
         end
       end
+      local grid = not handled and html_table(output.data)
+      if grid then
+        for _, chunks in ipairs(grid) do
+          add({ { pad(2) }, { icons.out .. " ", "JupynbOutBorder" }, unpack(chunks) })
+        end
+        handled = true
+      end
       if not handled then
         local tmime, text = pick_text(output.data)
         if text then
@@ -238,8 +271,15 @@ function M.as_text(cell)
         local path = M.image_path(value, mime)
         lines[#lines + 1] = string.format("[%s] %s", mime, path or "")
       end
+      local grid = html_table(output.data)
       local _, text = pick_text(output.data)
-      if text then
+      if grid then
+        for _, chunks in ipairs(grid) do
+          lines[#lines + 1] = table.concat(vim.tbl_map(function(c)
+            return c[1]
+          end, chunks))
+        end
+      elseif text then
         vim.list_extend(lines, vim.split(text:gsub("\n$", ""), "\n", { plain = true }))
       end
     end

@@ -9,11 +9,33 @@ local M = {}
 
 local config = require("jupynb.config")
 
+---image.nvim hands the kitty protocol a file *path* (t=f) unless over SSH.
+---Under WSL the terminal is a Windows program (WezTerm) that cannot open
+---/tmp/..., so the figure silently never shows: send the bytes inline (t=d).
+local function force_direct_transmit()
+  if vim.fn.has("wsl") == 0 then
+    return
+  end
+  local ok, helpers = pcall(require, "image/backends/kitty/helpers")
+  if not ok or helpers._jupynb_direct then
+    return
+  end
+  local write_graphics = helpers.write_graphics
+  helpers.write_graphics = function(cfg, data, chunk)
+    if cfg.transmit_medium == "f" then
+      cfg.transmit_medium = "d"
+    end
+    return write_graphics(cfg, data, chunk)
+  end
+  helpers._jupynb_direct = true
+end
+
 local function api()
   local ok, image = pcall(require, "image")
   if not ok then
     return nil
   end
+  force_direct_transmit()
   return image
 end
 
