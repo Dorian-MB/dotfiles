@@ -65,12 +65,12 @@ function M.run(buf, opts)
   end
 
   if opts.insert then
-    M.insert(doc.buf, "below", "code")
+    M.insert(doc.buf, "below", "code", true)
     return
   end
   if opts.advance then
     if idx >= #doc.cells then
-      M.insert(doc.buf, "below", "code")
+      M.insert(doc.buf, "below", "code", true)
     else
       focus(doc, idx + 1)
     end
@@ -106,7 +106,8 @@ end
 
 ---@param where "above"|"below"
 ---@param kind "code"|"markdown"|"raw"
-function M.insert(buf, where, kind)
+---@param insert boolean|nil enter insert mode in the new cell
+function M.insert(buf, where, kind, insert)
   local doc, cell, idx = cursor_cell(buf)
   if not doc then
     return
@@ -135,7 +136,7 @@ function M.insert(buf, where, kind)
   at = math.min(math.max(at, 0), vim.api.nvim_buf_line_count(doc.buf))
   vim.api.nvim_buf_set_lines(doc.buf, at, at, false, body)
   after_change(doc)
-  focus(doc, new_idx, true)
+  focus(doc, new_idx, insert)
 end
 
 function M.delete(buf)
