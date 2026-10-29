@@ -6,7 +6,7 @@ vim.keymap.del("n", "<leader>v")
 
 local map = vim.keymap.set
 
-map("n", "<C-Tab>", "<cmd>e #<CR>", { desc = "Switch to previous file" })
+map({"n", "i"}, "<C-Tab>", "<cmd>e #<CR>", { desc = "Switch to previous file" })
 map("n", "<leader>T", "<cmd>e #<CR>", { desc = "Switch to previous file" })
 
 map("i", "jk", "<ESC>")

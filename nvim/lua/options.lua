@@ -25,5 +25,5 @@ vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
 
 -- undo default nvchad setting
-vim.g.loaded_python3_provider = nil
+vim.g.loaded_python3_provider = 0 -- ex: necessaire pour molten.nvim
 vim.g.python3_host_prog = vim.fn.expand "~/.venvs/nvim/bin/python"
