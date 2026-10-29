@@ -16,6 +16,11 @@ switch_workspace = "prefix+shift+1..9"
 switch_tab = "prefix+1..9"
 # focus_workspace = "prefix+ctrl+1..9"
 
+# prefix+tab : retour au pane/onglet precedent (comme <leader>T dans nvim).
+# cycle_pane_next occupait prefix+tab par defaut : deplace sur prefix+space.
+last_pane = "prefix+tab"
+cycle_pane_next = "prefix+space"
+
 copy_mode = "prefix+("
 
 [theme]
