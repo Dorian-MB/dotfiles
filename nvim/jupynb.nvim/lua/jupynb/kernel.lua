@@ -134,7 +134,8 @@ end
 local function discover_venvs(start_dir)
   local found, seen = {}, {}
   local function add(python, label)
-    python = vim.fn.resolve(vim.fn.expand(python))
+    -- no resolve(): a venv's bin/python is a symlink, following it escapes the venv
+    python = vim.fn.expand(python)
     if python ~= "" and vim.fn.executable(python) == 1 and not seen[python] then
       seen[python] = true
       found[#found + 1] = { python = python, label = label }
