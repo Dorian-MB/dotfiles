@@ -22,6 +22,9 @@ M.base46 = {
     hl_override = {
     	Comment = { fg = comment_fg, italic = true },
     	["@comment"] = { fg = comment_fg, italic = true },
+    	-- selection visuelle : base46 met #2f2e3e, invisible avec la transparence.
+    	-- #585b70 = surface2 de Catppuccin.
+    	Visual = { bg = "#585b70" },
     },
 }
 
