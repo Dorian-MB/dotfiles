@@ -23,6 +23,9 @@ colorscheme) : aucune couleur n'est codée en dur.
  ▏ Le texte markdown est rendu normalement.
 ```
 
+Les choix de conception, les pièges rencontrés et la façon dont tout a été
+vérifié sont documentés dans [DESIGN.md](DESIGN.md).
+
 ## Comment ça marche
 
 Le fichier sur le disque reste un `.ipynb` standard. À l'ouverture, le

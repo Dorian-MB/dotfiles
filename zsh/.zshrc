@@ -29,10 +29,14 @@ bindkey '^[[1;3D' backward-word
 # alias ls=ls
 # alias la="ls -A"
 # alias lA="ls -la"
+alias l="command ls"
 alias ls='eza --icons --group-directories-first'
 alias ll='eza -l --icons --header --git --group-directories-first'
+alias lls='eza -l --icons --header --git --group-directories-first --total-size'
 alias la='eza -la --icons --header --git --group-directories-first'
+alias las='eza -la --icons --header --git --group-directories-first --total-size'
 alias lt='eza -l --icons --tree --level=2'
+alias lts='eza -l --icons --tree --level=2 --total-size'
 
 alias vi=nvim
 alias vi12="/opt/homebrew/bin/nvim"
@@ -44,6 +48,7 @@ alias cdd="cd ~/Documents/CODE/"
 alias cdai="cd ~/AI/"
 alias cdvi="cd ~/dotfiles/nvim/"
 alias dot="cd ~/dotfiles"
+alias cdi="cd ~/Documents/CV/"
 
 # No `alias python=...` here on purpose: an alias wins over the PATH that
 # `source .../activate` sets, so an activated venv would be silently
