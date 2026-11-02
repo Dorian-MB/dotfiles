@@ -46,9 +46,11 @@ config.default_domain = USE_SSH and "wsl-ssh" or "WSL:Ubuntu"
 -- En SSH, wezterm ne demarre plus WSL tout seul : apres un reboot (ou
 -- `wsl --shutdown`) personne n'ecoute sur 2222. On reveille Ubuntu une fois
 -- (systemd lance alors ssh.socket). GLOBAL survit aux rechargements de config.
+-- Une session SSH ne compte pas comme client WSL : sans wsl.exe vivant, WSL
+-- eteint la distro ~15 s apres le boot (et coupe la connexion). D'ou le sleep.
 if USE_SSH and not wezterm.GLOBAL.wsl_started then
 	wezterm.GLOBAL.wsl_started = true
-	wezterm.run_child_process({ "wsl.exe", "-d", "Ubuntu", "--exec", "true" })
+	wezterm.background_child_process({ "wsl.exe", "-d", "Ubuntu", "--exec", "sleep", "infinity" })
 end
 
 config.automatically_reload_config = true
