@@ -50,6 +50,8 @@ config.default_domain = USE_SSH and "wsl-ssh" or "WSL:Ubuntu"
 -- eteint la distro ~15 s apres le boot (et coupe la connexion). D'ou le sleep.
 if USE_SSH and not wezterm.GLOBAL.wsl_started then
 	wezterm.GLOBAL.wsl_started = true
+	-- bloquant : sinon libssh-rs se connecte pendant le boot de la VM et reste pendu
+	wezterm.run_child_process({ "wsl.exe", "-d", "Ubuntu", "--exec", "true" })
 	wezterm.background_child_process({ "wsl.exe", "-d", "Ubuntu", "--exec", "sleep", "infinity" })
 end
 
