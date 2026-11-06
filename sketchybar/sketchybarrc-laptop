@@ -16,7 +16,7 @@ sketchybar --bar \
     sticky=on \
     padding_left=23 \
     padding_right=23 \
-    notch_width=188 \
+    notch_width=200 \
     blur_radius=4 \
     display=main
 
@@ -36,18 +36,18 @@ sketchybar --default \
     label.padding_left=0 \
     label.padding_right=5
 
-# CPU/GPU just left of the notch (q), RAM just right of it (e).
-sketchybar --add item gpu q \
-    --set gpu \
-    icon=󰢮 \
-    update_freq=5 \
-    script="$PLUGIN_SHARED_DIR/stats.sh gpu icon.color" \
-    --add item cpu q \
+# RAM just left of the notch (q), CPU/GPU just right of it (e).
+sketchybar --add item cpu e \
     --set cpu \
     icon= \
     update_freq=5 \
     script="$PLUGIN_SHARED_DIR/stats.sh cpu icon.color" \
-    --add item ram e \
+    --add item gpu e \
+    --set gpu \
+    icon=󰢮 \
+    update_freq=5 \
+    script="$PLUGIN_SHARED_DIR/stats.sh gpu icon.color" \
+    --add item ram q \
     --set ram \
     icon=󰍛 \
     update_freq=5 \
