@@ -10,6 +10,9 @@ window-save-state = always
 maximize = true
 confirm-close-surface = false
 quick-terminal-position = center
+window-padding-x = 10,10
+window-padding-y = 10,10
+window-padding-balance = true
 
 font-family = JetBrainsMono Nerd Font
 font-size=19
