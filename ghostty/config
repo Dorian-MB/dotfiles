@@ -34,6 +34,12 @@ macos-option-as-alt = left
 # Split navigation. NOT bound to ctrl+tab: ghostty would swallow it and
 # nvim's <C-Tab> ("switch to previous file", see nvim/lua/mappings.lua)
 # would never fire inside a ghostty window.
+# ghostty binds ctrl+tab=next_tab by default (even with the tab bar hidden),
+# and once unbound it sends a plain Tab unless the app enabled the kitty
+# keyboard protocol. Send the CSI u sequence explicitly so nvim always sees
+# <C-Tab> / <C-S-Tab>.
+keybind = ctrl+tab=text:\x1b[9;5u
+keybind = ctrl+shift+tab=text:\x1b[9;6u
 keybind = cmd+]=goto_split:next
 keybind = cmd+[=goto_split:previous
 
