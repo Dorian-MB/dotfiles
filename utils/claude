@@ -5,3 +5,8 @@
 # Install graphifyy
 uv tool install graphifyy      # install the CLI (or: pipx install graphifyy)
 graphify install
+
+# Install Agents Skills
+# git config --global url."https://github.com/".insteadOf git@github.com:
+/plugin marketplace add https://github.com/addyosmani/agent-skills.git
+/plugin install agent-skills@addy-agent-skills
