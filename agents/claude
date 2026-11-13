@@ -15,3 +15,15 @@ graphify install
 ## Skins mods, change theme
 /plugin marketplace add hellosverre/claude-skins
 /plugin install skins@hellosverre-mods
+
+## claude-kit mods: progress bar + agents panel, session band (cost, cache, context)
+/plugin marketplace add johnnyvizz/claude-kit
+/plugin install savvy-progress@claude-kit
+/plugin install session-band@claude-kit
+
+# savvy-flow (skill + agents), modified copy in agents/savvy-flow/:
+# the orchestrator picks the model per worker task (haiku/sonnet/opus/fable),
+# light defaults to haiku, medium to sonnet. Do NOT also install savvy-flow@claude-kit.
+mkdir -p ~/.claude/skills ~/.claude/agents
+cp -R ~/dotfiles/agents/savvy-flow/skills/savvy-flow ~/.claude/skills/
+cp ~/dotfiles/agents/savvy-flow/agents/*.md ~/.claude/agents/
