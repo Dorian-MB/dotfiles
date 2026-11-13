@@ -10,3 +10,8 @@ graphify install
 # git config --global url."https://github.com/".insteadOf git@github.com:
 /plugin marketplace add https://github.com/addyosmani/agent-skills.git
 /plugin install agent-skills@addy-agent-skills
+
+# mods
+## Skins mods, change theme
+/plugin marketplace add hellosverre/claude-skins
+/plugin install skins@hellosverre-mods
