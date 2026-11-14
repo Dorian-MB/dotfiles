@@ -2,6 +2,8 @@
 
 Terminal / window-manager config for macOS (+ a Windows corner).
 
+Every folder has its own `README.md`: what the tool is, where it is linked, and its keybindings.
+
 | Directory | Tool | Target |
 |---|---|---|
 | `nvim/` | Neovim (NvChad v2.5) | `~/.config/nvim` |
