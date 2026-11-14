@@ -311,7 +311,16 @@ class Bridge:
             }
             if mtype == "execute_result":
                 out["execution_count"] = content.get("execution_count")
-            send(ev="output", id=cell, output=out)
+            # display_id lets update_display_data replace the original output
+            # (tqdm.notebook, display(handle) + handle.update()) instead of appending.
+            display_id = (content.get("transient") or {}).get("display_id")
+            send(
+                ev="output",
+                id=cell,
+                output=out,
+                display_id=display_id,
+                update=mtype == "update_display_data",
+            )
         elif mtype == "error":
             send(
                 ev="output",

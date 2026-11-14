@@ -420,6 +420,15 @@ function M.handle(session, msg)
     if not doc or msg.id == STARTUP_ID then
       return
     end
+    if msg.update then
+      -- update_display_data may target an output of any cell; no match -> ignored, like Jupyter
+      if output.update_display(doc.cells, msg.display_id, msg.output) then
+        vim.bo[buf].modified = true
+        render.refresh(buf)
+      end
+      return
+    end
+    msg.output._display_id = msg.display_id
     local cell = doc:cell_by_id(msg.id)
     if cell then
       if cell.clear_pending then

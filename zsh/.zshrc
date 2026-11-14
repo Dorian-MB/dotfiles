@@ -60,9 +60,9 @@ alias activate-base-env="source ${HOME}/.venvs/base/venv3.14/bin/activate"
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 
-# ls after cd
+# ls after cd (interactive terminal only: `eza --git` blocks scripts/agents that cd)
 chpwd() {
-  ll
+  [[ -o interactive && -t 1 ]] && ll
 }
 
 # Todo a corrigé

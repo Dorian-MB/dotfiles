@@ -17,3 +17,9 @@ herdr/session-snapshots/
 
 # yasb runtime state
 windows/yasb/yasb.log
+
+# graphify: keep only the shareable outputs (GRAPH_REPORT.md, graph.json, graph.html)
+graphify-out/cache/
+graphify-out/.graphify_*
+graphify-out/cost.json
+graphify-out/manifest.json

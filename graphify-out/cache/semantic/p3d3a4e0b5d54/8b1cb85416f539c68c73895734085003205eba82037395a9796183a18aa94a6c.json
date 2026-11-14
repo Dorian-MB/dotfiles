@@ -1,1 +1,0 @@
-{"nodes": [{"id": "nvim_readme", "label": "Neovim Config README", "file_type": "document", "source_file": "nvim/README.md", "_origin": "semantic"}], "edges": [{"source": "nvim_readme", "target": "nvim_jupynb_readme", "relation": "references", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "nvim/README.md", "_origin": "semantic"}], "hyperedges": []}

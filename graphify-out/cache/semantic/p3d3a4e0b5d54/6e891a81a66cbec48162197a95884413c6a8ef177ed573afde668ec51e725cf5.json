@@ -1,1 +1,0 @@
-{"nodes": [{"id": "agents_savvyflow_agents_savvyheavy", "label": "savvy-heavy", "file_type": "code", "source_file": "agents/savvy-flow/agents/savvy-heavy.md", "rationale": "Savvy-flow heavy worker (default Opus, xhigh effort).", "_origin": "semantic"}], "edges": [], "hyperedges": []}

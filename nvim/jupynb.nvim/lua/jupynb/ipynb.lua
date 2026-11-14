@@ -140,6 +140,7 @@ function M.outputs_for_disk(outputs)
   local out = {}
   for i, output in ipairs(outputs) do
     local copy = vim.deepcopy(output)
+    copy._display_id = nil -- runtime-only, like nbformat's `transient`
     if type(copy.data) == "table" then
       for mime, value in pairs(copy.data) do
         if type(value) == "table" and value._jupynb_path then

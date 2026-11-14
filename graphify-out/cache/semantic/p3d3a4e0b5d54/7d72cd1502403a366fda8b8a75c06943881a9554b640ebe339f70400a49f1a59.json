@@ -1,1 +1,0 @@
-{"nodes": [{"id": "agents_savvyflow_agents_savvylight", "label": "savvy-light", "file_type": "code", "source_file": "agents/savvy-flow/agents/savvy-light.md", "rationale": "Savvy-flow light worker (default Haiku, low effort).", "_origin": "semantic"}], "edges": [], "hyperedges": []}

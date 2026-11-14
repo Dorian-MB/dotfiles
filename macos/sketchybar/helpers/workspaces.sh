@@ -1,7 +1,10 @@
 #!/bin/bash
 
-# Single source of truth for the list of AeroSpace workspaces sketchybar
-# should know about. Keep this in sync with the `workspace X` bindings in
-# aerospace.toml. A workspace not in this list will never get a sketchybar
-# item, even if you switch to it in AeroSpace.
-export AEROSPACE_WORKSPACES=(1 2 3 4 A C E Q S Z)
+# AeroSpace workspaces sketchybar knows about, read from `persistent-workspaces`
+# in aerospace.toml (the single source of truth). A workspace missing from that
+# list gets no sketchybar item. Parsed from the file rather than asked to
+# `aerospace` so it costs nothing per event and works before aerospace is up.
+# Sourced by both zsh (sketchybarrc-*) and bash (plugins): unquoted $(...) splits
+# into array elements in both.
+AEROSPACE_CONFIG="${AEROSPACE_CONFIG:-$HOME/.config/aerospace/aerospace.toml}"
+AEROSPACE_WORKSPACES=($(sed -n 's/^persistent-workspaces *= *//p' "$AEROSPACE_CONFIG" | grep -oE '"[^"]+"' | tr -d '"'))

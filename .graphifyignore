@@ -1,0 +1,6 @@
+# Big declarative YAML: every key became a node and ~40 communities of noise
+# drowned the real code in the graph. The files stay in git, only graphify skips them.
+windows/yasb/config.yaml
+windows/glaze/config.yaml
+# Icon-font glyph outlines, no semantic content (and truncated at 20k chars anyway)
+macos/sketchybar/helpers/*.svg

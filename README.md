@@ -12,6 +12,9 @@ Terminal / window-manager config for macOS (+ a Windows corner).
 | `macos/ghostty/` | Ghostty | `~/.config/ghostty` |
 | `macos/sketchybar/` | SketchyBar | `~/.config/sketchybar` |
 | `macos/aerospace/` | AeroSpace | `~/.config/aerospace` |
+| `agents/keybindings.json` | Claude Code keybindings | `~/.claude/keybindings.json` |
+| `agents/` (rest) | Claude Code plugins / mods, see [`agents/plugins.md`](agents/plugins.md) | not linked |
+| `cli/` | list of installed CLI / TUI tools, see [`cli/README.md`](cli/README.md) | doc only |
 | `windows/glaze/`, `windows/yasb/` | GlazeWM + YASB | `%USERPROFILE%\.config\` |
 | `windows/wezterm/` | WezTerm (Windows) | `%USERPROFILE%\.wezterm.lua` |
 | `windows/wsl/` | WSL | `%USERPROFILE%\.wslconfig`, `/etc/wsl.conf` |
@@ -41,6 +44,10 @@ Fonts: `JetBrainsMono Nerd Font` (terminals + bar) and the bundled
 
 ### Link what you want
 
+`./install.sh` creates every link below, or only some (`./install.sh nvim zsh`).
+It is safe to re-run after moving a directory: stale links are repaired, real
+files are never overwritten. Or by hand:
+
 ```bash
 ln -s ~/dotfiles/nvim              ~/.config/nvim
 ln -s ~/dotfiles/macos/aerospace   ~/.config/aerospace
@@ -53,6 +60,8 @@ ln -s ~/dotfiles/starship/starship.toml ~/.config/starship.toml
 ln -s ~/dotfiles/zsh/.zshrc    ~/.zshrc
 ln -s ~/dotfiles/zsh/.zshenv   ~/.zshenv
 ln -s ~/dotfiles/zsh/.zprofile ~/.zprofile
+
+ln -s ~/dotfiles/agents/keybindings.json ~/.claude/keybindings.json
 ```
 
 The three zsh files go together: `.zprofile` sets up Homebrew, `.zshenv` sets up

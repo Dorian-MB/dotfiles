@@ -304,4 +304,26 @@ function M.append(cell, output)
   cell.outputs[#cell.outputs + 1] = output
 end
 
+---Replace, in place, every output displayed under `display_id`. Returns true if any matched.
+function M.update_display(cells, display_id, output)
+  if not display_id then
+    return false
+  end
+  local found = false
+  for _, cell in ipairs(cells) do
+    for i, old in ipairs(cell.outputs or {}) do
+      if old._display_id == display_id then
+        local new = vim.deepcopy(output)
+        -- an update keeps the original output_type (execute_result keeps its count)
+        new.output_type = old.output_type
+        new.execution_count = old.execution_count
+        new._display_id = display_id
+        cell.outputs[i] = new
+        found = true
+      end
+    end
+  end
+  return found
+end
+
 return M

@@ -54,9 +54,9 @@ automatically-unhide-macos-hidden-apps = true
 # This config option is only available since 'config-version = 2'
 # Fallback value (if you omit the key): persistent-workspaces = []
 # persistent-workspaces = []
-# Must stay in sync with sketchybar/helpers/workspaces.sh and with the
-# `workspace X` bindings below: a workspace bound here but missing from
-# that list gets no bar item, and vice versa.
+# sketchybar/helpers/workspaces.sh reads this exact line (keep it on one line)
+# to build the bar's workspace items. Keep it in sync with the `workspace X`
+# bindings below: a bound workspace missing here gets no bar item.
 persistent-workspaces = ["1", "2", "3", "4", "A", "C", "E", "Q", "S", "Z"]
 
 # A callback that runs every time binding mode changes
