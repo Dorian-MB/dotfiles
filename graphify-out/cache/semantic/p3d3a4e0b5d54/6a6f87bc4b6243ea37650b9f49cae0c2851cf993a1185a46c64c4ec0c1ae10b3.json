@@ -1,0 +1,1 @@
+{"nodes": [{"id": "agents_savvyflow_agents_savvycareful", "label": "savvy-careful", "file_type": "code", "source_file": "agents/savvy-flow/agents/savvy-careful.md", "rationale": "Savvy-flow careful worker (default Opus, high effort).", "_origin": "semantic"}], "edges": [], "hyperedges": []}

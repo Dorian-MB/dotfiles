@@ -1,0 +1,1 @@
+{"nodes": [{"id": "agents_savvyflow_agents_savvyfable", "label": "savvy-fable", "file_type": "code", "source_file": "agents/savvy-flow/agents/savvy-fable.md", "rationale": "Savvy-flow top worker (default Fable, high effort)."}], "edges": [], "hyperedges": []}
