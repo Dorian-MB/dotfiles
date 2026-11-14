@@ -36,3 +36,8 @@ for d in ~/.claude/plugins/cache/claude-code-filetree/filetree/*/; do (cd "$d" &
 mkdir -p ~/.claude/skills ~/.claude/agents
 cp -R ~/dotfiles/agents/savvy-flow/skills/savvy-flow ~/.claude/skills/
 cp ~/dotfiles/agents/savvy-flow/agents/*.md ~/.claude/agents/
+
+
+# keep warm 
+claude plugin marketplace add karanb192/claude-code-mods
+claude plugin install cache-tax@claude-code-mods
