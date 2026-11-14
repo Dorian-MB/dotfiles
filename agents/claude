@@ -22,6 +22,8 @@ for d in ~/.claude/plugins/cache/hellosverre-mods/skins/*/; do (cd "$d" && git a
 # File tree explorer (what claude edit) 
 /plugin marketplace add data-goblin/claude-code-filetree
 /plugin install filetree@claude-code-filetree
+# then (linux + mac): transparent /filetree pane. Re-run after each plugin update, then restart claude.
+for d in ~/.claude/plugins/cache/claude-code-filetree/filetree/*/; do (cd "$d" && git apply ~/dotfiles/agents/filetree/transparent.patch); done
 
 ## claude-kit mods: progress bar + agents panel, session band (cost, cache, context)
 /plugin marketplace add johnnyvizz/claude-kit

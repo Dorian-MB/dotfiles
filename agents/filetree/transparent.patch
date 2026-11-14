@@ -1,0 +1,51 @@
+diff --git a/hooks/register.tsx b/hooks/register.tsx
+index 23e923f..6c6cbb7 100644
+--- a/hooks/register.tsx
++++ b/hooks/register.tsx
+@@ -590,8 +590,8 @@ async function reset($: EngineInterface, root: string, focus = false, ready?: Pr
+   const listed = loadDirs($, [root])
+   const repo = detectRepo($)
+   await ready
+-  if (focus) await $.ui.open({ id: PANE, title, focus: true })
+-  else if (!noDock) await $.ui.open({ id: PANE, title })
++  if (focus) await $.ui.open({ id: PANE, backgroundColor: 'transparent', title, focus: true })
++  else if (!noDock) await $.ui.open({ id: PANE, backgroundColor: 'transparent', title })
+   await listed
+   await repo
+   await refreshGit($)
+@@ -1234,7 +1234,7 @@ async function applyStart($: EngineInterface): Promise<void> {
+   }
+   if (noDock || shown) return
+   const t = await get($)
+-  if (t.root) await $.ui.open({ id: PANE, title: `Files: ${t.root.split('/').pop() || t.root}` })
++  if (t.root) await $.ui.open({ id: PANE, backgroundColor: 'transparent', title: `Files: ${t.root.split('/').pop() || t.root}` })
+ }
+ 
+ async function settleRoot($: EngineInterface): Promise<void> {
+@@ -1873,7 +1873,7 @@ async function openRef($: EngineInterface, href: string, surface: RenderSurface)
+   if (!ref) return
+   const t = await get($)
+   if (!inside(t.root, ref.path)) return
+-  void $.ui.open({ id: PANE, title: `Files: ${t.root.split('/').pop() || t.root}` }).catch(() => undefined)
++  void $.ui.open({ id: PANE, backgroundColor: 'transparent', title: `Files: ${t.root.split('/').pop() || t.root}` }).catch(() => undefined)
+   await openHit($, { path: ref.path, line: ref.line, text: '' }, surface)
+ }
+ 
+@@ -2687,7 +2687,7 @@ async function mapKey($: EngineInterface, key: string): Promise<boolean> {
+ }
+ 
+ function focusPane($: EngineInterface, root: string, key: string): void {
+-  void $.ui.open({ id: PANE, title: `Files: ${root.split('/').pop() || root}`, focus: true }).then(() => (key ? $.ui.focus({ requestId: PANE, key }) : undefined)).catch(() => {})
++  void $.ui.open({ id: PANE, backgroundColor: 'transparent', title: `Files: ${root.split('/').pop() || root}`, focus: true }).then(() => (key ? $.ui.focus({ requestId: PANE, key }) : undefined)).catch(() => {})
+ }
+ 
+ function toggleShortcuts($: EngineInterface, open = !shortcutsShown): void {
+@@ -3280,7 +3280,7 @@ export const register: Register = (on, options) => {
+       if (t.preview) await patch($, () => ({ preview: '', previewTop: 0 }))
+       await setActivities($, cur => cur.map(a => (a.state === 'running' ? { ...a, state: 'failed', label: `${a.kind} interrupted` } : a)))
+       const cwd = await cwdOf($)
+-      const shown = !t.root || t.nodes.length === 0 || (follow && t.root !== cwd) ? reset($, cwd, false, ready) : ready.then(() => (noDock ? undefined : $.ui.open({ id: PANE, title: `Files: ${t.root.split('/').pop() || t.root}` })))
++      const shown = !t.root || t.nodes.length === 0 || (follow && t.root !== cwd) ? reset($, cwd, false, ready) : ready.then(() => (noDock ? undefined : $.ui.open({ id: PANE, backgroundColor: 'transparent', title: `Files: ${t.root.split('/').pop() || t.root}` })))
+       await ready
+       ageTick?.cancel()
+       ageTick = showAge ? $.clock.every(AGE_TICK_MS, () => $.ui.invalidate('ui.render')) : null
