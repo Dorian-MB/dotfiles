@@ -15,6 +15,13 @@ graphify install
 ## Skins mods, change theme
 /plugin marketplace add hellosverre/claude-skins
 /plugin install skins@hellosverre-mods
+# then (linux + mac): transparent /skin pane + catppuccin tables without opaque bands.
+# Re-run after each plugin update (it overwrites the cache), then restart claude + `/skin catppuccin`.
+for d in ~/.claude/plugins/cache/hellosverre-mods/skins/*/; do (cd "$d" && git apply ~/dotfiles/agents/skins/transparent.patch); done
+
+# File tree explorer (what claude edit) 
+/plugin marketplace add data-goblin/claude-code-filetree
+/plugin install filetree@claude-code-filetree
 
 ## claude-kit mods: progress bar + agents panel, session band (cost, cache, context)
 /plugin marketplace add johnnyvizz/claude-kit

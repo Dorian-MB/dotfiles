@@ -1,0 +1,35 @@
+diff --git a/hooks/register.tsx b/hooks/register.tsx
+index bb2f49e..5493b12 100644
+--- a/hooks/register.tsx
++++ b/hooks/register.tsx
+@@ -842,13 +842,13 @@ export const register: Register = on => {
+ 
+   on('command.run', { command: 'skin' }, async ($, e) => {
+     if (e.args.trim() === '') {
+-      await $.ui.open({ id: SETTINGS, title: 'Skins', focus: true, closeOnEscape: true })
++      await $.ui.open({ id: SETTINGS, title: 'Skins', focus: true, closeOnEscape: true, backgroundColor: 'transparent' })
+ 
+       return {}
+     }
+ 
+     if (e.args.trim().toLowerCase() === 'gallery') {
+-      await $.ui.open({ id: GALLERY, title: 'Skin gallery', focus: true, closeOnEscape: true })
++      await $.ui.open({ id: GALLERY, title: 'Skin gallery', focus: true, closeOnEscape: true, backgroundColor: 'transparent' })
+ 
+       return {}
+     }
+diff --git a/hooks/themes/catppuccin.ts b/hooks/themes/catppuccin.ts
+index ca91724..03a00f3 100644
+--- a/hooks/themes/catppuccin.ts
++++ b/hooks/themes/catppuccin.ts
+@@ -14,8 +14,8 @@ const skin: Skin = {
+     user: '#cba6f7',
+     fg: '#cdd6f4',
+     muted: '#7f849c',
+-    surface: '#252536',
+-    zebra: '#232334',
++    surface: 'transparent',
++    zebra: 'transparent',
+     ok: '#a6e3a1',
+     err: '#f38ba8',
+     warn: '#f9e2af',
