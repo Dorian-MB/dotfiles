@@ -27,8 +27,7 @@ theme = Catppuccin Macchiato
 
 # background: (opacity of image is back_opacity * img_opacity)
 background-image-fit = cover
-# background-image = "/Users/dorian/Documents/Prepa/cours info psi/SB/a.png"
-# background-image = "/Users/dorian/Documents/Prepa/cours info psi/SB/wings.png"
+# background-image = "path/to/your/png-jpg-file"
 background-image-opacity = 0.1
 background-opacity = 0.85
 background-blur = 13
