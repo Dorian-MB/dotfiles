@@ -29,11 +29,13 @@ config.enable_kitty_graphics = true
 
 -- local enable_background = true
 local enable_background = false
+-- local background_image = "/Users/dorian/Documents/Prepa/cours info psi/SB/a.png"
+-- local background_image = "/Users/dorian/Documents/Prepa/cours info psi/SB/wings.png"
 if enable_background then
 	config.background = {
 		{
 			source = {
-				File = "path/to/your/pnj-or-jpg/file",
+				File = background_image,
 			},
 			opacity = 0.30,
 			height = "100%",

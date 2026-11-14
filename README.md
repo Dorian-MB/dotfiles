@@ -7,12 +7,14 @@ Terminal / window-manager config for macOS (+ a Windows corner).
 | `nvim/` | Neovim (NvChad v2.5) | `~/.config/nvim` |
 | `zsh/` | zsh | `~/.zshrc`, `~/.zshenv`, `~/.zprofile` |
 | `starship/` | starship prompt | `~/.config/starship.toml` |
-| `wezterm/` | WezTerm | `~/.config/wezterm` |
-| `ghostty/` | Ghostty | `~/.config/ghostty` |
-| `sketchybar/` | SketchyBar | `~/.config/sketchybar` |
-| `aerospace/` | AeroSpace | `~/.config/aerospace` |
 | `herdr/` | herdr | `~/.config/herdr` |
-| `windows/` | GlazeWM + YASB | `%USERPROFILE%\.config\` |
+| `macos/wezterm/` | WezTerm | `~/.config/wezterm` |
+| `macos/ghostty/` | Ghostty | `~/.config/ghostty` |
+| `macos/sketchybar/` | SketchyBar | `~/.config/sketchybar` |
+| `macos/aerospace/` | AeroSpace | `~/.config/aerospace` |
+| `windows/glaze/`, `windows/yasb/` | GlazeWM + YASB | `%USERPROFILE%\.config\` |
+| `windows/wezterm/` | WezTerm (Windows) | `%USERPROFILE%\.wezterm.lua` |
+| `windows/wsl/` | WSL | `%USERPROFILE%\.wslconfig`, `/etc/wsl.conf` |
 
 ## Install
 
@@ -35,17 +37,17 @@ there is no syntax highlighting. On Linux / WSL (no Homebrew), see
 [`nvim/README.md`](nvim/README.md) for the install commands and troubleshooting.
 
 Fonts: `JetBrainsMono Nerd Font` (terminals + bar) and the bundled
-`sketchybar/helpers/sketchybar-app-font.ttf` (workspace app icons).
+`macos/sketchybar/helpers/sketchybar-app-font.ttf` (workspace app icons).
 
 ### Link what you want
 
 ```bash
-ln -s ~/dotfiles/nvim        ~/.config/nvim
-ln -s ~/dotfiles/aerospace   ~/.config/aerospace
-ln -s ~/dotfiles/sketchybar  ~/.config/sketchybar
-ln -s ~/dotfiles/wezterm     ~/.config/wezterm
-ln -s ~/dotfiles/ghostty     ~/.config/ghostty
-ln -s ~/dotfiles/herdr       ~/.config/herdr
+ln -s ~/dotfiles/nvim              ~/.config/nvim
+ln -s ~/dotfiles/macos/aerospace   ~/.config/aerospace
+ln -s ~/dotfiles/macos/sketchybar  ~/.config/sketchybar
+ln -s ~/dotfiles/macos/wezterm     ~/.config/wezterm
+ln -s ~/dotfiles/macos/ghostty     ~/.config/ghostty
+ln -s ~/dotfiles/herdr             ~/.config/herdr
 ln -s ~/dotfiles/starship/starship.toml ~/.config/starship.toml
 
 ln -s ~/dotfiles/zsh/.zshrc    ~/.zshrc
