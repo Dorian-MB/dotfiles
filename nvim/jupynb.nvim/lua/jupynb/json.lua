@@ -106,7 +106,7 @@ end
 ---@param str string
 ---@return table|nil, string|nil
 function M.decode(str)
-  local ok, res = pcall(vim.json.decode, str, { luanil = { object = true, array = true } })
+  local ok, res = pcall(vim.json.decode, str, { luanil = { object = true } })
   if not ok then
     return nil, tostring(res)
   end

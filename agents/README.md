@@ -1,7 +1,7 @@
 # Plugins Claude Code
 
 Plugins installés (scope user). Après une install ou une mise à jour : `/reload-plugins` ou redémarrer Claude Code.
-Install : voir `agents/claude`.
+Install : voir [`agents/plugins`](plugins).
 
 ## ponytail — `ponytail@ponytail`
 Mode « dev senior paresseux » : force la solution la plus simple qui marche (YAGNI, stdlib d'abord, pas d'abstraction non demandée). Skills + hook au démarrage + bande au-dessus du prompt.

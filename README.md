@@ -13,7 +13,7 @@ Terminal / window-manager config for macOS (+ a Windows corner).
 | `macos/sketchybar/` | SketchyBar | `~/.config/sketchybar` |
 | `macos/aerospace/` | AeroSpace | `~/.config/aerospace` |
 | `agents/keybindings.json` | Claude Code keybindings | `~/.claude/keybindings.json` |
-| `agents/` (rest) | Claude Code plugins / mods, see [`agents/plugins.md`](agents/plugins.md) | not linked |
+| `agents/` (rest) | Claude Code plugins / mods, see [`agents/README.md`](agents/README.md) | not linked |
 | `cli/` | list of installed CLI / TUI tools, see [`cli/README.md`](cli/README.md) | doc only |
 | `windows/glaze/`, `windows/yasb/` | GlazeWM + YASB | `%USERPROFILE%\.config\` |
 | `windows/wezterm/` | WezTerm (Windows) | `%USERPROFILE%\.wezterm.lua` |

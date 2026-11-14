@@ -72,13 +72,24 @@ function M.save(path, nb)
   if not ok then
     return false, "encode failed: " .. tostring(encoded)
   end
-  local fd, oerr = io.open(path, "w")
+  -- write next to the target then rename: a failed write never truncates the notebook
+  path = vim.uv.fs_realpath(path) or path -- rename must not replace a symlink
+  local tmp = path .. ".jupynb-tmp"
+  local fd, oerr = io.open(tmp, "w")
   if not fd then
     return false, tostring(oerr)
   end
-  fd:write(encoded)
-  fd:write("\n")
-  fd:close()
+  local wok, werr = fd:write(encoded, "\n")
+  local cok, cerr = fd:close()
+  if not (wok and cok) then
+    os.remove(tmp)
+    return false, tostring(werr or cerr)
+  end
+  local rok, rerr = os.rename(tmp, path)
+  if not rok then
+    os.remove(tmp)
+    return false, tostring(rerr)
+  end
   return true, nil
 end
 
@@ -116,7 +127,7 @@ function M.to_nb(cells, nb, opts)
       entry.id = nil
     end
     if cell.kind == "code" then
-      entry.execution_count = cell.exec_count or nil
+      entry.execution_count = cell.exec_count or vim.NIL -- required by nbformat, null if never run
       if opts.strip_outputs then
         entry.outputs = {}
       else
@@ -150,6 +161,7 @@ function M.outputs_for_disk(outputs)
             fd:close()
             copy.data[mime] = vim.base64.encode(raw)
           else
+            util.err("image lost, not saved: " .. value._jupynb_path)
             copy.data[mime] = ""
           end
         end
@@ -166,7 +178,10 @@ function M.outputs_for_disk(outputs)
         end
       end
     end
-    copy.metadata = copy.metadata or vim.empty_dict()
+    -- only rich outputs carry metadata; nbformat rejects it on stream/error
+    if copy.output_type == "display_data" or copy.output_type == "execute_result" then
+      copy.metadata = copy.metadata or vim.empty_dict()
+    end
     out[i] = copy
   end
   return out
@@ -184,7 +199,8 @@ function M.outputs_from_disk(outputs)
     if type(copy.data) == "table" then
       for mime, value in pairs(copy.data) do
         if type(value) == "table" and not value._jupynb_path then
-          if vim.islist(value) then
+          -- same exception as outputs_for_disk: a JSON payload is data, not split lines
+          if vim.islist(value) and mime ~= "application/json" then
             copy.data[mime] = table.concat(value, "")
           end
         end

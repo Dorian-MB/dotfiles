@@ -28,7 +28,6 @@ import base64
 import json
 import os
 import queue
-import shutil
 import sys
 import tempfile
 import threading
@@ -416,8 +415,10 @@ class Bridge:
                 import traceback as tb
 
                 self.log("%s: %s\n%s" % (req.get("op"), exc, tb.format_exc()))
+        # tmpdir is kept on purpose: images in it are only inlined into the
+        # notebook on :w, which can happen after the kernel was stopped.
+        # macOS purges $TMPDIR on its own.
         self.op_shutdown({})
-        shutil.rmtree(self.tmpdir, ignore_errors=True)
 
 
 def _image_size(path):

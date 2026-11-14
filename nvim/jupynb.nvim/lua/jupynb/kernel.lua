@@ -34,7 +34,7 @@ end
 --- process -----------------------------------------------------------------
 
 local function handle_line(session, line)
-  local ok, msg = pcall(vim.json.decode, line, { luanil = { object = true, array = true } })
+  local ok, msg = pcall(vim.json.decode, line, { luanil = { object = true } })
   if ok and type(msg) == "table" then
     vim.schedule(function()
       M.handle(session, msg)
