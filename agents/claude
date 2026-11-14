@@ -41,3 +41,10 @@ cp ~/dotfiles/agents/savvy-flow/agents/*.md ~/.claude/agents/
 # keep warm 
 claude plugin marketplace add karanb192/claude-code-mods
 claude plugin install cache-tax@claude-code-mods
+
+
+# Anthropic's sample (marketplace lives in a subfolder, so clone then add the path)
+git clone --depth 1 https://github.com/anthropics/claude-code-playground ~/.claude/claude-code-playground
+claude plugin marketplace add ~/.claude/claude-code-playground/claude-code/mods
+claude plugin install replay-theater@claude-code-playground-mods --scope user
+claude plugin install blast-radius@claude-code-playground-mods --scope user
