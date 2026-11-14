@@ -24,6 +24,8 @@ for d in ~/.claude/plugins/cache/hellosverre-mods/skins/*/; do (cd "$d" && git a
 /plugin install filetree@claude-code-filetree
 # then (linux + mac): transparent /filetree pane. Re-run after each plugin update, then restart claude.
 for d in ~/.claude/plugins/cache/claude-code-filetree/filetree/*/; do (cd "$d" && git apply ~/dotfiles/agents/filetree/transparent.patch); done
+# keys (alt+o tree, alt+i back, alt+x close; alt+h/l taken by AeroSpace). Don't run /filetree keys, it rewrites them.
+ln -sf ~/dotfiles/agents/keybindings.json ~/.claude/keybindings.json
 
 ## claude-kit mods: progress bar + agents panel, session band (cost, cache, context)
 /plugin marketplace add johnnyvizz/claude-kit

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://www.schemastore.org/claude-code-keybindings.json",
+  "$docs": "https://code.claude.com/docs/en/keybindings",
+  "bindings": [
+    {
+      "context": "Chat",
+      "bindings": {
+        "meta+o": "abovePrompt:focus"
+      }
+    },
+    {
+      "context": "Pane",
+      "bindings": {
+        "meta+i": "abovePrompt:leave",
+        "meta+x": "pane:close"
+      }
+    },
+    {
+      "context": "PaneField",
+      "bindings": {
+        "meta+i": "abovePrompt:leave"
+      }
+    }
+  ]
+}
