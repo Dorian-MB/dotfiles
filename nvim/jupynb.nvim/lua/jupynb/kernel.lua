@@ -195,7 +195,7 @@ function M.pick(buf, cb)
       end
     end
     if #items == 0 then
-      util.err("no Jupyter kernel found (pip install ipykernel)")
+      util.err("no Jupyter kernel found (pip install ipykernel, or <leader>jK to give a python path)")
       return
     end
     vim.ui.select(items, {
@@ -208,6 +208,24 @@ function M.pick(buf, cb)
         M.start(buf, { kernel = choice.kernel, python = choice.python }, cb)
       end
     end)
+  end)
+end
+
+---Ask for a python interpreter (or an env directory) and start a kernel with it.
+function M.pick_path(buf, cb)
+  vim.ui.input({ prompt = "Python env (python or env dir): ", completion = "file" }, function(input)
+    if not input or input == "" then
+      return
+    end
+    local python = vim.fn.expand(input)
+    if vim.fn.isdirectory(python) == 1 then
+      python = python:gsub("/$", "") .. "/bin/python"
+    end
+    if vim.fn.executable(python) == 0 then
+      util.err("not an executable python: " .. python)
+      return
+    end
+    M.start(buf, { kernel = "python3", python = python }, cb)
   end)
 end
 

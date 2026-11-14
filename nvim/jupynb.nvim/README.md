@@ -109,6 +109,10 @@ Et sous le préfixe (`<leader>j` par défaut) :
 | `o`    | sortie complète           | `<` `>`| déplacer la cellule        |
 | `k`    | choisir le kernel         | `x`    | redémarrer le kernel       |
 | `i`    | interrompre               | `F`    | réparer la structure       |
+| `K`    | kernel depuis le chemin d'un env python (`.../bin/python` ou dossier de l'env) | | |
+
+Si l'env choisi n'a pas `ipykernel`, le démarrage échoue avec un message
+explicite (`ipykernel is not installed in …`) : `<env>/bin/python -m pip install ipykernel`.
 
 ## Installation (lazy.nvim)
 

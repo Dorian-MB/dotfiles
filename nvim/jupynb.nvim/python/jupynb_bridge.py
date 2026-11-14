@@ -28,6 +28,7 @@ import base64
 import json
 import os
 import queue
+import subprocess
 import sys
 import tempfile
 import threading
@@ -107,6 +108,12 @@ class Bridge:
             if python:
                 if not os.path.exists(python):
                     raise RuntimeError("python not found: %s" % python)
+                # without ipykernel the kernel dies at once and we would only see a vague timeout
+                probe = subprocess.run([python, "-c", "import ipykernel"], capture_output=True)
+                if probe.returncode != 0:
+                    raise RuntimeError(
+                        "ipykernel is not installed in %s (run: %s -m pip install ipykernel)" % (python, python)
+                    )
                 spec.argv = [
                     python,
                     "-m",
@@ -125,10 +132,7 @@ class Bridge:
             kc.start_channels()
             kc.wait_for_ready(timeout=req.get("timeout", 60))
         except Exception as exc:
-            hint = ""
-            if python and "ipykernel" in str(exc).lower():
-                hint = " (install ipykernel in that environment)"
-            self.log("kernel start failed: %s%s" % (exc, hint))
+            self.log("kernel start failed: %s" % exc)
             send(ev="kernel_status", state="dead", kernel=name)
             return
 
