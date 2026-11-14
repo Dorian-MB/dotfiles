@@ -1,0 +1,7 @@
+{
+  "name": "dotfiles",
+  "owner": { "name": "Dorian-MB", "url": "https://github.com/Dorian-MB" },
+  "plugins": [
+    { "name": "pane-glass", "source": "./pane-glass", "description": "Mod: every plugin pane opens with a transparent background.", "version": "0.1.0", "category": "mod" }
+  ]
+}

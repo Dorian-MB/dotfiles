@@ -15,17 +15,19 @@ graphify install
 ## Skins mods, change theme
 /plugin marketplace add hellosverre/claude-skins
 /plugin install skins@hellosverre-mods
-# then (linux + mac): transparent /skin pane + catppuccin tables without opaque bands.
+# then (linux + mac): catppuccin tables without opaque bands.
 # Re-run after each plugin update (it overwrites the cache), then restart claude + `/skin catppuccin`.
 for d in ~/.claude/plugins/cache/hellosverre-mods/skins/*/; do (cd "$d" && git apply ~/dotfiles/agents/skins/transparent.patch); done
 
 # File tree explorer (what claude edit) 
 /plugin marketplace add data-goblin/claude-code-filetree
 /plugin install filetree@claude-code-filetree
-# then (linux + mac): transparent /filetree pane. Re-run after each plugin update, then restart claude.
-for d in ~/.claude/plugins/cache/claude-code-filetree/filetree/*/; do (cd "$d" && git apply ~/dotfiles/agents/filetree/transparent.patch); done
 # keys (alt+o tree, alt+i back, alt+x close; alt+h/l taken by AeroSpace). Don't run /filetree keys, it rewrites them.
 ln -sf ~/dotfiles/agents/keybindings.json ~/.claude/keybindings.json
+
+## pane-glass (own mod, agents/pane-glass): every plugin pane (/skin, /filetree, /replay...) opens transparent
+claude plugin marketplace add ~/dotfiles/agents
+claude plugin install pane-glass@dotfiles
 
 ## claude-kit mods: progress bar + agents panel, session band (cost, cache, context)
 /plugin marketplace add johnnyvizz/claude-kit
@@ -49,4 +51,5 @@ claude plugin install cache-tax@claude-code-mods
 git clone --depth 1 https://github.com/anthropics/claude-code-playground ~/.claude/claude-code-playground
 claude plugin marketplace add ~/.claude/claude-code-playground/claude-code/mods
 claude plugin install replay-theater@claude-code-playground-mods --scope user
-claude plugin install blast-radius@claude-code-playground-mods --scope user
+# blast-radius uninstalled: it holds risky commands in a pane with no notification, easy to miss.
+# claude plugin install blast-radius@claude-code-playground-mods --scope user

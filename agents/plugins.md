@@ -31,6 +31,9 @@ Mod qui redessine le transcript : lignes d'outils avec icônes et durées, diffs
 
 Demander « fais-moi un skin… » à Claude utilise la skill `skin-designer`.
 
+## pane-glass — `pane-glass@dotfiles` (mod perso, `agents/pane-glass`)
+Mod : chaque panneau de plugin (`/skin`, `/filetree`, `/replay`…) s'ouvre avec un fond transparent, pour garder l'opacité/le flou du terminal. Rien à configurer.
+
 ## session-band — `session-band@claude-kit`
 Mod : une bande au-dessus du prompt avec n° de tour, tok/s, coût du tour et de la session, compte à rebours du cache (1 h) et remplissage du contexte. Cadre orange à 20 min de l'expiration du cache, rouge à 10 ; notification à 10 et 5 min.
 
@@ -59,7 +62,9 @@ Mod exemple d'Anthropic : après un tour, rejoue une par une les modifications d
 - Après un tour avec modifications : `r` ou le bouton **Replay** au-dessus du prompt, ou `/replay`
 - Panneau : boutons Prev / Next / Close
 
-## blast-radius — `blast-radius@claude-code-playground-mods`
+## blast-radius — `blast-radius@claude-code-playground-mods` (désinstallé)
+Désinstallé : il retient la commande dans un panneau, sans notification, facile à rater (refus silencieux après 10 min).
+
 Mod exemple d'Anthropic : bloque les commandes shell risquées et montre ce qu'elles toucheraient avant de les lancer. **Proceed** exécute, **Cancel** refuse (Claude voit la raison).
 
 Commandes surveillées : `rm -r/-f/-rf` (fichiers + taille), `git reset --hard`, `git checkout -- .`/`git restore .`, `git clean`, `git push --force` (commits perdus côté remote), migrations (`manage.py migrate`, `db:migrate`, `alembic upgrade`, `prisma migrate`). Le reste passe normalement.
