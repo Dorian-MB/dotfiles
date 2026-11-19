@@ -2,6 +2,8 @@
 
 Outils en ligne de commande et TUI installés sur ma machine.
 
+Comment s'en servir : [`USAGE.md`](USAGE.md).
+
 ## Shell
 
 | Outil | Rôle |
@@ -14,6 +16,7 @@ Outils en ligne de commande et TUI installés sur ma machine.
 | fd | `find` moderne |
 | ripgrep | `grep` rapide |
 | jq | JSON en ligne de commande |
+| qsv | boîte à outils CSV (stats, filtres, jointures) |
 
 ## Éditeurs / TUI
 
@@ -26,6 +29,7 @@ Outils en ligne de commande et TUI installés sur ma machine.
 | btop | moniteur système |
 | taproom | UI Homebrew |
 | glow | rendu Markdown |
+| csvlens | visionneuse CSV interactive |
 | fastfetch | infos système |
 | cmatrix | Matrix dans le terminal |
 | claude | Claude Code |
@@ -59,7 +63,7 @@ Outils en ligne de commande et TUI installés sur ma machine.
 
 ```bash
 brew install zsh-autosuggestions zsh-syntax-highlighting starship fzf eza bat fd ripgrep jq \
-  neovim tmux herdr lazygit btop taproom glow fastfetch cmatrix \
+  neovim tmux herdr lazygit btop taproom glow csvlens qsv fastfetch cmatrix \
   git uv node typst avivsinai/tap/jk viu ffmpeg imagemagick poppler pngpaste rustup
 uv tool install graphifyy
 cargo install tree-sitter-cli rustlings
@@ -81,11 +85,11 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 uv tool install graphifyy
-cargo install tree-sitter-cli rustlings viu typst-cli
+cargo install tree-sitter-cli rustlings viu typst-cli csvlens
 ```
 
 - **neovim** : voir [`nvim/README.md`](../nvim/README.md) (la version apt est trop vieille, il faut >= 0.12).
-- **lazygit**, **glow** : prends le binaire dans leurs releases GitHub (`apt` ne les a que sur les Ubuntu récents).
+- **lazygit**, **glow**, **qsv** : prends le binaire dans leurs releases GitHub (`apt` ne les a que sur les Ubuntu récents).
 - **eza**, **fastfetch** : seulement dans `apt` à partir d'Ubuntu 24.04 / Debian 13, sinon `cargo install eza`.
 - **herdr**, **taproom**, **jk** : pas de paquet `apt` ; installe [Homebrew sur Linux](https://docs.brew.sh/Homebrew-on-Linux) et utilise la commande macOS.
 - **pngpaste** : macOS uniquement (sous Linux : `xclip -selection clipboard -t image/png -o > img.png`).
