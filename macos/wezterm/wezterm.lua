@@ -29,7 +29,8 @@ config.enable_kitty_graphics = true
 
 -- local enable_background = true
 local enable_background = false
-local background_image = "path/to/your/png-jpg-file"
+-- local background_image = "/Users/dorian/Documents/Prepa/cours info psi/SB/a.png"
+local background_image = "/Users/dorian/Documents/Prepa/cours info psi/SB/wings.png"
 if enable_background then
 	config.background = {
 		{

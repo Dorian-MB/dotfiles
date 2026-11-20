@@ -57,10 +57,6 @@ map(
 )
 
 map("n", "<leader>G", "<cmd>tabnew<cr>")
--- by debault past over a selection doent copy
--- but <leader> + p does
-map("x", "p", 'p:let @+=@0<cr>:let @"=@0<cr>', { desc = "past dont copy replaced text" })
-map("x", "<leader>p", '"+p', { desc = "past and copy over the selection" })
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode

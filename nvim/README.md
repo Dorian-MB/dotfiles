@@ -107,32 +107,147 @@ relies only on treesitter : a missing parser means no colors at all.
    empty, run `:TSUpdate` and read the error with `:messages`.
 4. `:checkhealth nvim-treesitter` for the full report.
 
-## Some Mapping :
+## Mappings
 
-- `<leader>` = space
+- `<leader>` = `space`
+- Modes : **n** normal, **i** insert, **v** visual, **x** visual (sans select), **o** operateur, **t** terminal
+- *(NvChad)* = mapping par defaut de NvChad, garde tel quel
+- `<leader>wK` liste tous les mappings actifs (which-key), `<leader>ch` ouvre le cheatsheet NvChad
 
-**[x]**
-- `p` - dont copy replaced text
-- `<leader>p` - does
+### General
+| Mode | Touche | Action |
+|------|--------|--------|
+| i | `jk` | sortir du mode insert (`<Esc>`) |
+| n, i, v | `<C-s>` | sauvegarder |
+| n | `<C-c>` | copier tout le fichier *(NvChad)* |
+| n | `<Esc>` | effacer le surlignage de recherche *(NvChad)* |
+| n | `<leader>n` / `<leader>rn` | toggle numeros / numeros relatifs *(NvChad)* |
+| n | `<leader>u` | undotree |
+| n, v | `<leader>/` | commenter la ligne / la selection *(NvChad)* |
+| n, x | `<leader>fm` | formatter le fichier (conform, aussi fait a la sauvegarde) *(NvChad)* |
+| n | `<leader>th` | choisir un theme *(NvChad)* |
 
-**[v]**
-- `J`&`K` - move down/up the selected line
+### Deplacement
+| Mode | Touche | Action |
+|------|--------|--------|
+| n | `<C-d>` / `<C-u>` | demi-page bas / haut, curseur recentre (`zz`) |
+| n, x, o | `<leader>s` | flash : sauter vers un caractere (labels) |
+| n, x, o | `<leader>S` | flash : selectionner un noeud treesitter |
+| o | `r` | flash remote (ex : `yr` + label = yank a distance) |
+| n, x, o | `f` `t` `F` `T` | flash : versions avec labels des sauts natifs |
 
-**[n, v]**
-- `<leader>R` - find and replace current word
-- `<leader>rr` - find and replace current word from the current position
+### Edition
+| Mode | Touche | Action |
+|------|--------|--------|
+| v | `J` / `K` | descendre / monter les lignes selectionnees (re-indentees) |
+| x | `P` | coller sur la selection sans ecraser le presse-papier (natif nvim) |
+| x | `p` | coller sur la selection, le texte remplace va dans le presse-papier (natif) |
+| n, v | `ys` `cs` `ds` / `S` | nvim-surround (ajouter / changer / supprimer, `S` en visual) |
 
-**[n]**
-- `<leader>G` - goto tabnew
-- `<leader>u` - Undo tree
-- `<leader>ds` - telescope document_symbols
-- `<leader>ws` - telescope workspace_symbols
-- `<leader>lg` - LazyGit
-- `<leader>T` - switch with previous buffer
-- `<leader>hh` - harpoon menu
-- `<leader>ha` - harpoon add file
-- `<leader>hx` - harpoon remove file
-- `<leader>1..4` - harpoon go to file 1..4
+### Mode insert (style readline / Ghostty `option-as-alt`)
+| Mode | Touche | Action |
+|------|--------|--------|
+| i | `<M-b>` / `<M-f>` | mot precedent / fin du mot |
+| i | `<M-BS>` / `<M-Del>` | supprimer jusqu'au debut / a la fin du mot |
+| i | `<C-BS>` / `<C-Del>` | supprimer jusqu'au debut / a la fin de la ligne |
+| i | `<C-b>` / `<C-e>` | debut / fin de ligne *(NvChad)* |
+| i | `<C-h>` `<C-j>` `<C-k>` `<C-l>` | deplacer le curseur gauche / bas / haut / droite *(NvChad)* |
+
+### Rechercher / remplacer
+| Mode | Touche | Action |
+|------|--------|--------|
+| n | `<leader>R` | remplacer le mot sous le curseur dans tout le fichier (confirmation) |
+| n | `<leader>rr` | idem, de la ligne courante a la fin |
+| n | `<leader>rf` | `:.,$s///gc` vide, de la ligne courante a la fin |
+| v | `<leader>R` | remplacer la selection dans tout le fichier |
+| v | `<leader>rr` | remplacer la selection de la ligne courante a la fin |
+
+### Buffers, fenetres, onglets
+| Mode | Touche | Action |
+|------|--------|--------|
+| n, i | `<C-Tab>` | revenir au fichier precedent (`:e #`) |
+| n | `<leader>T` | revenir au fichier precedent (`:e #`) |
+| n | `<Tab>` / `<S-Tab>` | buffer suivant / precedent *(NvChad)* |
+| n | `<leader>b` | nouveau buffer *(NvChad)* |
+| n | `<leader>x` | fermer le buffer *(NvChad)* |
+| n | `<leader>G` | nouvel onglet (`:tabnew`) |
+| n | `<C-h>` `<C-j>` `<C-k>` `<C-l>` | changer de fenetre *(NvChad)* |
+| n | `<C-n>` / `<leader>e` | nvim-tree toggle / focus *(NvChad)* |
+
+### Harpoon
+| Mode | Touche | Action |
+|------|--------|--------|
+| n | `<leader>hh` | menu harpoon |
+| n | `<leader>ha` | ajouter le fichier |
+| n | `<leader>hx` | retirer le fichier |
+| n | `<leader>1` .. `<leader>4` | aller au fichier 1..4 |
+
+### Telescope
+| Mode | Touche | Action |
+|------|--------|--------|
+| n | `<leader>ff` / `<leader>fa` | fichiers / tous les fichiers (caches, ignores) *(NvChad)* |
+| n | `<leader>fg` | live grep |
+| n | `<leader>fw` | grep du mot sous le curseur (NvChad : live grep) |
+| n | `<leader>fz` | recherche floue dans le buffer *(NvChad)* |
+| n | `<leader>fb` | buffers *(NvChad)* |
+| n | `<leader>fo` | fichiers recents *(NvChad)* |
+| n | `<leader>fh` | pages d'aide *(NvChad)* |
+| n | `<leader>fc` | commandes |
+| n | `<leader>fr` | reprendre la derniere recherche |
+| n | `<leader>fd` | diagnostics |
+| n | `<leader>fB` | liste des pickers telescope (builtin) |
+| n | `<leader>ma` | marks *(NvChad)* |
+| n | `<leader>ds` | symboles du document LSP (NvChad : diagnostics loclist) |
+| n | `<leader>ws` | symboles du workspace LSP |
+| n | `<leader>pt` | terminaux caches *(NvChad)* |
+
+### LSP (buffers avec un serveur attache)
+| Mode | Touche | Action |
+|------|--------|--------|
+| n | `gd` / `gD` | definition / declaration *(NvChad)* |
+| n | `<leader>D` | definition du type *(NvChad)* |
+| n | `<leader>ra` | renommer (NvRenamer) *(NvChad)* |
+| n | `K` | documentation (natif nvim) |
+| n | `grr` `gri` `gra` `grn` | references / implementation / code action / renommer (natif nvim) |
+| n | `[d` / `]d` | diagnostic precedent / suivant (natif nvim) |
+| n | `<leader>wa` `<leader>wr` `<leader>wl` | ajouter / retirer / lister les dossiers du workspace *(NvChad)* |
+
+### Completion (blink.cmp)
+| Mode | Touche | Action |
+|------|--------|--------|
+| i | `<CR>` | accepter |
+| i | `<Tab>` / `<S-Tab>` | suggestion suivante / precedente, saut dans le snippet |
+| i | `<C-space>` | ouvrir le menu / la doc |
+| i | `<C-e>` | fermer le menu |
+
+### Git
+| Mode | Touche | Action |
+|------|--------|--------|
+| n | `<leader>lg` | LazyGit |
+| n | `<leader>gb` | branches (telescope) |
+| n | `<leader>gt` | git status (telescope) *(NvChad)* |
+| n | `<leader>cm` | commits (telescope) *(NvChad)* |
+
+### Terminal
+| Mode | Touche | Action |
+|------|--------|--------|
+| n, i, t | `<A-i>` | terminal flottant |
+| n, i, t | `<A-o>` | terminal horizontal (meme terminal que `<A-h>`) |
+| n, t | `<A-h>` / `<A-v>` | terminal horizontal / vertical *(NvChad)* |
+| t | `<C-x>` | sortir du mode terminal *(NvChad)* |
+
+### Mappings supprimes
+| Touche | Avant | Raison |
+|--------|-------|--------|
+| `<leader>h` | NvChad : nouveau terminal horizontal | libere pour harpoon (`<leader>h*`), `vim.keymap.del` dans `mappings.lua` |
+| `<leader>v` | NvChad : nouveau terminal vertical | supprime (`<A-v>` reste) |
+| `<leader>fb` (custom) | telescope builtin | deplace sur `<leader>fB`, `<leader>fb` redevient buffers |
+| `p` (visual) | coller sans ecraser le presse-papier | inutile : `P` natif fait pareil |
+| `<leader>p` (visual) | coller et copier le texte remplace | inutile : c'est le `p` natif |
+| `<leader>gd` | gitsigns `diffthis HEAD` | supprime avec le plugin git diff |
+| `<leader>cd` / `<leader>cu` / `<leader>M` | notebook-navigator : cellule suivante / precedente / executer | remplace par jupynb.nvim (voir plus bas) |
+| `<C-a>` / `<C-b>` / `<C-:>` | notebook-navigator : cellule au dessus / en dessous / commenter | remplace par jupynb.nvim |
+| `<C-e>` / `<C-a>` (insert) | minuet-ai : accepter la suggestion / la ligne | plugin desactive (`enabled = false`) |
 
 ## Notebooks (.ipynb)
 
@@ -149,19 +264,24 @@ ont besoin d'ImageMagick : `brew install imagemagick`.
 `:checkhealth jupynb` verifie l'installation, `:Jupynb <Tab>` liste les
 commandes.
 
-**[n] dans un buffer notebook**
-- `<C-CR>` - executer la cellule
-- `<S-CR>` - executer et aller a la cellule suivante
-- `<M-CR>` - executer et inserer une cellule en dessous
-- `]c` / `[c` - cellule suivante / precedente
-- `<leader>jr` / `<leader>jR` - executer la cellule / tout le notebook
-- `<leader>ja` / `<leader>jb` - inserer une cellule au dessus / en dessous
-- `<leader>jd` - supprimer la cellule
-- `<leader>jm` - basculer code <-> markdown
-- `<leader>jc` / `<leader>jC` - effacer la sortie / toutes les sorties
-- `<leader>jo` - ouvrir la sortie complete dans un split
-- `<leader>jk` - choisir le kernel (les `.venv` du projet sont proposes)
-- `<leader>jx` / `<leader>ji` - redemarrer / interrompre le kernel
-
-
-
+**[n] dans un buffer notebook** (locaux au buffer)
+| Mode | Touche | Action |
+|------|--------|--------|
+| n, i | `<C-CR>` | executer la cellule |
+| n, i | `<S-CR>` | executer et aller a la cellule suivante |
+| n, i | `<M-CR>` | executer et inserer une cellule en dessous |
+| n | `]c` / `[c` | cellule suivante / precedente |
+| n | `<leader>jr` / `<leader>jR` | executer la cellule / tout le notebook |
+| n | `<leader>jA` / `<leader>jB` | executer toutes les cellules au dessus / en dessous |
+| n | `<leader>ja` / `<leader>jb` | inserer une cellule au dessus / en dessous |
+| n | `<leader>jd` | supprimer la cellule |
+| n | `<leader>jm` | basculer code <-> markdown |
+| n | `<leader>js` | couper la cellule au curseur |
+| n | `<leader>jJ` | fusionner avec la cellule suivante |
+| n | `<leader>j<` / `<leader>j>` | monter / descendre la cellule |
+| n | `<leader>jc` / `<leader>jC` | effacer la sortie / toutes les sorties |
+| n | `<leader>jo` | ouvrir la sortie complete dans un split (`q` pour fermer) |
+| n | `<leader>jk` | choisir le kernel (les `.venv` du projet sont proposes) |
+| n | `<leader>jK` | kernel depuis le chemin d'un env python |
+| n | `<leader>jx` / `<leader>ji` | redemarrer / interrompre le kernel |
+| n | `<leader>jF` | reparer la structure du notebook |
