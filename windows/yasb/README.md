@@ -11,7 +11,8 @@ Config de la barre [YASB](https://github.com/amnweb/yasb) (Windows), qui accompa
 - Destination : `%USERPROFILE%\.config\yasb\`
 - YASB recharge tout seul la config et le CSS quand les fichiers changent.
 - Elle pilote GlazeWM : `start_command`, `stop_command` et `reload_command` dans `config.yaml`.
-- Widgets : espaces GlazeWM, horloge, météo (Open-Meteo), pomodoro, notes, todo, notifications, CPU / RAM / disque / GPU, luminosité, volume, Bluetooth, Wi-Fi / Ethernet, zone de notification, corbeille, fonds d'écran, menu d'extinction, lanceur d'apps.
+- Barre affichée sur tous les écrans (`screens: ["*"]`).
+- Widgets : espaces GlazeWM, horloge, météo (Open-Meteo), pomodoro, notes, todo, notifications, CPU / RAM, volume, Bluetooth, Wi-Fi / Ethernet, zone de notification (avec l'icône batterie), corbeille, fonds d'écran, menu d'extinction, lanceur d'apps. Disque, GPU et luminosité sont configurés mais masqués (commentés dans la liste des widgets).
 - `config.yaml` est exclu du graphe graphify (`.graphifyignore`) : ses centaines de clés noyaient le vrai code.
 
 ## Raccourcis clavier

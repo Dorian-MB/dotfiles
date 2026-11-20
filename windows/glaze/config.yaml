@@ -135,6 +135,7 @@ workspaces:
   - name: "E"
   - name: "Q"
   - name: "S"
+  - name: "D"
   - name: "C"
   - name: "G"
 
@@ -193,9 +194,9 @@ keybindings:
   - commands: ["focus --direction right"]
     bindings: ["alt+l", "alt+right"]
   - commands: ["focus --direction up"]
-    bindings: ["alt+k", "alt+up"]
+    bindings: ["alt+k"] #  "alt+up"
   - commands: ["focus --direction down"]
-    bindings: ["alt+j", "alt+down"]
+    bindings: ["alt+j"] #  "alt+down"
 
   # Move focused window in a given direction.
   - commands: ["move --direction left"]
@@ -314,6 +315,8 @@ keybindings:
     bindings: ["alt+q"]
   - commands: ["focus --workspace S"]
     bindings: ["alt+s"]
+  - commands: ["focus --workspace D"]
+    bindings: ["alt+d"]
   - commands: ["focus --workspace C"]
     bindings: ["alt+c"]
   - commands: ["focus --workspace G"]
@@ -321,14 +324,14 @@ keybindings:
 
   # Move the focused window's parent workspace to a monitor in a given
   # direction.
-  # - commands: ["move-workspace --direction left"]
-  #   bindings: ["alt+shift+a"]
-  # - commands: ["move-workspace --direction right"]
-  #   bindings: ["alt+shift+f"]
-  # - commands: ["move-workspace --direction up"]
-  #   bindings: ["alt+shift+d"]
-  # - commands: ["move-workspace --direction down"]
-  #   bindings: ["alt+shift+s"]
+  - commands: ["move-workspace --direction left"]
+    bindings: ["alt+ctrl+left"]
+  - commands: ["move-workspace --direction right"]
+    bindings: ["alt+ctrl+right"]
+  - commands: ["move-workspace --direction up"]
+    bindings: ["alt+ctrl+up"]
+  - commands: ["move-workspace --direction down"]
+    bindings: ["alt+ctrl+down"]
 
   # Move focused window to a workspace defined in `workspaces` config.
   - commands: ["move --workspace 1", "focus --workspace 1"]
@@ -359,6 +362,8 @@ keybindings:
     bindings: ["alt+shift+q"]
   - commands: ["move --workspace S", "focus --workspace S"]
     bindings: ["alt+shift+s"]
+  - commands: ["move --workspace D", "focus --workspace D"]
+    bindings: ["alt+shift+d"]
   - commands: ["move --workspace C", "focus --workspace C"]
     bindings: ["alt+shift+c"]
   - commands: ["move --workspace G", "focus --workspace G"]

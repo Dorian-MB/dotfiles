@@ -10,10 +10,11 @@ Config du gestionnaire de fenêtres en tuiles [GlazeWM](https://github.com/glzr-
 
 | Touche | Action |
 |---|---|
-| `Alt+h/j/k/l` ou `Alt+flèches` | focus à gauche / en bas / en haut / à droite |
+| `Alt+h/j/k/l`, `Alt+←/→` | focus à gauche / en bas / en haut / à droite (`Alt+↑/↓` laissés libres) |
 | `Alt+Shift+h/j/k/l` ou `Alt+Shift+flèches` | déplacer la fenêtre |
-| `Alt+1…9`, `Alt+a/z/e/q/s/c/g` | aller à l'espace 1…9, A, Z, E, Q, S, C, G |
+| `Alt+1…9`, `Alt+a/z/e/q/s/d/c/g` | aller à l'espace 1…9, A, Z, E, Q, S, D, C, G |
 | `Alt+Shift+` (même touche) | envoyer la fenêtre vers cet espace et y aller |
+| `Alt+Ctrl+flèches` | déplacer l'espace actif vers l'écran à gauche / droite / haut / bas |
 | `Alt+n` / `Alt+p` | espace actif suivant / précédent |
 | `Alt+Tab` | dernier espace utilisé |
 | `Alt+v` | changer le sens du découpage |

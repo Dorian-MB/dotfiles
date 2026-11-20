@@ -74,7 +74,7 @@ config.font = wezterm.font_with_fallback({
 })
 config.bold_brightens_ansi_colors = false
 
-config.window_background_opacity = 1
+config.window_background_opacity = 0.85
 
 -- Figures matplotlib dans nvim (jupynb.nvim / image.nvim) : desactive par defaut.
 config.enable_kitty_graphics = true

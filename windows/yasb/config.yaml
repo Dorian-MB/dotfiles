@@ -13,7 +13,7 @@ glazewm:
   reload_command: "glazewm.exe command wm-exit && glazewm.exe start"
 bars:
   yasb-bar:
-    screens: ["primary"]
+    screens: ["*"]
     class_name: "yasb-bar"
     alignment:
       position: "top"
@@ -48,14 +48,14 @@ bars:
         - "glazewm_workspaces"
       center:
         - "cpu"
-        - "gpu"
+        # - "gpu"
         # - "pomodoro"
         - "memory"
-        - "disk"
+        # - "disk"
       right:
         - "systray"
         # - "wallpapers"
-        - "brightness"
+        # - "brightness"
         # - "bluetooth"
         - "wifi"
         # - "open_meteo"
@@ -522,7 +522,7 @@ widgets:
       pin_click_modifier: "alt"
       show_unpinned: true
       show_unpinned_button: true
-      show_battery: false
+      show_battery: true
       show_volume: false
       show_network: true
       tooltip: true
