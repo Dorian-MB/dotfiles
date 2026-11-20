@@ -21,7 +21,7 @@ Les ajouts par rapport a `vim.txt` sont marques **+**.
 |--------|--------|
 | `h` `j` `k` `l` | gauche, bas, haut, droite |
 | `w` / `b` | debut du mot suivant / precedent |
-| `W` / `B` | idem pour un MOT (tout ce qui est colle : `my_array.argmax(axis=1)`) |
+| `W` / `B` | idem pour un MOT : tout jusqu'au prochain espace (`my_array.argmax(axis=1)`) |
 | `e` / `E` | fin du mot / MOT |
 | `ge` **+** | fin du mot precedent |
 | `0` / `^` / `$` **+** | debut de ligne / premier caractere non blanc / fin de ligne |
@@ -95,8 +95,10 @@ Les ajouts par rapport a `vim.txt` sont marques **+**.
 | `xp` **+** | echanger deux caracteres |
 | `ddp` **+** | echanger deux lignes |
 
-Coller sur une selection remplace le registre par le texte supprime : le
-prochain `p` collera ce texte (pareil apres un `dd`).
+Coller sur une selection avec `p` remplace le registre par le texte supprime :
+le prochain `p` collera ce texte (pareil apres un `dd`).
+**+** En visual, `P` colle **sans** ecraser le registre : `yiw` une fois, puis
+`viwP` sur autant de mots que tu veux.
 
 ### Registres **+**
 | Touche | Action |
@@ -116,19 +118,33 @@ prochain `p` collera ce texte (pareil apres un `dd`).
 | `U` **+** | annuler tous les changements de la ligne |
 
 ## Text objects **+**
-Avec un operateur (`d` `c` `y` `v`...) : `i` = interieur, `a` = avec les bords.
+Avec un operateur (`d` `c` `y` `v`...) : `i` = **inside** (le contenu seul),
+`a` = **around** (le contenu + les bords). Sur `print("aaa")`, curseur dans `aaa` :
+- `ci"` -> `print("|")` : vide l'interieur des guillemets
+- `ca"` -> `print(|)` : supprime aussi les guillemets
+- `ci(` -> `print(|)` / `ca(` -> `print|`
+- `daw` supprime le mot **et** l'espace qui suit, `diw` laisse l'espace
 
-| Objet | Cible |
-|-------|-------|
-| `iw` / `aw` | mot |
-| `iW` / `aW` | MOT |
-| `is` / `as` | phrase |
-| `ip` / `ap` | paragraphe |
-| `i(` `ib` / `a(` | parentheses |
-| `i{` `iB` / `a{` | accolades |
-| `i[` / `a[` | crochets |
-| `i"` `i'` `` i` `` | entre guillemets |
-| `it` / `at` | balise HTML / XML |
+Exemples avec le curseur sur `|`, resultat apres `d` :
+
+| Objet | Ce que c'est | Exemple | `di…` | `da…` |
+|-------|--------------|---------|-------|-------|
+| `w` | mot : lettres, chiffres, `_` (s'arrete a `.` `(` `-`...) | `foo.ba\|r baz` | `foo. baz` | `foo.baz` |
+| `W` | MOT : tout jusqu'au prochain espace | `ddd aaaa.().bb\|bbb ccc` | `ddd  ccc` | `ddd ccc` |
+| `s` | phrase : finit par `.` `!` `?` + espace | `Un. Deu\|x trois. Fin.` | `Un.  Fin.` | `Un. Fin.` |
+| `p` | paragraphe : lignes entre deux lignes vides | (bloc de lignes) | le bloc | le bloc + la ligne vide qui suit |
+| `(` ou `b` | parentheses | `max(a, \|b)` | `max()` | `max` |
+| `{` ou `B` | accolades | `f { x\| = 1 }` | `f {}` | `f ` |
+| `[` | crochets | `l[0\|]` | `l[]` | `l` |
+| `<` | chevrons | `Vec<i3\|2>` | `Vec<>` | `Vec` |
+| `"` `'` `` ` `` | guillemets (sur la meme ligne) | `print("aa\|a")` | `print("")` | `print()` |
+| `t` | balise HTML / XML | `<b>te\|xt</b>` | `<b></b>` | (rien) |
+
+- `a` + mot ou guillemets prend aussi l'**espace** autour, d'ou `foo.baz` et `ddd ccc`.
+- Avec un nombre, on sort d'un niveau : dans `f(g(|x))`, `d2i(` donne `f()`.
+- Pour les guillemets (`"` `'` `` ` ``) seulement, le curseur peut etre **avant**
+  sur la ligne : sur le `p` de `print("aaa")`, `ci"` modifie directement `aaa`.
+  Pour `(` `{` `[`, il faut etre a l'interieur.
 
 ## Mode visual
 | Touche | Action |
@@ -140,7 +156,30 @@ Avec un operateur (`d` `c` `y` `v`...) : `i` = interieur, `a` = avec les bords.
 | `<C-v>` puis `I` / `A` | inserer au debut / a la fin de chaque ligne du bloc (`<Esc>` pour appliquer) |
 | `<C-v>` puis `$A` **+** | ajouter a la fin de lignes de longueurs differentes |
 | `y` `d` `c` `>` `<` `=` `u` `U` | operateurs appliques a la selection |
+| `p` / `P` **+** | remplacer la selection, en copiant / sans copier le texte remplace |
 | `:` **+** | commande sur la selection (`:'<,'>s/a/b/g`, `:'<,'>norm A;`) |
+
+## Commandes `[` / `]` **+**
+`[` = precedent, `]` = suivant. Les majuscules vont au premier / dernier.
+
+| Touche | Action |
+|--------|--------|
+| `[(` / `])` | parenthese ouvrante / fermante qui entoure le curseur |
+| `[{` / `]}` | accolade ouvrante / fermante qui entoure le curseur |
+| `[[` / `]]` | section ou fonction precedente / suivante (selon le langage) |
+| `[m` / `]m` | debut de methode precedent / suivant |
+| `[d` / `]d` | diagnostic precedent / suivant (`[D` / `]D` premier / dernier) |
+| `[q` / `]q` | entree quickfix precedente / suivante (`[Q` / `]Q`) |
+| `[l` / `]l` | entree location list precedente / suivante (`[L` / `]L`) |
+| `[b` / `]b` | buffer precedent / suivant (`[B` / `]B`) |
+| `[a` / `]a` | fichier precedent / suivant de l'arglist (`[A` / `]A`) |
+| `[<Space>` / `]<Space>` | ajouter une ligne vide au dessus / en dessous (sans bouger) |
+| `[p` / `]p` | coller au dessus / en dessous en adaptant l'indentation |
+| `[s` / `]s` | faute d'orthographe precedente / suivante (`:set spell`, `z=` corriger) |
+| `[c` / `]c` | modification precedente / suivante en mode diff (`nvim -d a b`) |
+| `['` / `]'` | ligne de marque precedente / suivante |
+
+Les touches `d` `q` `l` `b` `a` `<Space>` et `[D` `]D` sont des defauts de nvim 0.10+ / 0.11.
 
 ## Marques et sauts
 | Touche | Action |
@@ -235,13 +274,18 @@ la casse, `I` sensible a la casse.
 | `@:` | rejouer la derniere commande `:` |
 | `q:` | historique des commandes editable |
 
-## Surround (plugin nvim-surround)
+## Pepites **+**
 | Touche | Action |
 |--------|--------|
-| `ys<motion><c>` | entourer : `ysiw)` mot, `ys$"` jusqu'a la fin |
-| `yss<c>` | entourer la ligne |
-| `cs<old><new>` | changer : `cs('` `(x)` -> `'x'` |
-| `ds<c>` | supprimer : `ds"` |
-| `S<c>` (visual) | entourer la selection |
-
-`(` `{` `[` ajoutent un espace a l'interieur, `)` `}` `]` non. `t` = balise HTML.
+| `<C-^>` (Ctrl+6) | revenir au fichier precedent (= `:e #`) |
+| `<C-w>` / `<C-u>` (insert) | supprimer le mot precedent / jusqu'au debut de la ligne (marche aussi dans `:` et le shell) |
+| `<C-r>=` (insert) | calculatrice : `<C-r>=128*3<CR>` insere `384` |
+| `:%s//new/g` | motif vide = derniere recherche : `*` sur un mot puis `:%s//new/g` |
+| `*` puis `cgn` puis `.` | remplacer les occurrences une a une (`n` pour en sauter une) |
+| `g<C-a>` (visual bloc) | numeroter : une colonne de `0` devient `1 2 3 4...` |
+| `"<A>yy` | registre en majuscule = **ajouter** au registre `a` (rassembler des lignes, puis `"ap`) |
+| `gc<motion>` | commenter : `gcc` la ligne, `gcip` le paragraphe, `gc3j` 4 lignes (nvim 0.10+) |
+| `gx` | ouvrir l'URL ou le fichier sous le curseur |
+| `:earlier 5m` / `:later 5m` | revenir a l'etat du fichier il y a 5 minutes / revenir en avant |
+| `:grep <x>` puis `:cdo s/x/y/g \| update` | remplacer dans tout le projet (dans telescope : `<C-q>` envoie les resultats dans la quickfix) |
+| `xp` / `ddp` | echanger deux caracteres / deux lignes |

@@ -142,7 +142,18 @@ relies only on treesitter : a missing parser means no colors at all.
 | v | `J` / `K` | descendre / monter les lignes selectionnees (re-indentees) |
 | x | `P` | coller sur la selection sans ecraser le presse-papier (natif nvim) |
 | x | `p` | coller sur la selection, le texte remplace va dans le presse-papier (natif) |
-| n, v | `ys` `cs` `ds` / `S` | nvim-surround (ajouter / changer / supprimer, `S` en visual) |
+
+### Surround (nvim-surround)
+| Mode | Touche | Action |
+|------|--------|--------|
+| n | `ys<motion><c>` | entourer : `ysiw)` le mot, `ys$"` jusqu'a la fin de ligne |
+| n | `yss<c>` | entourer la ligne |
+| n | `cs<old><new>` | changer : `cs('` -> `(x)` devient `'x'` |
+| n | `ds<c>` | supprimer : `ds"` -> `"x"` devient `x` |
+| v | `S<c>` | entourer la selection |
+
+`(` `{` `[` ajoutent un espace a l'interieur, `)` `}` `]` non. `t` = balise HTML
+(`ysiwt` puis `div`).
 
 ### Mode insert (style readline / Ghostty `option-as-alt`)
 | Mode | Touche | Action |
@@ -152,6 +163,16 @@ relies only on treesitter : a missing parser means no colors at all.
 | i | `<C-BS>` / `<C-Del>` | supprimer jusqu'au debut / a la fin de la ligne |
 | i | `<C-b>` / `<C-e>` | debut / fin de ligne *(NvChad)* |
 | i | `<C-h>` `<C-j>` `<C-k>` `<C-l>` | deplacer le curseur gauche / bas / haut / droite *(NvChad)* |
+
+### Commandes `[` / `]`
+| Mode | Touche | Action |
+|------|--------|--------|
+| n | `[c` / `]c` | cellule notebook precedente / suivante (jupynb, buffers `.ipynb`, remplace le `[c` diff natif) |
+| n | `[d` / `]d` | diagnostic LSP precedent / suivant (natif nvim) |
+| n | `[q` / `]q` | entree quickfix precedente / suivante, ex : apres `<C-q>` dans telescope (natif nvim) |
+| n | `[b` / `]b` | buffer precedent / suivant (natif nvim, comme `<S-Tab>` / `<Tab>`) |
+
+Liste complete des `[` / `]` natifs : [vim.md](vim.md).
 
 ### Rechercher / remplacer
 | Mode | Touche | Action |
