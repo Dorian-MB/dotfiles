@@ -9,8 +9,10 @@ alias lt='eza -l --icons --tree --level=2'
 alias lts='eza -l --icons --tree --level=2 --total-size'
 
 alias vi=nvim
-alias vi12="/opt/homebrew/bin/nvim"
-alias vi11="/opt/nvim/bin/nvim"
+if [[ $OSTYPE == darwin* ]]; then # these paths only exist on the Mac
+  alias vi12="/opt/homebrew/bin/nvim"
+  alias vi11="/opt/nvim/bin/nvim"
+fi
 
 alias cl=clear
 alias cc=claude

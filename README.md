@@ -7,7 +7,7 @@ Every folder has its own `README.md`: what the tool is, where it is linked, and 
 | Directory | Tool | Target |
 |---|---|---|
 | `nvim/` | Neovim (NvChad v2.5) | `~/.config/nvim` |
-| `zsh/` | zsh | `~/.zshrc`, `~/.zshenv`, `~/.zprofile` |
+| `zsh/` | zsh | `~/.zshrc`, `~/.zshrc_alias`, `~/.zshenv`, `~/.zprofile` |
 | `starship/` | starship prompt | `~/.config/starship.toml` |
 | `herdr/` | herdr | `~/.config/herdr` |
 | `macos/wezterm/` | WezTerm | `~/.config/wezterm` |
@@ -30,7 +30,7 @@ git clone https://github.com/Dorian-MB/dotfiles.git ~/dotfiles
 ### Dependencies
 
 ```bash
-brew install neovim git ripgrep fd fzf bat eza jq starship tree-sitter-cli uv rustup
+brew install neovim git ripgrep fd fzf bat eza jq starship zoxide tree-sitter-cli uv rustup
 brew install jesseduffield/lazygit/lazygit
 brew install --cask wezterm ghostty
 brew install nikitabobko/tap/aerospace FelixKratz/formulae/sketchybar FelixKratz/formulae/borders
@@ -59,15 +59,21 @@ ln -s ~/dotfiles/macos/ghostty     ~/.config/ghostty
 ln -s ~/dotfiles/herdr             ~/.config/herdr
 ln -s ~/dotfiles/starship/starship.toml ~/.config/starship.toml
 
-ln -s ~/dotfiles/zsh/.zshrc    ~/.zshrc
-ln -s ~/dotfiles/zsh/.zshenv   ~/.zshenv
-ln -s ~/dotfiles/zsh/.zprofile ~/.zprofile
+ln -s ~/dotfiles/zsh/.zshrc     ~/.zshrc    # macOS
+ln -s ~/dotfiles/zsh/.zshrc_windows ~/.zshrc  # Linux / WSL instead
+ln -s ~/dotfiles/zsh/.zshrc_alias ~/.zshrc_alias
+ln -s ~/dotfiles/zsh/.zshenv    ~/.zshenv
+ln -s ~/dotfiles/zsh/.zprofile  ~/.zprofile
 
 ln -s ~/dotfiles/agents/keybindings.json ~/.claude/keybindings.json
 ```
 
-The three zsh files go together: `.zprofile` sets up Homebrew, `.zshenv` sets up
-uv/cargo, and `.zshrc` depends on both (it calls `brew --prefix`).
+Always use absolute paths: a relative target (`zsh/.zshrc`) resolves from `~`
+and gives a broken link. `install.sh` picks the right `.zshrc` from `uname`.
+
+On macOS the zsh files go together: `.zprofile` sets up Homebrew, `.zshenv` sets up
+uv/cargo, and `.zshrc` depends on both (it uses `$HOMEBREW_PREFIX`). `.zshrc_windows`
+needs no Homebrew: it sets its own `PATH` and loads the apt plugins from `/usr/share`.
 
 Or just copy paste what you want.
 

@@ -11,6 +11,7 @@ Comment s'en servir : [`USAGE.md`](USAGE.md).
 | zsh + zsh-autosuggestions + zsh-syntax-highlighting | shell |
 | starship | prompt |
 | fzf | fuzzy finder |
+| zoxide | `cd` intelligent (`z <motif>`) |
 | eza | `ls` moderne |
 | bat | `cat` avec coloration |
 | fd | `find` moderne |
@@ -62,7 +63,7 @@ Comment s'en servir : [`USAGE.md`](USAGE.md).
 ### macOS
 
 ```bash
-brew install zsh-autosuggestions zsh-syntax-highlighting starship fzf eza bat fd ripgrep jq \
+brew install zsh-autosuggestions zsh-syntax-highlighting starship fzf zoxide eza bat fd ripgrep jq \
   neovim tmux herdr lazygit btop taproom glow csvlens qsv fastfetch cmatrix \
   git uv node typst avivsinai/tap/jk viu ffmpeg imagemagick poppler pngpaste rustup
 uv tool install graphifyy
@@ -73,7 +74,7 @@ cargo install tree-sitter-cli rustlings
 
 ```bash
 sudo apt update
-sudo apt install zsh zsh-autosuggestions zsh-syntax-highlighting fzf eza bat fd-find ripgrep jq \
+sudo apt install zsh zsh-autosuggestions zsh-syntax-highlighting fzf zoxide eza bat fd-find ripgrep jq \
   tmux btop fastfetch cmatrix git nodejs npm ffmpeg imagemagick poppler-utils build-essential
 # Debian renomme bat et fd
 mkdir -p ~/.local/bin

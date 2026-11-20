@@ -18,6 +18,11 @@ export EDITOR=nvim
 # StarShip (after PATH: starship lives in ~/.local/bin)
 eval "$(starship init zsh)"
 
+# History
+HISTFILE=~/.zsh_history HISTSIZE=50000 SAVEHIST=50000
+setopt share_history hist_ignore_all_dups hist_ignore_space
+# Completion: compinit is already run by Ubuntu's /etc/zsh/zshrc
+
 # set -o vi
 set -o emacs
 # Ctrl/Alt + flèches : mot suivant / précédent (sans ça zsh affiche ";5C")
@@ -52,6 +57,11 @@ fvi() {
 }
 
 
-# Activate syntax highlighting (Zsh plugins)
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# fzf: Ctrl+R history, Ctrl+T file, Alt+C cd
+source <(fzf --zsh)
+# zoxide: `z <part of name>` jumps to a frequent directory
+(( $+commands[zoxide] )) && eval "$(zoxide init zsh)"
+
+# Zsh plugins (apt). Syntax highlighting must be sourced last.
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

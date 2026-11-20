@@ -7,14 +7,15 @@ eval "$(starship init zsh)"
 # import alias
 [ -f ~/.zshrc_alias ] && source ~/.zshrc_alias
 
-# Activate syntax highlighting
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# Disable underline
-(( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
-ZSH_HIGHLIGHT_STYLES[path]=none
-ZSH_HIGHLIGHT_STYLES[path_prefix]=none
-# Activate autosuggestions
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# History
+HISTFILE=~/.zsh_history HISTSIZE=50000 SAVEHIST=50000
+setopt share_history hist_ignore_all_dups hist_ignore_space
+
+# Completion (macOS doesn't run compinit by default; brew shellenv already adds its fpath)
+autoload -Uz compinit && compinit
+
+# Activate autosuggestions ($HOMEBREW_PREFIX comes from .zprofile, no `brew` call)
+source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 export PATH="$HOME/.venvs/nvim/bin:$PATH"
 # export PATH="/opt/nvim/bin:$PATH"
@@ -53,3 +54,14 @@ fvi() {
 
   [ -n "$file" ] && vi "$file"
 }
+
+# fzf: Ctrl+R history, Ctrl+T file, Alt+C cd
+source <(fzf --zsh)
+# zoxide: `z <part of name>` jumps to a frequent directory
+(( $+commands[zoxide] )) && eval "$(zoxide init zsh)"
+
+# Syntax highlighting: must be sourced last (plugin requirement)
+source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Disable underline
+ZSH_HIGHLIGHT_STYLES[path]=none
+ZSH_HIGHLIGHT_STYLES[path_prefix]=none

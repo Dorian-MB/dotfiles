@@ -20,7 +20,7 @@ LINKS=(
   "herdr                    $HOME/.config/herdr"
   "starship/starship.toml   $HOME/.config/starship.toml"
   "$ZSHRC                   $HOME/.zshrc"
-  "zsh/.zsh_alias           $HOME/.zshrc_alias"
+  "zsh/.zshrc_alias         $HOME/.zshrc_alias"
   "zsh/.zshenv              $HOME/.zshenv"
   "zsh/.zprofile            $HOME/.zprofile"
   "agents/keybindings.json  $HOME/.claude/keybindings.json"
