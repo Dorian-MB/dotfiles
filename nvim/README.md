@@ -155,6 +155,20 @@ relies only on treesitter : a missing parser means no colors at all.
 `(` `{` `[` ajoutent un espace a l'interieur, `)` `}` `]` non. `t` = balise HTML
 (`ysiwt` puis `div`).
 
+### Text objects (mini.ai)
+Les text objects natifs (`ci(`, `da"`...) cherchent la paire suivante quand le
+curseur n'est pas dedans : `ci(` sur le `p` de `print("aaa")` donne `print()`.
+
+| Mode | Touche | Action |
+|------|--------|--------|
+| o, x | `ia` / `aa` | argument : `dia` sur `g(x)` dans `f(g(x), h)` donne `f(, h)` |
+| o, x | `if` / `af` | appel de fonction : `daf` sur `max(a, b)` supprime tout l'appel |
+| o, x | `iq` / `aq` | n'importe quels guillemets `"` `'` `` ` `` |
+| o, x | `ib` / `ab` | n'importe quelles parentheses `()` `[]` `{}` (natif : seulement `()`) |
+| o, x | `it` / `at` | balise HTML |
+| o, x | `in(` / `il(` | la paire **suivante** / **precedente** (`cin"`, `dil(`...) |
+| n, x, o | `g[` / `g]` | aller au debut / a la fin du text object (`g[(`) |
+
 ### Mode insert (style readline / Ghostty `option-as-alt`)
 | Mode | Touche | Action |
 |------|--------|--------|
@@ -268,7 +282,6 @@ Liste complete des `[` / `]` natifs : [vim.md](vim.md).
 | `<leader>gd` | gitsigns `diffthis HEAD` | supprime avec le plugin git diff |
 | `<leader>cd` / `<leader>cu` / `<leader>M` | notebook-navigator : cellule suivante / precedente / executer | remplace par jupynb.nvim (voir plus bas) |
 | `<C-a>` / `<C-b>` / `<C-:>` | notebook-navigator : cellule au dessus / en dessous / commenter | remplace par jupynb.nvim |
-| `<C-e>` / `<C-a>` (insert) | minuet-ai : accepter la suggestion / la ligne | plugin desactive (`enabled = false`) |
 
 ## Notebooks (.ipynb)
 

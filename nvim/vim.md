@@ -144,7 +144,7 @@ Exemples avec le curseur sur `|`, resultat apres `d` :
 - Avec un nombre, on sort d'un niveau : dans `f(g(|x))`, `d2i(` donne `f()`.
 - Pour les guillemets (`"` `'` `` ` ``) seulement, le curseur peut etre **avant**
   sur la ligne : sur le `p` de `print("aaa")`, `ci"` modifie directement `aaa`.
-  Pour `(` `{` `[`, il faut etre a l'interieur.
+  Pour `(` `{` `[`, il faut etre a l'interieur (sauf avec le plugin mini.ai, voir README).
 
 ## Mode visual
 | Touche | Action |
