@@ -1,0 +1,28 @@
+
+alias l="command ls"
+alias ls='eza --icons --group-directories-first'
+alias ll='eza -l --icons --header --git --group-directories-first'
+alias lls='eza -l --icons --header --git --group-directories-first --total-size'
+alias la='eza -la --icons --header --git --group-directories-first'
+alias las='eza -la --icons --header --git --group-directories-first --total-size'
+alias lt='eza -l --icons --tree --level=2'
+alias lts='eza -l --icons --tree --level=2 --total-size'
+
+alias vi=nvim
+alias vi12="/opt/homebrew/bin/nvim"
+alias vi11="/opt/nvim/bin/nvim"
+
+alias cl=clear
+alias cc=claude
+alias cdd="cd ~/Documents/CODE/"
+alias cdai="cd ~/AI/"
+alias cdvi="cd ~/dotfiles/nvim/"
+alias dot="cd ~/dotfiles"
+alias cdi="cd ~/Documents/CV/"
+
+# No `alias python=...` here on purpose: an alias wins over the PATH that
+# `source .../activate` sets, so an activated venv would be silently
+# ignored. The PATH line above already defaults python/pip to ~/.venvs/nvim.
+alias py=python
+alias activate-base-env="source ${HOME}/.venvs/base/venv3.14/bin/activate"
+

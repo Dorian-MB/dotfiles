@@ -1,0 +1,57 @@
+# PATH first: everything below (starship, nvim, fd, bat, uv...) lives here
+# Local binaries
+# ln -s "$(which fdfind)" ~/.local/bin/fd
+# ln -s "$(which batcat)" ~/.local/bin/bat
+export PATH="$HOME/.local/bin:$PATH"
+# Python / Neovim environment
+export PATH="$HOME/.venvs/nvim/bin:$PATH"
+
+# Rainfrog
+export EDITOR=nvim
+
+# import secret key
+[ -f ~/.zshrc_secret ] && source ~/.zshrc_secret
+
+# import alias
+[ -f ~/.zshrc_alias ] && source ~/.zshrc_alias
+
+# StarShip (after PATH: starship lives in ~/.local/bin)
+eval "$(starship init zsh)"
+
+# set -o vi
+set -o emacs
+# Ctrl/Alt + flèches : mot suivant / précédent (sans ça zsh affiche ";5C")
+bindkey '^[[1;5C' forward-word
+bindkey '^[[1;5D' backward-word
+bindkey '^[[1;3C' forward-word
+bindkey '^[[1;3D' backward-word
+
+
+# ls after cd (interactive terminal only: `eza --git` blocks scripts/agents that cd)
+chpwd() {
+  [[ -o interactive && -t 1 ]] && ll
+}
+
+# Todo a corrigé
+# fcd -> Cherche un dossier et se déplace (cd) dedans directement
+fcd() {
+  local dir
+  dir=$(fd --type d --hidden --exclude .git | fzf +m)
+  [ -n "$dir" ] && cd "$dir"
+}
+# fvi -> Cherche un fichier avec fd + fzf et l'ouvre dans vi
+fvi() {
+  local file
+  file=$(fd --type f --hidden --exclude .git | fzf \
+    --query="$1" \
+    --select-1 \
+    --exit-0 \
+    --preview 'bat --style=numbers --color=always {} 2>/dev/null || cat {}')
+
+  [ -n "$file" ] && vi "$file"
+}
+
+
+# Activate syntax highlighting (Zsh plugins)
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh

@@ -4,6 +4,9 @@ eval "$(starship init zsh)"
 # import secret key
 [ -f ~/.zshrc_secret ] && source ~/.zshrc_secret
 
+# import alias
+[ -f ~/.zshrc_alias ] && source ~/.zshrc_alias
+
 # Activate syntax highlighting
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Disable underline
@@ -16,6 +19,9 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 export PATH="$HOME/.venvs/nvim/bin:$PATH"
 # export PATH="/opt/nvim/bin:$PATH"
 
+# Rainfrog
+export EDITOR=nvim
+
 # set -o vi
 set -o emacs
 # Ctrl/Alt + flèches : mot suivant / précédent (sans ça zsh affiche ";5C")
@@ -25,46 +31,11 @@ bindkey '^[[1;3C' forward-word
 bindkey '^[[1;3D' backward-word
 
 
-# alias l="ls -l"
-# alias ls=ls
-# alias la="ls -A"
-# alias lA="ls -la"
-alias l="command ls"
-alias ls='eza --icons --group-directories-first'
-alias ll='eza -l --icons --header --git --group-directories-first'
-alias lls='eza -l --icons --header --git --group-directories-first --total-size'
-alias la='eza -la --icons --header --git --group-directories-first'
-alias las='eza -la --icons --header --git --group-directories-first --total-size'
-alias lt='eza -l --icons --tree --level=2'
-alias lts='eza -l --icons --tree --level=2 --total-size'
-
-alias vi=nvim
-alias vi12="/opt/homebrew/bin/nvim"
-alias vi11="/opt/nvim/bin/nvim"
-
-alias cl=clear
-alias cc=claude
-alias cdd="cd ~/Documents/CODE/"
-alias cdai="cd ~/AI/"
-alias cdvi="cd ~/dotfiles/nvim/"
-alias dot="cd ~/dotfiles"
-alias cdi="cd ~/Documents/CV/"
-
-# No `alias python=...` here on purpose: an alias wins over the PATH that
-# `source .../activate` sets, so an activated venv would be silently
-# ignored. The PATH line above already defaults python/pip to ~/.venvs/nvim.
-alias py=python
-alias activate-base-env="source ${HOME}/.venvs/base/venv3.14/bin/activate"
-
-
-
-
 # ls after cd (interactive terminal only: `eza --git` blocks scripts/agents that cd)
 chpwd() {
   [[ -o interactive && -t 1 ]] && ll
 }
 
-# Todo a corrigé
 # fcd -> Cherche un dossier et se déplace (cd) dedans directement
 fcd() {
   local dir

@@ -7,6 +7,8 @@
 
 set -u
 DOT="$(cd "$(dirname "$0")" && pwd)"
+# WSL/Linux gets its own zshrc (no Homebrew); macOS keeps zsh/.zshrc
+ZSHRC=zsh/.zshrc; [ "$(uname)" = Linux ] && ZSHRC=zsh/.zshrc_windows
 
 # source (relative to the repo)  ->  target
 LINKS=(
@@ -17,7 +19,8 @@ LINKS=(
   "macos/ghostty            $HOME/.config/ghostty"
   "herdr                    $HOME/.config/herdr"
   "starship/starship.toml   $HOME/.config/starship.toml"
-  "zsh/.zshrc               $HOME/.zshrc"
+  "$ZSHRC                   $HOME/.zshrc"
+  "zsh/.zsh_alias           $HOME/.zshrc_alias"
   "zsh/.zshenv              $HOME/.zshenv"
   "zsh/.zprofile            $HOME/.zprofile"
   "agents/keybindings.json  $HOME/.claude/keybindings.json"
