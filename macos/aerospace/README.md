@@ -17,6 +17,8 @@ Config du gestionnaire de fenêtres en tuiles [AeroSpace](https://github.com/nik
 
 `key-mapping` échange `q↔a` et `w↔z` : les touches écrites dans le fichier sont les lettres **AZERTY** que tu vois sur le clavier. Pour les symboles, le tableau donne la touche physique d'un Mac AZERTY.
 
+Aucun raccourci ne doit prendre `Alt+Shift+l` : c'est la touche du `|` sur un Mac AZERTY (d'où `Ctrl+Alt` pour déplacer les fenêtres). AeroSpace ne distingue pas Alt gauche et Alt droit.
+
 ## Raccourcis clavier
 
 Mode principal :
@@ -24,7 +26,7 @@ Mode principal :
 | Touche | Action |
 |---|---|
 | `Alt+h/j/k/l` | focus à gauche / en bas / en haut / à droite |
-| `Alt+Shift+h/j/k/l` | déplacer la fenêtre |
+| `Ctrl+Alt+h/j/k/l` | déplacer la fenêtre |
 | `Alt+1…4`, `Alt+a/c/d/e/q/s/z` | aller à l'espace 1…4, A, C, D, E, Q, S, Z |
 | `Alt+Shift+` (même touche) | envoyer la fenêtre vers cet espace |
 | `Alt+Tab` | revenir à l'espace précédent |
@@ -45,6 +47,6 @@ Mode service (chaque touche revient ensuite au mode principal) :
 | `r` | remettre à plat la disposition de l'espace |
 | `f` | basculer flottant ↔ tuile |
 | `Retour arrière` | fermer toutes les fenêtres sauf l'active |
-| `Alt+Shift+h/j/k/l` | regrouper avec la fenêtre voisine dans cette direction |
+| `Ctrl+Alt+h/j/k/l` | regrouper avec la fenêtre voisine dans cette direction |
 
 `Alt+d` (espace D) a un raccourci mais n'est pas dans `persistent-workspaces` : il n'a donc pas de pastille dans la barre.
