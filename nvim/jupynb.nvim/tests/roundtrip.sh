@@ -21,6 +21,9 @@ run.outputs = [
     nbformat.v4.new_output("display_data", data={"application/json": [1, None, 3], "image/png": png}),
 ]
 nb.cells = [nbformat.v4.new_markdown_cell("# title\ntext"), run, nbformat.v4.new_code_cell("never_run()")]
+# metadata is passed through untouched: floats keep their short form, nulls survive
+run.metadata = {"papermill": {"duration": 0.1, "exception": None}, "tags": ["é"]}
+nb.metadata["custom"] = {"ratio": 3.14159, "missing": None}
 nbformat.write(nb, f"{t}/real.ipynb")
 EOF
 ln -s "$T/real.ipynb" "$T/link.ipynb"
@@ -38,6 +41,8 @@ before, after = (nbformat.read(f"{t}/{n}.ipynb", 4) for n in ("before", "real"))
 nbformat.validate(after)
 strip = lambda nb: [(c.cell_type, c.source, c.get("execution_count"), c.get("outputs")) for c in nb.cells]
 assert strip(before) == strip(after), (strip(before), strip(after))
-print("roundtrip ok")
 EOF
+# byte for byte: the whole point is that saving an untouched notebook leaves no git diff
+cmp "$T/before.ipynb" "$T/real.ipynb" || { diff "$T/before.ipynb" "$T/real.ipynb"; exit 1; }
+echo "roundtrip ok"
 [ -L "$T/link.ipynb" ] || { echo "symlink replaced by a file"; exit 1; }

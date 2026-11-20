@@ -32,6 +32,13 @@ local function encode_number(n)
   if n == math.floor(n) and math.abs(n) < 2 ^ 53 then
     return string.format("%d", n)
   end
+  -- shortest form that reads back as the same number, like Python's repr (0.1, not 0.10000000000000001)
+  for _, fmt in ipairs({ "%.15g", "%.16g" }) do
+    local s = string.format(fmt, n)
+    if tonumber(s) == n then
+      return s
+    end
+  end
   return (string.format("%.17g", n))
 end
 
@@ -103,10 +110,11 @@ function M.encode(value)
   return table.concat(out)
 end
 
+---`null` comes back as `vim.NIL` (kept, so it is written back); callers decide where it means "absent".
 ---@param str string
 ---@return table|nil, string|nil
 function M.decode(str)
-  local ok, res = pcall(vim.json.decode, str, { luanil = { object = true } })
+  local ok, res = pcall(vim.json.decode, str)
   if not ok then
     return nil, tostring(res)
   end

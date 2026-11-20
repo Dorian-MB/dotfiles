@@ -7,12 +7,13 @@ alias `eza`, raccourcis `fzf`, `zoxide`.
 |---|---|---|
 | `.zprofile` | `~/.zprofile` | shells de login : Homebrew (`brew shellenv`) |
 | `.zshenv` | `~/.zshenv` | tous les shells : `PATH` de uv (`~/.local/bin`) et cargo |
-| `.zshrc` | `~/.zshrc` (macOS) | shells interactifs : tout le reste |
-| `.zshrc_windows` | `~/.zshrc` (Linux / WSL) | pareil sans Homebrew : `PATH` local, plugins apt dans `/usr/share` |
-| `.zshrc_alias` | `~/.zshrc_alias` | les alias, partagés par les deux `.zshrc` |
+| `.zshrc` | `~/.zshrc` | shells interactifs : tout le reste, macOS et Linux / WSL |
+| `.zshrc_alias` | `~/.zshrc_alias` | les alias |
 
-Sur macOS, les trois vont ensemble : `.zshrc` utilise `$HOMEBREW_PREFIX`, défini par `.zprofile`.
-Installation : `./install.sh zsh` depuis la racine du dépôt (choisit le bon `.zshrc` selon `uname`).
+Un seul `.zshrc` pour les deux systèmes ; les trois lignes qui diffèrent sont marquées `macOS/WSL`
+(`~/.local/bin` dans le `PATH`, `compinit`, dossier des plugins : Homebrew ou `/usr/share` d'apt).
+Sur macOS, les trois fichiers vont ensemble : `.zshrc` utilise `$HOMEBREW_PREFIX`, défini par `.zprofile`.
+Installation : `./install.sh zsh` depuis la racine du dépôt.
 À la main, toujours des chemins absolus : un lien relatif se résout depuis `~` et casse.
 
 Dépendances WSL : `sudo apt install zsh eza fzf fd-find bat zoxide zsh-syntax-highlighting zsh-autosuggestions`,

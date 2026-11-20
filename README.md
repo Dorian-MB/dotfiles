@@ -17,7 +17,8 @@ Every folder has its own `README.md`: what the tool is, where it is linked, and 
 | `agents/keybindings.json` | Claude Code keybindings | `~/.claude/keybindings.json` |
 | `agents/` (rest) | Claude Code plugins / mods, see [`agents/README.md`](agents/README.md) | not linked |
 | `cli/` | list of installed CLI / TUI tools, see [`cli/README.md`](cli/README.md) | doc only |
-| `windows/glaze/`, `windows/yasb/` | GlazeWM + YASB | `%USERPROFILE%\.config\` |
+| `windows/glaze/` | GlazeWM | `%USERPROFILE%\.glzr\glazewm\config.yaml` |
+| `windows/yasb/` | YASB | `%USERPROFILE%\.config\yasb\` |
 | `windows/wezterm/` | WezTerm (Windows) | `%USERPROFILE%\.wezterm.lua` |
 | `windows/wsl/` | WSL | `%USERPROFILE%\.wslconfig`, `/etc/wsl.conf` |
 
@@ -46,9 +47,18 @@ Fonts: `JetBrainsMono Nerd Font` (terminals + bar) and the bundled
 
 ### Link what you want
 
-`./install.sh` creates every link below, or only some (`./install.sh nvim zsh`).
-It is safe to re-run after moving a directory: stale links are repaired, real
-files are never overwritten. Or by hand:
+`./install.sh` detects the OS and installs what fits it, or only some entries
+(`./install.sh nvim zsh`):
+
+- everywhere: `nvim`, `herdr`, `starship`, `zsh`, Claude keybindings (symlinks);
+- macOS: also AeroSpace, SketchyBar, WezTerm, Ghostty (symlinks);
+- WSL: also the `windows/` files, **copied** into the Windows home (Windows apps
+  can't follow WSL symlinks), plus `/etc/wsl.conf` (asks for `sudo`). The Windows
+  home is found with `cmd.exe`; override it with `WINHOME=/mnt/c/Users/<you>`.
+
+It is safe to re-run: stale links are repaired and real files are never
+overwritten by a link. A copied Windows file that differs is kept as `<file>.bak`
+before being replaced, so re-run it after editing a `windows/` file. Or by hand:
 
 ```bash
 ln -s ~/dotfiles/nvim              ~/.config/nvim
@@ -59,8 +69,7 @@ ln -s ~/dotfiles/macos/ghostty     ~/.config/ghostty
 ln -s ~/dotfiles/herdr             ~/.config/herdr
 ln -s ~/dotfiles/starship/starship.toml ~/.config/starship.toml
 
-ln -s ~/dotfiles/zsh/.zshrc     ~/.zshrc    # macOS
-ln -s ~/dotfiles/zsh/.zshrc_windows ~/.zshrc  # Linux / WSL instead
+ln -s ~/dotfiles/zsh/.zshrc       ~/.zshrc
 ln -s ~/dotfiles/zsh/.zshrc_alias ~/.zshrc_alias
 ln -s ~/dotfiles/zsh/.zshenv    ~/.zshenv
 ln -s ~/dotfiles/zsh/.zprofile  ~/.zprofile
@@ -69,11 +78,11 @@ ln -s ~/dotfiles/agents/keybindings.json ~/.claude/keybindings.json
 ```
 
 Always use absolute paths: a relative target (`zsh/.zshrc`) resolves from `~`
-and gives a broken link. `install.sh` picks the right `.zshrc` from `uname`.
+and gives a broken link.
 
 On macOS the zsh files go together: `.zprofile` sets up Homebrew, `.zshenv` sets up
-uv/cargo, and `.zshrc` depends on both (it uses `$HOMEBREW_PREFIX`). `.zshrc_windows`
-needs no Homebrew: it sets its own `PATH` and loads the apt plugins from `/usr/share`.
+uv/cargo, and `.zshrc` depends on both (it uses `$HOMEBREW_PREFIX`). The same `.zshrc`
+works on Linux / WSL without Homebrew: it then loads the apt plugins from `/usr/share`.
 
 Or just copy paste what you want.
 

@@ -24,6 +24,18 @@ function M.empty(lang)
   }
 end
 
+---`null` in an object becomes a missing key, except under `metadata`: the plugin
+---only passes metadata through, so its nulls are kept and written back as-is.
+local function drop_nulls(t)
+  for k, v in pairs(t) do
+    if v == vim.NIL and not vim.islist(t) then
+      t[k] = nil
+    elseif type(v) == "table" and k ~= "metadata" then
+      drop_nulls(v)
+    end
+  end
+end
+
 ---Normalise a decoded notebook so the rest of the plugin can rely on it.
 function M.normalize(nb)
   nb = nb or {}
@@ -58,9 +70,10 @@ function M.load(path)
   if not nb then
     return nil, "invalid JSON: " .. tostring(err)
   end
-  if type(nb) ~= "table" or nb.cells == nil then
+  if type(nb) ~= "table" or type(nb.cells) ~= "table" then
     return nil, "not a Jupyter notebook (no `cells` key)"
   end
+  drop_nulls(nb)
   return M.normalize(nb), nil
 end
 
@@ -85,6 +98,11 @@ function M.save(path, nb)
     os.remove(tmp)
     return false, tostring(werr or cerr)
   end
+  -- the tmp file gets default permissions: keep the notebook's own (a chmod 600 stays 600)
+  local st = vim.uv.fs_stat(path)
+  if st then
+    vim.uv.fs_chmod(tmp, bit.band(st.mode, 4095))
+  end
   local rok, rerr = os.rename(tmp, path)
   if not rok then
     os.remove(tmp)
@@ -94,16 +112,21 @@ function M.save(path, nb)
 end
 
 ---Language of the notebook, from its metadata.
+-- metadata keeps its nulls (vim.NIL), so only trust values of the expected type
+local function tbl(v)
+  return type(v) == "table" and v or {}
+end
+local function str(v)
+  return type(v) == "string" and v or nil
+end
+
 function M.language(nb)
-  local md = nb and nb.metadata or {}
-  local ks = md.kernelspec or {}
-  local li = md.language_info or {}
-  return ks.language or li.name or "python"
+  local md = tbl(nb and nb.metadata)
+  return str(tbl(md.kernelspec).language) or str(tbl(md.language_info).name) or "python"
 end
 
 function M.kernel_name(nb)
-  local ks = (nb and nb.metadata or {}).kernelspec or {}
-  return ks.name
+  return str(tbl(tbl(nb and nb.metadata).kernelspec).name)
 end
 
 ---Build the nbformat cell list out of the plugin's cell model.

@@ -139,6 +139,9 @@ pip install jupyter_client ipykernel
 `:checkhealth jupynb` vérifie tout (python, kernels, parsers treesitter,
 ImageMagick, terminal compatible).
 
+Test : `tests/roundtrip.sh ~/.venvs/nvim/bin/python` ouvre un notebook, le sauvegarde et exige un fichier
+identique octet par octet (demande `pip install nbformat` dans ce python).
+
 ## Options
 
 ```lua

@@ -2,7 +2,7 @@
 
 Config du gestionnaire de fenêtres en tuiles [GlazeWM](https://github.com/glzr-io/glazewm) (Windows).
 
-- Fichier : `config.yaml` → `%USERPROFILE%\.config\` (voir le README racine)
+- Fichier : `config.yaml` → `%USERPROFILE%\.glzr\glazewm\config.yaml` (copié par `./install.sh` depuis WSL)
 - Fins de ligne **CRLF**, à conserver (voir `.gitattributes`).
 - La barre est [YASB](../yasb) : elle démarre et arrête GlazeWM elle-même.
 

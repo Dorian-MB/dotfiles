@@ -1,5 +1,12 @@
-# StarShip
-eval "$(starship init zsh)"
+# One file for macOS (Homebrew) and Linux/WSL (apt). Only three lines differ: marked "macOS/WSL".
+
+# macOS/WSL: on the Mac ~/.local/bin already comes from .zshenv; a WSL ~/.zshenv may not set it
+[[ ":$PATH:" == *":$HOME/.local/bin:"* ]] || export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.venvs/nvim/bin:$PATH"
+# export PATH="/opt/nvim/bin:$PATH"
+
+# Rainfrog
+export EDITOR=nvim
 
 # import secret key
 [ -f ~/.zshrc_secret ] && source ~/.zshrc_secret
@@ -7,21 +14,15 @@ eval "$(starship init zsh)"
 # import alias
 [ -f ~/.zshrc_alias ] && source ~/.zshrc_alias
 
+# StarShip (after PATH: on WSL starship lives in ~/.local/bin)
+eval "$(starship init zsh)"
+
 # History
 HISTFILE=~/.zsh_history HISTSIZE=50000 SAVEHIST=50000
 setopt share_history hist_ignore_all_dups hist_ignore_space
 
-# Completion (macOS doesn't run compinit by default; brew shellenv already adds its fpath)
-autoload -Uz compinit && compinit
-
-# Activate autosuggestions ($HOMEBREW_PREFIX comes from .zprofile, no `brew` call)
-source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-export PATH="$HOME/.venvs/nvim/bin:$PATH"
-# export PATH="/opt/nvim/bin:$PATH"
-
-# Rainfrog
-export EDITOR=nvim
+# macOS/WSL: Ubuntu's /etc/zsh/zshrc already runs compinit, macOS doesn't
+(( $+functions[compdef] )) || { autoload -Uz compinit && compinit }
 
 # set -o vi
 set -o emacs
@@ -60,8 +61,12 @@ source <(fzf --zsh)
 # zoxide: `z <part of name>` jumps to a frequent directory
 (( $+commands[zoxide] )) && eval "$(zoxide init zsh)"
 
+# macOS/WSL: plugins live in Homebrew's share (no `brew` call: $HOMEBREW_PREFIX is set by .zprofile) or apt's
+for _zplug in $HOMEBREW_PREFIX/share /opt/homebrew/share /usr/share; do [[ -d $_zplug/zsh-autosuggestions ]] && break; done
+source $_zplug/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Syntax highlighting: must be sourced last (plugin requirement)
-source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $_zplug/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+unset _zplug
 # Disable underline
 ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none

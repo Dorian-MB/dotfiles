@@ -46,18 +46,20 @@ local function on_stdout(session, data)
   if not data then
     return
   end
-  session.pending = (session.pending or "") .. data
+  local buf = (session.pending or "") .. data
+  local start = 1
   while true do
-    local nl = session.pending:find("\n", 1, true)
+    local nl = buf:find("\n", start, true)
     if not nl then
       break
     end
-    local line = session.pending:sub(1, nl - 1)
-    session.pending = session.pending:sub(nl + 1)
-    if line ~= "" then
-      handle_line(session, line)
+    if nl > start then
+      handle_line(session, buf:sub(start, nl - 1))
     end
+    start = nl + 1
   end
+  -- cut once per chunk, not once per line (big outputs would copy the rest every line)
+  session.pending = buf:sub(start)
 end
 
 ---Start the bridge process for a buffer (not the kernel itself).

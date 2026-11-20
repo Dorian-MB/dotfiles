@@ -73,8 +73,9 @@ function M.lines_to_source(lines)
   for i, line in ipairs(lines) do
     out[i] = (i < #lines) and (line .. "\n") or line
   end
-  if #out == 1 and out[1] == "" then
-    return {}
+  -- like Python's splitlines(keepends=True): "a\n" is {"a\n"}, never {"a\n", ""}
+  if out[#out] == "" then
+    out[#out] = nil
   end
   return out
 end

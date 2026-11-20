@@ -25,9 +25,11 @@ bridge -> Neovim
 from __future__ import annotations
 
 import base64
+import glob
 import json
 import os
 import queue
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -62,7 +64,9 @@ class Bridge:
         self.alive = False
         self.cells = {}  # jupyter msg_id -> notebook cell id
         self.started_at = {}  # msg_id -> time
-        self.tmpdir = tempfile.mkdtemp(prefix="jupynb-")
+        _clean_old_tmpdirs()
+        # named after Neovim's pid: its images are needed until that Neovim exits
+        self.tmpdir = tempfile.mkdtemp(prefix="jupynb-%d-" % os.getppid())
         self.kernel_name = None
         self.display_name = None
         self.language = "python"
@@ -382,7 +386,8 @@ class Bridge:
                         entry["width"], entry["height"] = dims
                     out[mime] = entry
                 except Exception as exc:
-                    out["text/plain"] = "<%s: %s>" % (mime, exc)
+                    # keep the kernel's own text repr if it sent one
+                    out.setdefault("text/plain", "<%s: %s>" % (mime, exc))
             else:
                 out[mime] = value
         return out
@@ -421,8 +426,29 @@ class Bridge:
                 self.log("%s: %s\n%s" % (req.get("op"), exc, tb.format_exc()))
         # tmpdir is kept on purpose: images in it are only inlined into the
         # notebook on :w, which can happen after the kernel was stopped.
-        # macOS purges $TMPDIR on its own.
+        # The next bridge removes it once that Neovim has exited.
         self.op_shutdown({})
+
+
+def _pid_alive(pid):
+    try:
+        os.kill(pid, 0)
+    except ProcessLookupError:
+        return False
+    except OSError:
+        return True  # exists, owned by someone else
+    return True
+
+
+def _clean_old_tmpdirs():
+    """Remove image dirs left by Neovim sessions that are gone (Linux never purges /tmp quickly)."""
+    for path in glob.glob(os.path.join(tempfile.gettempdir(), "jupynb-*-*")):
+        try:
+            pid = int(os.path.basename(path).split("-")[1])
+        except ValueError:
+            continue
+        if not _pid_alive(pid):
+            shutil.rmtree(path, ignore_errors=True)
 
 
 def _image_size(path):
