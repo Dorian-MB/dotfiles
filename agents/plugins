@@ -29,9 +29,8 @@ ln -sf ~/dotfiles/agents/keybindings.json ~/.claude/keybindings.json
 claude plugin marketplace add ~/dotfiles/agents
 claude plugin install pane-glass@dotfiles
 
-## claude-kit mods: progress bar + agents panel, session band (cost, cache, context)
+## claude-kit mods: session band (cost, cache, context)
 /plugin marketplace add johnnyvizz/claude-kit
-/plugin install savvy-progress@claude-kit
 /plugin install session-band@claude-kit
 
 # savvy-flow (skill + agents), modified copy in agents/savvy-flow/:

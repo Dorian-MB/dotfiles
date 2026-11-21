@@ -7,8 +7,10 @@ Modifications par rapport à l'original : l'orchestrateur choisit le modèle de 
 | Fichier | Rôle |
 |---|---|
 | `skills/savvy-flow/SKILL.md` | instructions de l'orchestrateur |
+| `skills/savvy-flow/greenfield.md` | étapes nouveau projet, lues seulement si le dossier est vide |
+| `skills/savvy-flow/design.md` | règles de design, lues seulement si la tâche touche l'UI |
 | `agents/savvy-fable.md` | Fable, effort high : logique très complexe, bugs coriaces |
-| `agents/savvy-heavy.md` | Opus, effort xhigh : code inconnu ou désordonné, multi-fichiers |
+| `agents/savvy-heavy.md` | Opus, effort high : code inconnu ou désordonné, multi-fichiers |
 | `agents/savvy-careful.md` | Opus, effort high : refactors délicats, beaucoup de cas limites |
 | `agents/savvy-medium.md` | Sonnet, effort medium : fonctionnalités standard |
 | `agents/savvy-light.md` | Haiku, effort low : éditions mécaniques, config, lancer les tests |
@@ -27,4 +29,3 @@ cp ~/dotfiles/agents/savvy-flow/agents/*.md ~/.claude/agents/
 |---|---|
 | `/savvy-flow <tâche>` | lance le flux orchestré sur la tâche |
 
-Si le mod `savvy-progress` (claude-kit) est installé, une barre de progression suit les tâches.
