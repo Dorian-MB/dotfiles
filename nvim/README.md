@@ -33,27 +33,40 @@ ln -sfn ~/.local/opt/nvim-linux-x86_64/bin/nvim ~/.local/bin/nvim
 ### Dependencies
 ```
 External dependencies
-├── Neovim >= 0.12
-├── git
-├── ripgrep
-├── fd
-├── rustup
-├── uv
+├── Neovim >= 0.12                  (nvim-treesitter branche main)
+├── git                             (lazy.nvim)
+├── ripgrep                         (telescope live grep / grep string)
+├── fd                              (telescope find files, optionnel : rg sinon)
+├── node + npm                      (Mason installe pyright, html, css, prettier avec npm)
+├── rustup                          (rustfmt + cargo pour rustaceanvim)
+├── uv                              (cree le venv python ~/.venvs/nvim)
 ├── tree-sitter (the CLI, used to compile the parsers)
 ├── a C compiler (gcc or clang)
-└── lazygit
+├── lazygit                         (<leader>lg)
+├── imagemagick                     (images des notebooks)
+└── a Nerd Font                     (icones NvChad)
 
-Mason
-├── pyright
-├── ruff
-├── lua-language-server
-├── stylua
-└── ...
+Mason (:Mason)
+├── pyright                         (LSP python)
+├── ruff                            (format python)
+├── lua-language-server             (LSP lua)
+├── stylua                          (format lua)
+├── html-lsp / css-lsp              (LSP html / css)
+├── prettier                        (format html / css)
+└── rust-analyzer                   (LSP rust, ou `rustup component add rust-analyzer`)
 ```
+Le venv python `~/.venvs/nvim` est ajoute au `PATH` de nvim (`init.lua`) et sert
+aux notebooks :
+```bash
+uv venv ~/.venvs/nvim
+uv pip install --python ~/.venvs/nvim jupyter_client ipykernel matplotlib pandas
+```
+
 Exemple:
 ```bash
-brew install jesseduffield/lazygit/lazygit
-brew install tree-sitter-cli
+brew install ripgrep fd node uv lazygit tree-sitter-cli imagemagick
+brew install --cask font-jetbrains-mono-nerd-font
+curl https://sh.rustup.rs -sSf | sh
 ```
 
 `tree-sitter` CLI on Linux / WSL :
@@ -288,10 +301,7 @@ Liste complete des `[` / `]` natifs : [vim.md](vim.md).
 Ouvrir un `.ipynb` affiche un vrai notebook (cellules, sorties, images) grace
 au plugin local [`jupynb.nvim`](jupynb.nvim/README.md).
 
-Dependances python (deja installees dans `~/.venvs/nvim`) :
-```bash
-pip install jupyter_client ipykernel matplotlib pandas
-```
+Dependances python : le venv `~/.venvs/nvim` (voir [Dependencies](#dependencies)).
 Les images passent par le protocole graphique kitty (Ghostty le supporte) et
 ont besoin d'ImageMagick : `brew install imagemagick`.
 
