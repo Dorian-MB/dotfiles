@@ -1,6 +1,6 @@
 ---
 name: savvy-heavy
-description: Savvy-flow heavy worker (default Opus, high effort; the orchestrator may pick another model). Unfamiliar or messy code, multi-file changes, tricky logic, non-obvious architecture, root-cause debugging, and delicate work where thoroughness matters: refactors, fixes that must preserve invariants, logic with many edge cases. Spawned only by the /savvy-flow orchestrator.
+description: "Savvy-flow heavy worker (default Opus, high effort; the orchestrator may pick another model). Unfamiliar or messy code, multi-file changes, tricky logic, non-obvious architecture, root-cause debugging, and delicate work where thoroughness matters: refactors, fixes that must preserve invariants, logic with many edge cases. Spawned only by the /savvy-flow orchestrator."
 model: opus
 effort: high
 tools: Read, Edit, Write, Bash, Grep, Glob, WebFetch, WebSearch, mcp__savvy-progress__step
