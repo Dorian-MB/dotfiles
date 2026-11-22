@@ -1,7 +1,17 @@
-# Plugins Claude Code
+# Claude Code : plugins, mods et skills
+
+| Chemin | Contenu |
+|---|---|
+| [`plugins`](plugins) | Commandes d'installation de tout ce qui suit |
+| [`keybindings.json`](keybindings.json) | Raccourcis (lié dans `~/.claude/`), voir filetree |
+| [`.claude-plugin/`](.claude-plugin) | Marketplace locale `dotfiles` (sert à installer pane-glass) |
+| [`pane-glass/`](pane-glass) | Mod perso : panneaux transparents |
+| [`skins/`](skins) | Patch `transparent.patch` pour le thème catppuccin du mod skins |
+| [`handoff/`](handoff) | Skill perso `/handoff` |
+| [`savvy-flow/`](savvy-flow) | Skill `/savvy-flow` modifiée + ses 5 agents |
 
 Plugins installés (scope user). Après une install ou une mise à jour : `/reload-plugins` ou redémarrer Claude Code.
-Install : voir [`agents/plugins`](plugins).
+Les skills (`handoff`, `savvy-flow`) s'installent par lien symbolique (`ln -s`, voir leur README) : une modification dans le dépôt est active dès la session suivante, sans rien recopier.
 
 ## ponytail — `ponytail@ponytail`
 Mode « dev senior paresseux » : force la solution la plus simple qui marche (YAGNI, stdlib d'abord, pas d'abstraction non demandée). Skills + hook au démarrage + bande au-dessus du prompt.
@@ -30,6 +40,8 @@ Mod qui redessine le transcript : lignes d'outils avec icônes et durées, diffs
 | `/skin help` | Toutes les commandes |
 
 Demander « fais-moi un skin… » à Claude utilise la skill `skin-designer`.
+
+Patch catppuccin sans bandes opaques : [`skins/`](skins), à réappliquer après chaque mise à jour du plugin.
 
 ## pane-glass — `pane-glass@dotfiles` (mod perso, `agents/pane-glass`)
 Mod : chaque panneau de plugin (`/skin`, `/filetree`, `/replay`…) s'ouvre avec un fond transparent, pour garder l'opacité/le flou du terminal. Rien à configurer.
@@ -61,6 +73,23 @@ Mod exemple d'Anthropic : après un tour, rejoue une par une les modifications d
 
 - Après un tour avec modifications : `r` ou le bouton **Replay** au-dessus du prompt, ou `/replay`
 - Panneau : boutons Prev / Next / Close
+
+## agent-skills — `agent-skills@addy-agent-skills`
+Collection de skills d'Addy Osmani ([addyosmani/agent-skills](https://github.com/addyosmani/agent-skills)).
+
+## graphify — CLI `graphifyy` + skill
+Transforme du code, des docs ou des médias en graphe de connaissances interrogeable. `/graphify` ; install : `uv tool install graphifyy` puis `graphify install`.
+
+## handoff — skill perso (`agents/handoff`)
+Confie une tâche à une nouvelle session Claude Code dans un onglet herdr, via un fichier `.claude/tasks/<slug>.md` (Fait / Reste, références par chemin ou hash plutôt que copies, jamais de secrets). Détails : [`handoff/README.md`](handoff/README.md).
+
+- `/handoff <tâche>` · `/handoff --savvy <tâche>` · `/handoff --clear [slug]` · `/handoff --clear-all`
+- Penser à mettre `.claude/tasks/` dans le gitignore (global de préférence).
+
+## savvy-flow — skill modifiée (`agents/savvy-flow`)
+L'orchestrateur planifie, découpe et confie chaque tâche à un sous-agent (`savvy-light` Haiku, `savvy-medium` Sonnet, `savvy-careful`/`savvy-heavy` Opus, `savvy-fable` Fable), en choisissant le modèle par tâche. **Ne pas** installer aussi `savvy-flow@claude-kit`. Détails : [`savvy-flow/README.md`](savvy-flow/README.md).
+
+- `/savvy-flow <tâche>`
 
 ## blast-radius — `blast-radius@claude-code-playground-mods` (désinstallé)
 Désinstallé : il retient la commande dans un panneau, sans notification, facile à rater (refus silencieux après 10 min).

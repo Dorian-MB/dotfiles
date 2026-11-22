@@ -15,12 +15,13 @@ Modifications par rapport à l'original : l'orchestrateur choisit le modèle de 
 | `agents/savvy-medium.md` | Sonnet, effort medium : fonctionnalités standard |
 | `agents/savvy-light.md` | Haiku, effort low : éditions mécaniques, config, lancer les tests |
 
-Installation (copie, pas de lien) :
+Installation (liens symboliques : les modifications du dépôt sont actives tout de suite) :
 
 ```bash
 mkdir -p ~/.claude/skills ~/.claude/agents
-cp -R ~/dotfiles/agents/savvy-flow/skills/savvy-flow ~/.claude/skills/
-cp ~/dotfiles/agents/savvy-flow/agents/*.md ~/.claude/agents/
+rm -rf ~/.claude/skills/savvy-flow  # retire une ancienne copie
+ln -s ~/dotfiles/agents/savvy-flow/skills/savvy-flow ~/.claude/skills/savvy-flow
+ln -sf ~/dotfiles/agents/savvy-flow/agents/*.md ~/.claude/agents/
 ```
 
 ## Utilisation

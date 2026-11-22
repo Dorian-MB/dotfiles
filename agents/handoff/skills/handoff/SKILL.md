@@ -24,7 +24,6 @@ The goal is cost: the new session starts with a tiny context instead of this who
    - ...
    ```
 
-   The `# Contexte utile` section holds **only facts from this conversation that the task needs** and that the new session could not cheaply rediscover: decisions taken and why, files with line ranges and function names, constraints the user stated, options already rejected, verification expected. No summary of the conversation, nothing generic, nothing already in CLAUDE.md, no code pasted, nothing invented. Under ~300 words.
+   The `# Contexte utile` section holds **only facts from this conversation that the task needs** and that the new session could not cheaply rediscover: decisions taken and why, files with line ranges and function names, constraints the user stated, options already rejected, verification expected. If the task continues work already started here, add one bullet `Fait : … / Reste : …`. No summary of the conversation, nothing generic, nothing already in CLAUDE.md, no code pasted, nothing invented. Do not copy plans, specs, issues, commits or diffs: reference them by path, hash or URL. Never write secrets (API keys, tokens, passwords) or personal data: say where they live instead. Under ~300 words.
    **If nothing in this conversation is useful for the task, omit the whole section**: the file then holds only `# Tâche`.
-3. **Show** the user the file path and its content, and wait for their go-ahead. On feedback, edit the file and show it again.
-4. **Launch**: `bash ~/.claude/skills/handoff/handoff.sh .claude/tasks/<slug>.md` followed by `--savvy` in savvy mode. Report its output in one line. Do not start the task yourself.
+3. **Launch** right away, without asking for confirmation: `bash ~/.claude/skills/handoff/handoff.sh .claude/tasks/<slug>.md` followed by `--savvy` in savvy mode. Report the task file path and the script output in one line each. Do not start the task yourself.

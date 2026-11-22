@@ -37,8 +37,13 @@ claude plugin install pane-glass@dotfiles
 # the orchestrator picks the model per worker task (haiku/sonnet/opus/fable),
 # light defaults to haiku, medium to sonnet. Do NOT also install savvy-flow@claude-kit.
 mkdir -p ~/.claude/skills ~/.claude/agents
-cp -R ~/dotfiles/agents/savvy-flow/skills/savvy-flow ~/.claude/skills/
-cp ~/dotfiles/agents/savvy-flow/agents/*.md ~/.claude/agents/
+rm -rf ~/.claude/skills/savvy-flow  # an old copy would block the link
+ln -s ~/dotfiles/agents/savvy-flow/skills/savvy-flow ~/.claude/skills/savvy-flow
+ln -sf ~/dotfiles/agents/savvy-flow/agents/*.md ~/.claude/agents/
+
+# handoff (skill): hand a task to a fresh session in a new herdr tab
+rm -rf ~/.claude/skills/handoff
+ln -s ~/dotfiles/agents/handoff/skills/handoff ~/.claude/skills/handoff
 
 
 # keep warm 
