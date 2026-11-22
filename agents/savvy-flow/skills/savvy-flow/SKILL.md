@@ -1,6 +1,6 @@
 ---
 name: savvy-flow
-description: Orchestrated delivery flow. The session model plans, owns design, delegates implementation to tiered worker subagents (savvy-fable / savvy-heavy / savvy-careful / savvy-medium / savvy-light) and adversarially reviews their output. Invoke with /savvy-flow <task>.
+description: Orchestrated delivery flow. The session model plans, owns design, delegates implementation to tiered worker subagents (savvy-fable / savvy-heavy / savvy-medium / savvy-light) and adversarially reviews their output. Invoke with /savvy-flow <task>.
 disable-model-invocation: true
 argument-hint: <task description>
 ---
@@ -14,7 +14,7 @@ Task from the user: $ARGUMENTS
 ## 0. Preconditions
 
 - The flow is designed for a strong orchestrator model at high effort (Fable high is the reference setup). Do not try to detect or verify the session's model or effort — you cannot see the effort level. Whatever the session runs on is the user's deliberate choice; just orchestrate.
-- Worker agents must exist: `savvy-fable`, `savvy-heavy`, `savvy-careful`, `savvy-medium`, `savvy-light` (in `~/.claude/agents/`, or shipped with the savvy-flow plugin, in which case the Agent tool lists them as `savvy-flow:savvy-careful` and so on). If the Agent tool does not list them, stop and tell the user.
+- Worker agents must exist: `savvy-fable`, `savvy-heavy`, `savvy-medium`, `savvy-light` (in `~/.claude/agents/`, or shipped with the savvy-flow plugin, in which case the Agent tool lists them as `savvy-flow:savvy-heavy` and so on). If the Agent tool does not list them, stop and tell the user.
 
 ## Progress bar
 
@@ -44,10 +44,9 @@ Each task gets two independent choices: a **tier** (the worker agent: its rules,
 | Tier | Agent | Default model / effort | Use for |
 |------|-------|------------------------|---------|
 | Fable | `savvy-fable` | Fable / high | "Hardest problems": very complex logic (subtle algorithms, concurrency, many interacting states), hard bugs that resist ordinary debugging or survived a Heavy investigation; targeted design features, only when the user asks (`design.md`) |
-| Heavy | `savvy-heavy` | Opus / high | "Understand and find": unfamiliar or messy code, unclear root cause, non-obvious architecture, large contexts, anything where a wrong first approach is expensive |
-| Careful | `savvy-careful` | Opus / high | "Do it right": the approach is clear but execution is delicate. Multi-file refactors, fixes that must preserve invariants, logic with many edge cases, concurrency |
+| Heavy | `savvy-heavy` | Opus / high | "Understand, find, and do it right": unfamiliar or messy code, unclear root cause, non-obvious architecture, large contexts, anything where a wrong first approach is expensive; also delicate execution of a clear approach: multi-file refactors, fixes that must preserve invariants, logic with many edge cases, concurrency |
 | Medium | `savvy-medium` | Sonnet / medium | Standard feature work, bug fixes with a known cause, changes confined to a few files with clear requirements |
-| Light | `savvy-light` | Haiku / low | Mechanical edits, renames, boilerplate, config, small isolated fixes, running builds/tests and reporting |
+| Light | `savvy-light` | Haiku / medium | Mechanical edits, renames, boilerplate, config, small isolated fixes, running builds/tests and reporting |
 
 **Model**: pass it as the Agent tool's `model` parameter, which overrides the agent's default; omit it to keep the default above. Choose per task, not per tier:
 
@@ -59,16 +58,16 @@ Each task gets two independent choices: a **tier** (the worker agent: its rules,
 | `fable` | highest | only what Opus has failed at or clearly cannot do |
 
 Heuristics:
-- Start from the tier's default model. Move it down when the brief removes the difficulty (a precise Heavy-written brief can often be implemented on `sonnet`; a long but repetitive Careful task may run on `sonnet`), up when the code is large or unfamiliar (a Light task in a huge unknown file may need `sonnet`).
+- Start from the tier's default model. Move it down when the brief removes the difficulty (a precise Heavy-written brief can often be implemented on `sonnet`; a long but repetitive Heavy task may run on `sonnet`), up when the code is large or unfamiliar (a Light task in a huge unknown file may need `sonnet`).
 - The user may constrain models in the task ("workers on sonnet", "no fable", "opus only"): that overrides the defaults and these heuristics. Without access to `fable`, use `opus` for the Fable tier.
 - Uncertain between two tiers or two models → take the higher one. Exception: Fable (tier or model) is a reserve; pick it only when the task clearly meets its criteria, otherwise Heavy / `opus`.
-- Heavy vs Careful is about the kind of difficulty, not the amount: insight needed → Heavy; thoroughness needed → Careful. A task that needs both is two tasks: Heavy investigates and produces a precise brief, Careful implements it.
+- A task that needs both insight and a delicate implementation is two tasks: Heavy investigates and produces a precise brief, then Heavy (often on `sonnet`) or Medium implements it.
 - A task that is mostly investigation with an unclear outcome is Heavy; split "investigate" and "implement" if the investigation result changes the plan.
 - Never delegate final judgment (section 5) to any tier. Design is delegated only as `design.md` allows: to `savvy-fable`, on the user's explicit request.
 
 ## 4. Delegate
 
-- Use the Agent tool with `subagent_type` = the tier agent name exactly as the Agent tool lists it (`savvy-careful` or `savvy-flow:savvy-careful`), and `model` = the model chosen in section 3 when it differs from the agent's default. Run independent tasks in parallel in one message; chain dependent ones.
+- Use the Agent tool with `subagent_type` = the tier agent name exactly as the Agent tool lists it (`savvy-heavy` or `savvy-flow:savvy-heavy`), and `model` = the model chosen in section 3 when it differs from the agent's default. Run independent tasks in parallel in one message; chain dependent ones.
 - Each brief must be self-contained: the worker has no access to this conversation. Include the decided design specs, constraints from CLAUDE.md that matter, and the exact verification expected.
 - Point the worker at the code precisely so it does not re-explore: file paths **with line ranges** and the names of the functions/types involved, as found during planning. Do not paste code into the brief: you would write it as expensive output tokens, and the worker reads it more cheaply itself.
 - Keep briefs tight. Do not paste the whole plan; paste this task.

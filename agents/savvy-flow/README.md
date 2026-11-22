@@ -10,10 +10,9 @@ Modifications par rapport à l'original : l'orchestrateur choisit le modèle de 
 | `skills/savvy-flow/greenfield.md` | étapes nouveau projet, lues seulement si le dossier est vide |
 | `skills/savvy-flow/design.md` | règles de design, lues seulement si la tâche touche l'UI |
 | `agents/savvy-fable.md` | Fable, effort high : logique très complexe, bugs coriaces |
-| `agents/savvy-heavy.md` | Opus, effort high : code inconnu ou désordonné, multi-fichiers |
-| `agents/savvy-careful.md` | Opus, effort high : refactors délicats, beaucoup de cas limites |
+| `agents/savvy-heavy.md` | Opus, effort high : code inconnu ou désordonné, multi-fichiers, refactors délicats, beaucoup de cas limites |
 | `agents/savvy-medium.md` | Sonnet, effort medium : fonctionnalités standard |
-| `agents/savvy-light.md` | Haiku, effort low : éditions mécaniques, config, lancer les tests |
+| `agents/savvy-light.md` | Haiku, effort medium : éditions mécaniques, config, lancer les tests |
 
 Installation (liens symboliques : les modifications du dépôt sont actives tout de suite) :
 

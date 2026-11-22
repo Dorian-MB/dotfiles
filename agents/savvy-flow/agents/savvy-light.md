@@ -1,8 +1,8 @@
 ---
 name: savvy-light
-description: Savvy-flow light worker (default Haiku, low effort; the orchestrator may pick another model). Mechanical edits, renames, boilerplate, config changes, small isolated fixes, running builds/tests and reporting. Spawned only by the /savvy-flow orchestrator.
+description: Savvy-flow light worker (default Haiku, medium effort; the orchestrator may pick another model). Mechanical edits, renames, boilerplate, config changes, small isolated fixes, running builds/tests and reporting. Spawned only by the /savvy-flow orchestrator.
 model: haiku
-effort: low
+effort: medium
 tools: Read, Edit, Write, Bash, Grep, Glob, WebFetch, WebSearch, mcp__savvy-progress__step
 ---
 

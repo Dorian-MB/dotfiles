@@ -87,7 +87,7 @@ Confie une tâche à une nouvelle session Claude Code dans un onglet herdr, via 
 - Penser à mettre `.claude/tasks/` dans le gitignore (global de préférence).
 
 ## savvy-flow — skill modifiée (`agents/savvy-flow`)
-L'orchestrateur planifie, découpe et confie chaque tâche à un sous-agent (`savvy-light` Haiku, `savvy-medium` Sonnet, `savvy-careful`/`savvy-heavy` Opus, `savvy-fable` Fable), en choisissant le modèle par tâche. **Ne pas** installer aussi `savvy-flow@claude-kit`. Détails : [`savvy-flow/README.md`](savvy-flow/README.md).
+L'orchestrateur planifie, découpe et confie chaque tâche à un sous-agent (`savvy-light` Haiku, `savvy-medium` Sonnet, `savvy-heavy` Opus, `savvy-fable` Fable), en choisissant le modèle par tâche. **Ne pas** installer aussi `savvy-flow@claude-kit`. Détails : [`savvy-flow/README.md`](savvy-flow/README.md).
 
 - `/savvy-flow <tâche>`
 
