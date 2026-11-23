@@ -27,6 +27,7 @@ claude plugin install pane-glass@dotfiles
 ## claude-kit mods: session band (cost, cache, context)
 /plugin marketplace add johnnyvizz/claude-kit
 /plugin install session-band@claude-kit
+/plugin install savvy-progress@claude-kit  # required: savvy-flow agents call its step tool
 
 # savvy-flow (skill + agents), modified copy in agents/savvy-flow/:
 # the orchestrator picks the model per worker task (haiku/sonnet/opus/fable),
@@ -46,9 +47,9 @@ claude plugin marketplace add karanb192/claude-code-mods
 claude plugin install cache-tax@claude-code-mods
 
 
-# Anthropic's sample (marketplace lives in a subfolder, so clone then add the path)
-git clone --depth 1 https://github.com/anthropics/claude-code-playground ~/.claude/claude-code-playground
-claude plugin marketplace add ~/.claude/claude-code-playground/claude-code/mods
-claude plugin install replay-theater@claude-code-playground-mods --scope user
+# Anthropic's sample (marketplace lives in a subfolder, so clone then add the path), NOT isntalled
+# git clone --depth 1 https://github.com/anthropics/claude-code-playground ~/.claude/claude-code-playground
+# claude plugin marketplace add ~/.claude/claude-code-playground/claude-code/mods
+# claude plugin install replay-theater@claude-code-playground-mods --scope user
 # blast-radius uninstalled: it holds risky commands in a pane with no notification, easy to miss.
 # claude plugin install blast-radius@claude-code-playground-mods --scope user
