@@ -12,6 +12,15 @@ différent est gardé en `.bak` avant d'être remplacé ; relance le script apr�
 | [`wezterm/`](wezterm) | WezTerm, ouvre directement WSL | `%USERPROFILE%\.wezterm.lua` |
 | [`wsl/`](wsl) | WSL 2 (Ubuntu) | `%USERPROFILE%\.wslconfig`, `/etc/wsl.conf` |
 
+`defaults.ps1` est l'équivalent de `macos/defaults.sh` : répétition des touches rapide (Touches filtres,
+225 ms puis 15 ms) et Explorateur (fichiers cachés, extensions, chemin complet). `-Undo` remet les valeurs Windows.
+Depuis WSL : `powershell.exe -ExecutionPolicy Bypass -File "$(wslpath -w ~/dotfiles/windows/defaults.ps1)"`, puis
+déconnecte-toi de la session.
+
+```
+/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -ExecutionPolicy Bypass -File "$(wslpath -w ~/dotfiles/windows/defaults.ps1)"
+```
+
 Les raccourcis de GlazeWM sont proches de ceux d'AeroSpace (`Alt+h/j/k/l`, `Alt+lettre` pour les espaces).
 
 `glaze/config.yaml` et `yasb/yasb_colors.css` sont en fins de ligne **CRLF** : garde-les ainsi si tu les modifies depuis macOS (voir `.gitattributes`).
