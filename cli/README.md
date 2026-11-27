@@ -3,6 +3,7 @@
 Outils en ligne de commande et TUI installés sur ma machine.
 
 Comment s'en servir : [`USAGE.md`](USAGE.md).
+SSH (config, VPN, clés) : [`ssh.md`](ssh.md).
 
 ## Shell
 
