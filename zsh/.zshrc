@@ -1,8 +1,10 @@
-# One file for macOS (Homebrew) and Linux/WSL (apt). Only three lines differ: marked "macOS/WSL".
+# One file for macOS (Homebrew) and Linux/WSL (apt). Only four lines differ: marked "macOS/WSL".
 
 # macOS/WSL: on the Mac ~/.local/bin already comes from .zshenv; a WSL ~/.zshenv may not set it
 [[ ":$PATH:" == *":$HOME/.local/bin:"* ]] || export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.venvs/nvim/bin:$PATH"
+# macOS/WSL: WSLg runs an X server but DISPLAY is not set; TUIs (rainfrog) need it to reach the Windows clipboard
+[[ -z $DISPLAY && -S /tmp/.X11-unix/X0 && -d /mnt/wslg ]] && export DISPLAY=:0
 # export PATH="/opt/nvim/bin:$PATH"
 
 # Rainfrog
