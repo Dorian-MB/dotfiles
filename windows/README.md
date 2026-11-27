@@ -21,6 +21,9 @@ déconnecte-toi de la session.
 /mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -ExecutionPolicy Bypass -File "$(wslpath -w ~/dotfiles/windows/defaults.ps1)"
 ```
 
+Aperçu avec Espace dans l'Explorateur, comme le Quick Look du Mac : `winget install QL-Win.QuickLook` (puis *Run at
+Startup* depuis son icône). GlazeWM l'ouvre en fenêtre flottante centrée.
+
 Les raccourcis de GlazeWM sont proches de ceux d'AeroSpace (`Alt+h/j/k/l`, `Alt+lettre` pour les espaces).
 
 `glaze/config.yaml` et `yasb/yasb_colors.css` sont en fins de ligne **CRLF** : garde-les ainsi si tu les modifies depuis macOS (voir `.gitattributes`).
