@@ -8,6 +8,7 @@
 | [`pane-glass/`](pane-glass) | Mod perso : panneaux transparents |
 | [`skins/`](skins) | Patch `transparent.patch` pour le thème catppuccin du mod skins |
 | [`handoff/`](handoff) | Skill perso `/handoff` |
+| [`cra/`](cra) | Skill perso `/cra` : compte rendu du jour (`ln -s ~/dotfiles/agents/cra/skills/cra ~/.claude/skills/cra`) |
 | [`savvy-flow/`](savvy-flow) | Skill `/savvy-flow` modifiée + ses 5 agents |
 
 Plugins installés (scope user). Après une install ou une mise à jour : `/reload-plugins` ou redémarrer Claude Code.
