@@ -8,19 +8,19 @@ Marche pareil sur macOS et Linux/WSL ; les différences sont signalées.
 Un bloc par serveur ; le bloc va d'un `Host` au suivant.
 
 ```
-Host anah-portail              # l'alias tapé après `ssh`
-    HostName 10.128.116.51     # l'adresse réelle
-    User <user>                # remplace `ssh <user>@10.128.116.51`
+Host <serveur1>          # l'alias tapé après `ssh`
+    HostName <ip1>       # l'adresse réelle
+    User <user>          # remplace `ssh <user>@<ip1>`
 
-Host anah-engine
-    HostName 10.128.116.50
+Host <serveur2>
+    HostName <ip2>
     User <user>
 ```
 
 ```bash
 mkdir -p ~/.ssh && chmod 700 ~/.ssh   # sur un Mac neuf, ~/.ssh peut ne pas exister
 chmod 600 ~/.ssh/config               # ssh peut refuser un config modifiable par d'autres
-ssh -G anah-portail | grep -E '^(hostname|user) '   # config appliquée, sans se connecter
+ssh -G <serveur1> | grep -E '^(hostname|user) '   # config appliquée, sans se connecter
 ```
 
 Piège : un copier-coller (navigateur, Teams) peut insérer des espaces insécables. Symptôme :
@@ -42,34 +42,34 @@ Un mot de passe ne peut pas être mis dans ce fichier (et ne doit pas l'être, m
 | `Connection timed out` | serveur injoignable sur le réseau | §3 (VPN) |
 | `Host key verification failed` | premier contact, en mode non interactif | se connecter à la main une fois (§4) |
 | `Permission denied` | mauvais utilisateur / mot de passe / clé | `ssh -v <alias>` |
-| `connection is not using a post-quantum key exchange` | OpenSSH du serveur ancien (Debian 11) | avertissement seulement, ignorable |
+| `connection is not using a post-quantum key exchange` | OpenSSH du serveur ancien | avertissement seulement, ignorable |
 
 Tester sans rien taper (n'attend pas de mot de passe, coupe au bout de 5 s) :
 
 ```bash
-ssh -o BatchMode=yes -o ConnectTimeout=5 anah-portail true
+ssh -o BatchMode=yes -o ConnectTimeout=5 <serveur1> true
 ```
 
 ## 3. Réseau : le VPN
 
-Les `10.128.116.x` ne sont joignables que via le bon VPN (OpenVPN).
+Les serveurs ne sont joignables que via le bon VPN.
 
 Windows (PowerShell) :
 
 ```powershell
-Test-NetConnection 10.128.116.51 -Port 22                       # TcpTestSucceeded : True attendu
-Find-NetRoute -RemoteIPAddress 10.128.116.51 | Select InterfaceAlias, NextHop
+Test-NetConnection <ip1> -Port 22                       # TcpTestSucceeded : True attendu
+Find-NetRoute -RemoteIPAddress <ip1> | Select InterfaceAlias, NextHop
 ```
 
 macOS (ou Linux) :
 
 ```bash
-nc -vz -G 5 10.128.116.51 22          # "succeeded" attendu (Linux : nc -vz -w 5 ...)
-route -n get 10.128.116.51 | grep interface   # Linux : ip route get 10.128.116.51
+nc -vz -G 5 <ip1> 22          # "succeeded" attendu (Linux : nc -vz -w 5 ...)
+route -n get <ip1> | grep interface   # Linux : ip route get <ip1>
 ```
 
 - Interface Wi-Fi (`Wi-Fi`, `en0`) → le trafic ne passe pas par le VPN : mauvais VPN ou VPN déconnecté.
-- Interface VPN (`OpenVPN Connect DCO Adapter`, `utun…` sur Mac) → bon chemin.
+- Interface VPN (nom du VPN sous Windows, `utun…` sur Mac) → bon chemin.
 
 WSL seulement : si Windows passe mais pas WSL, ajouter `networkingMode=mirrored` et `dnsTunneling=true` sous
 `[wsl2]` dans `C:\Users\<user>\.wslconfig`, puis `wsl --shutdown`. (Pas nécessaire ici : WSL passait dès que le
@@ -78,7 +78,7 @@ VPN était bon.)
 ## 4. Première connexion et clé SSH
 
 ```bash
-ssh anah-portail
+ssh <serveur1>
 ```
 
 La première fois : `The authenticity of host ... can't be established` → `yes` (empreinte enregistrée dans
@@ -88,8 +88,8 @@ Pour ne plus taper le mot de passe :
 
 ```bash
 ssh-keygen -t ed25519          # Entrée pour le chemin par défaut (~/.ssh/id_ed25519)
-ssh-copy-id anah-portail       # mot de passe une dernière fois
-ssh-copy-id anah-engine
+ssh-copy-id <serveur1>       # mot de passe une dernière fois
+ssh-copy-id <serveur2>
 ```
 
 - `id_ed25519` : clé privée, reste sur la machine, ne se partage jamais. Une par machine (Mac, WSL) : générer
@@ -113,5 +113,5 @@ Host *
     AddKeysToAgent yes
 ```
 
-Vérifier : `ssh anah-portail` ne demande plus de mot de passe. Sinon, `ssh -v anah-portail` pour voir pourquoi
+Vérifier : `ssh <serveur1>` ne demande plus de mot de passe. Sinon, `ssh -v <serveur1>` pour voir pourquoi
 la clé est refusée (serveur qui n'accepte que les mots de passe, droits sur `~/.ssh` côté serveur…).
